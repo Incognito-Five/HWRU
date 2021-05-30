@@ -1,4 +1,4 @@
-package com.example.myapplication;
+package com.example.myapplication1;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -10,7 +10,7 @@ import androidx.annotation.Nullable;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
 
-    public  static final String DBNAME = "Login.db";
+    public static final String DBNAME ="Login.db";
 
     public DatabaseHelper(Context context) {
         super(context, "Login.db", null, 1);
@@ -20,28 +20,26 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase MyDB) {
         //creates table for users
         MyDB.execSQL("create Table users(username TEXT primary key, password TEXT)");
-
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase MyDB, int oldVersion, int newVersion) {
         //user's existence
         MyDB.execSQL("drop Table if exists users");
-
     }
 
-    //insertion of username and password to the database
+    //insertion of username and password
     public Boolean insertData(String username, String password){
         SQLiteDatabase MyDB = this.getWritableDatabase();
-        ContentValues contentValues = new ContentValues();
+        ContentValues contentValues =new ContentValues();
         contentValues.put("username", username);
         contentValues.put("password", password);
-        long result = MyDB.insert("users", null, contentValues);
+        long result =MyDB.insert("users", null, contentValues);
         //insertion not possible
-        if(result == -1)
+        if (result == -1)
             return false;
         else
-            return  true;
+            return true;
     }
 
     //check if username exists
@@ -49,17 +47,17 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         SQLiteDatabase MyDB = this.getWritableDatabase();
         Cursor cursor = MyDB.rawQuery("Select * from users where username = ?", new String[] {username});
         if (cursor.getCount()>0)
-            return true;
+            return  true;
         else
             return false;
     }
 
-    //check password for username
+    //check if username and password exists
     public Boolean checkusernamepassword(String username, String password){
         SQLiteDatabase MyDB = this.getWritableDatabase();
-        Cursor cursor = MyDB.rawQuery("Select * from users where username = ? and password = ?", new String[] {username,password});
+        Cursor cursor = MyDB.rawQuery("Select * from users where username = ? and password = ?", new String[] {username, password});
         if (cursor.getCount()>0)
-            return true;
+            return  true;
         else
             return false;
     }
