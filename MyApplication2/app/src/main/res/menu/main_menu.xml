@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+
+    <item android:title="@string/profile">
+
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/account"
+                    android:icon="@drawable/profile_icon"
+                    android:title="@string/account">
+
+                </item>
+                <item
+                    android:id="@+id/back_up_storage"
+                    android:icon="@drawable/back_up_icon"
+                    android:title="@string/back_up_storage">
+
+                </item>
+                <item
+                    android:id="@+id/themes"
+                    android:icon="@drawable/themes_icon"
+                    android:title="@string/themes">
+
+                </item>
+            </group>
+        </menu>
+    </item>
+
+    <item android:title="@string/about_us">
+
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/help"
+                    android:icon="@drawable/help_icon"
+                    android:title="@string/help">
+
+                </item>
+            </group>
+        </menu>
+
+    </item>
+
+
+    <item android:title="@string/settings">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/sounds"
+                    android:icon="@drawable/sounds_icon"
+                    android:title="@string/sounds">
+
+                </item>
+            </group>
+        </menu>
+    </item>
+
+
+</menu>
