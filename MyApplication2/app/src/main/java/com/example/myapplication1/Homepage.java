@@ -53,7 +53,7 @@ public class Homepage extends AppCompatActivity implements NavigationView.OnNavi
     }
 
     @Override
-    public boolean onNavigationItemSelected(@NonNull MenuItem menuItem){
+    public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
         return true;
     }
 

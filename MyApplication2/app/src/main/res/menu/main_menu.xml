@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <group android:checkableBehavior="single">
 
-        <item android:title="@string/profile">
 
-            <menu>
+    <item android:title="@string/profile">
 
+        <menu>
+            <group android:checkableBehavior="single">
                 <item
                     android:id="@+id/account"
                     android:icon="@drawable/profile_icon"
@@ -25,39 +25,38 @@
                     android:title="@string/themes">
 
                 </item>
-            </menu>
-        </item>
-    </group>
+            </group>
+        </menu>
+    </item>
 
-    <group android:checkableBehavior="single">
+    <item android:title="@string/about_us">
 
-        <item android:title="@string/about_us">
-
-            <menu>
+        <menu>
+            <group android:checkableBehavior="single">
                 <item
                     android:id="@+id/help"
                     android:icon="@drawable/help_icon"
                     android:title="@string/help">
 
                 </item>
-            </menu>
+            </group>
+        </menu>
 
-        </item>
-    </group>
+    </item>
 
-    <group android:checkableBehavior="single">
 
-        <item android:title="@string/settings">
-            <menu>
+    <item android:title="@string/settings">
+        <menu>
+            <group android:checkableBehavior="single">
                 <item
                     android:id="@+id/sounds"
                     android:icon="@drawable/sounds_icon"
                     android:title="@string/sounds">
 
                 </item>
-            </menu>
-        </item>
-    </group>
+            </group>
+        </menu>
+    </item>
 
 
 </menu>
