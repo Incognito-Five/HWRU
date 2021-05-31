@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
                     Boolean checkuserpw = DB.checkusernamepassword(user, pw);
                     if (checkuserpw == true){
                         Toast.makeText(MainActivity.this, "Login successful", Toast.LENGTH_SHORT).show();
-                        Intent intent = new Intent(getApplicationContext(), Home.class);
+                        Intent intent = new Intent(getApplicationContext(), Homepage.class);
                         startActivity(intent);
                     }
                     else {

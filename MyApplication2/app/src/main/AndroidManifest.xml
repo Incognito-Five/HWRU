@@ -11,7 +11,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication1"
         tools:ignore="AllowBackup">
-        <activity android:name=".Homepage"></activity>
+        <activity android:name=".Settings"></activity>
+        <activity android:name=".AboutUs" />
+        <activity android:name=".Profile" />
+        <activity android:name=".BMI" />
+        <activity android:name=".Timetable" />
+        <activity android:name=".Calendar" />
+        <activity android:name=".WaterTracker" />
+        <activity android:name=".Notebook" />
+        <activity android:name=".Homepage" />
         <activity android:name=".MainActivity2" />
         <activity android:name=".MainActivity">
             <intent-filter>
