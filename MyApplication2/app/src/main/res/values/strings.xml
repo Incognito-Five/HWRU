@@ -31,5 +31,10 @@
     <string name="menu">Menu</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="registration">Registration</string>
+    <string name="lbl_password">PASSWORD</string>
+    <string name="please_enter_your_username">please enter your username</string>
+    <string name="username">USERNAME:</string>
+    <string name="name">NAME:</string>
 
 </resources>
