@@ -11,7 +11,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication1"
         tools:ignore="AllowBackup">
-        <activity android:name=".Homepage"></activity>
+        <activity android:name=".RegistrationPage"></activity>
+        <activity android:name=".Homepage" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

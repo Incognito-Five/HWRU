@@ -35,5 +35,8 @@
     <string name="username">USERNAME</string>
     <string name="username_">USERNAME:</string>
     <string name="new_user_register_here">New user? Register here</string>
+    <string name="register_here">Register Here</string>
+    <string name="name">NAME:</string>
+    <string name="please_enter_your_name">please_enter your name</string>
 
 </resources>
