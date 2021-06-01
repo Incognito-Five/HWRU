@@ -26,12 +26,12 @@ public class MainActivity extends AppCompatActivity {
         login = (Button) findViewById(R.id.button_login);
         forget_pass = (Button) findViewById(R.id.button_forg);
         register = (Button) findViewById(R.id.button_reg);
-        DB =new DatabaseHelper(this);
+        DB = new DatabaseHelper(this);
 
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String user =username.getText().toString();
+                String user = username.getText().toString();
                 String pw = password.getText().toString();
 
                 if (user.equals("")||pw.equals(""))
