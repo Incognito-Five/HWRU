@@ -14,7 +14,7 @@ public class MainActivity extends AppCompatActivity {
 
     EditText username, password;
     Button login, forget_pass, register;
-    DatabaseHelper DB;
+    DatabaseHelper DBase;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,27 +26,13 @@ public class MainActivity extends AppCompatActivity {
         login = (Button) findViewById(R.id.button_login);
         forget_pass = (Button) findViewById(R.id.button_forg);
         register = (Button) findViewById(R.id.button_reg);
-        DB = new DatabaseHelper(this);
+        DBase = new DatabaseHelper(this);
+
 
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String user = username.getText().toString();
-                String pw = password.getText().toString();
 
-                if (user.equals("")||pw.equals(""))
-                    Toast.makeText(MainActivity.this, "Please enter all fields", Toast.LENGTH_SHORT).show();
-                else {
-                    Boolean checkuserpw = DB.checkusernamepassword(user, pw);
-                    if (checkuserpw){
-                        Toast.makeText(MainActivity.this, "Login successful", Toast.LENGTH_SHORT).show();
-                        Intent intent = new Intent(getApplicationContext(), Homepage.class);
-                        startActivity(intent);
-                    }
-                    else {
-                        Toast.makeText(MainActivity.this, "Invalid username and password", Toast.LENGTH_SHORT).show();
-                    }
-                }
             }
         });
 

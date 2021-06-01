@@ -11,8 +11,8 @@ import android.widget.Toast;
 
 public class RegistrationPage extends AppCompatActivity {
     EditText username, password, repassword;
-    Button register1, login1;
-    DatabaseHelper DB;
+    Button register, login;
+    DatabaseHelper DBase;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,49 +22,30 @@ public class RegistrationPage extends AppCompatActivity {
         username = (EditText) findViewById(R.id.txt_username);
         password = (EditText) findViewById(R.id.txt_pw);
         repassword = (EditText) findViewById(R.id.txt_repw);
-        register1 = (Button) findViewById(R.id.button_reg1);
-        login1 = (Button) findViewById(R.id.button_log1);
-        DB = new DatabaseHelper(this);
+        register = (Button) findViewById(R.id.button_reg1);
+        login = (Button) findViewById(R.id.button_log1);
+        DBase = new DatabaseHelper(this);
 
-        register1.setOnClickListener(new View.OnClickListener() {
+
+        register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String user1 = username.getText().toString();
-                String pass1 = password.getText().toString();
+                String user = username.getText().toString();
+                String pass = password.getText().toString();
                 String repass = repassword.getText().toString();
 
-                if (user1.equals("")||pass1.equals("")||repass.equals(""))
+                if(user.equals("") || pass.equals("") || repass.equals("")){
                     Toast.makeText(RegistrationPage.this, "Please enter all fields", Toast.LENGTH_SHORT).show();
+                }
                 else {
-                    if (pass1.equals(repass)){
-                        Boolean checkuser = DB.checkusername(user1);
-                        if (checkuser == false){
-                            Boolean insert = DB.insertData(user1,pass1);
-                            if (insert == true){
-                                Toast.makeText(RegistrationPage.this, "Registration successful", Toast.LENGTH_SHORT).show();
-                                Intent intent = new Intent(getApplicationContext(), Homepage.class);
-                                startActivity(intent);
-                            }
-                            else {
-                                Toast.makeText(RegistrationPage.this, "Registration failed", Toast.LENGTH_SHORT).show();
-                            }
-                        }
-                        else {
-                            Toast.makeText(RegistrationPage.this, "User already exists! Please login", Toast.LENGTH_SHORT).show();
-                        }
-                    }
-                    else {
-                        Toast.makeText(RegistrationPage.this, "Password does not match", Toast.LENGTH_SHORT).show();
-                    }
+
                 }
             }
         });
 
-        login1.setOnClickListener(new View.OnClickListener() {
+        login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-                startActivity(intent);
             }
         });
     }
