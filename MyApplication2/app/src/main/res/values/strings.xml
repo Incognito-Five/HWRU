@@ -31,5 +31,24 @@
     <string name="menu">Menu</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+    <string name="navigation_header">Navigation Header</string>
+    <string name="incognito5">Incognito5</string>
+    <string name="incognito5_gmail_com">incognito5@gmail.com</string>
+=======
+>>>>>>> Stashed changes
+    <string name="please_enter_your_username">please enter your username</string>
+    <string name="username">USERNAME</string>
+    <string name="username_">USERNAME:</string>
+    <string name="new_user_register_here">New user? Register here</string>
+    <string name="register_here">Register Here</string>
+    <string name="name">NAME:</string>
+    <string name="please_enter_your_name">please_enter your name</string>
+<<<<<<< Updated upstream
+=======
+>>>>>>> f7117d9c960185fbf0bd5841eaf2931732136888
+>>>>>>> Stashed changes
 
 </resources>
