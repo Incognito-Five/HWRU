@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        username = (EditText) findViewById(R.id.txt_email);
+        username = (EditText) findViewById(R.id.txt_username);
         password = (EditText) findViewById(R.id.txt_pw);
         login = (Button) findViewById(R.id.button_login);
         DB =new DatabaseHelper(this);
@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
                     Boolean checkuserpw = DB.checkusernamepassword(user, pw);
                     if (checkuserpw){
                         Toast.makeText(MainActivity.this, "Login successful", Toast.LENGTH_SHORT).show();
-                        Intent intent = new Intent(getApplicationContext(), Home.class);
+                        Intent intent = new Intent(getApplicationContext(), Homepage.class);
                         startActivity(intent);
                     }
                     else {

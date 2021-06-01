@@ -31,5 +31,9 @@
     <string name="menu">Menu</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="please_enter_your_username">please enter your username</string>
+    <string name="username">USERNAME</string>
+    <string name="username_">USERNAME:</string>
+    <string name="new_user_register_here">New user? Register here</string>
 
 </resources>
