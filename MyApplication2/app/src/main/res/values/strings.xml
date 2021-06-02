@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">My Application1</string>
+    <string name="app_name">HWRU</string>
     <string name="welcome">WELCOME</string>
     <string name="how_well_are_u">HOW WELL ARE U?</string>
     <string name="textview">TextView</string>

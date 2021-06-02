@@ -15,7 +15,7 @@ import android.view.View;
 
 import com.google.android.material.navigation.NavigationView;
 
-public class Homepage extends AppCompatActivity implements View.OnClickListener {
+public class Homepage extends AppCompatActivity implements View.OnClickListener, NavigationView.OnNavigationItemSelectedListener {
 
     //Variables
     DrawerLayout drawerLayout;
@@ -28,10 +28,23 @@ public class Homepage extends AppCompatActivity implements View.OnClickListener 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_homepage);
 
-        //Hooks
+        //toolbar
+        toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+
+        //drawer
         drawerLayout = findViewById(R.id.drawer_layout);
         navigationView =findViewById(R.id.nav_view);
-        toolbar =findViewById(R.id.toolbar);
+
+        navigationView.setNavigationItemSelectedListener(this);
+        navigationView.bringToFront();
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this,drawerLayout,toolbar,
+                R.string.navigation_drawer_open,R.string.navigation_drawer_close);
+        drawerLayout.addDrawerListener(toggle);
+        toggle.syncState();
+
+        //Hooks
+
         card_timetable = (CardView) findViewById(R.id.card_timetable);
         card_calendar = (CardView) findViewById(R.id.card_calendar);
         card_notebook = (CardView) findViewById(R.id.card_notebook);
@@ -48,6 +61,17 @@ public class Homepage extends AppCompatActivity implements View.OnClickListener 
     }
 
     @Override
+    public void onBackPressed(){
+
+        if(drawerLayout.isDrawerOpen(GravityCompat.START)){
+            drawerLayout.closeDrawer(GravityCompat.START);
+        }
+        else{
+            super.onBackPressed();
+        }
+    }
+
+    @Override
     public void onClick(View v) {
         switch(v.getId()){
             case R.id.card_timetable: openIntent(Timetable.class); break;
@@ -58,9 +82,14 @@ public class Homepage extends AppCompatActivity implements View.OnClickListener 
         }
 
     }
-
     public void openIntent(Class classname){
         Intent intent = new Intent(this, classname);
         startActivity(intent);
+    }
+
+
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+        return true;
     }
 }

@@ -9,7 +9,7 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.MyApplication1"
+        android:theme="@style/Theme.MyApplication1.NoActionBar"
         tools:ignore="AllowBackup">
         <activity android:name=".RegistrationPage" />
         <activity android:name=".Settings" />
@@ -20,8 +20,8 @@
         <activity android:name=".Calendar" />
         <activity android:name=".WaterTracker" />
         <activity android:name=".Notebook" />
-        <activity android:name=".Homepage" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".MainActivity"/>
+        <activity android:name=".Homepage" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
