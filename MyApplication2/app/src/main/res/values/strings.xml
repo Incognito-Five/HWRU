@@ -44,5 +44,10 @@
     <string name="register_here">Register Here</string>
     <string name="name">NAME:</string>
     <string name="please_enter_your_name">please_enter your name</string>
+    <string name="retype_password">RETYPE PASSWORD:</string>
+    <string name="register">Register</string>
+    <string name="already_a_user_login_here">Already a user? Login here</string>
+    =======
+>>>>>>> parent of b8b78cc (Merge branch 'main' of https://github.com/Incognito-Five/HWRU into main)
 
 </resources>

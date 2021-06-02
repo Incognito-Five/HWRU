@@ -1,3 +1,4 @@
+
 package com.example.myapplication1;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -19,7 +20,7 @@ public class RegistrationPage extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registration_page);
 
-        username = (EditText) findViewById(R.id.txt_username);
+        username = (EditText) findViewById(R.id.txt_username1);
         password = (EditText) findViewById(R.id.txt_pw);
         repassword = (EditText) findViewById(R.id.txt_repw);
         register1 = (Button) findViewById(R.id.button_reg1);
