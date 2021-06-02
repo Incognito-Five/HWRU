@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">HWRU</string>
+    <string name="app_name">My Application1</string>
     <string name="welcome">WELCOME</string>
     <string name="how_well_are_u">HOW WELL ARE U?</string>
     <string name="textview">TextView</string>
@@ -31,12 +31,9 @@
     <string name="menu">Menu</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-
     <string name="navigation_header">Navigation Header</string>
     <string name="incognito5">Incognito5</string>
     <string name="incognito5_gmail_com">incognito5@gmail.com</string>
-=======
->>>>>>> Stashed changes
     <string name="please_enter_your_username">please enter your username</string>
     <string name="username">USERNAME</string>
     <string name="username_">USERNAME:</string>
@@ -44,9 +41,4 @@
     <string name="register_here">Register Here</string>
     <string name="name">NAME:</string>
     <string name="please_enter_your_name">please_enter your name</string>
-    <string name="retype_password">RETYPE PASSWORD:</string>
-    <string name="already_a_user_login_here">Already a user? Login here</string>
-    =======
->>>>>>> parent of b8b78cc (Merge branch 'main' of https://github.com/Incognito-Five/HWRU into main)
-
 </resources>
