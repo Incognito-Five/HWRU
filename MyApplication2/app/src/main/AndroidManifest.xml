@@ -11,6 +11,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication1"
         tools:ignore="AllowBackup">
+        <activity android:name=".ResetPage"></activity>
+        <activity android:name=".ForgotPasswordPage" />
         <activity android:name=".RegistrationPage" />
         <activity android:name=".Settings" />
         <activity android:name=".AboutUs" />

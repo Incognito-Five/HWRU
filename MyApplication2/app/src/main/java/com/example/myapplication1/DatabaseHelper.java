@@ -59,4 +59,17 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             return false;
         }
     }
+
+    public Boolean updatepass(String username, String password){
+        SQLiteDatabase DBase = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put("Password", password);
+        long result = DBase.update("users", contentValues, "username = ?", new String[] {username});
+        if(result == -1){
+            return false;
+        }
+        else {
+            return true;
+        }
+    }
 }
