@@ -20,8 +20,8 @@
         <activity android:name=".Calendar" />
         <activity android:name=".WaterTracker" />
         <activity android:name=".Notebook" />
-        <activity android:name=".MainActivity"/>
-        <activity android:name=".Homepage" >
+        <activity android:name=".Homepage" />
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
