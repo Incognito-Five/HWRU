@@ -32,7 +32,23 @@ public class MainActivity extends AppCompatActivity {
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                String user = username.getText().toString();
+                String pw = password.getText().toString();
 
+                if (user.equals("")||pw.equals(""))
+                    Toast.makeText(MainActivity.this, "Please enter all fields", Toast.LENGTH_SHORT).show();
+                else {
+                    Boolean checkuserpw = DBase.checkUsernamePassword(user, pw);
+                    if (checkuserpw){
+                        Toast.makeText(MainActivity.this, "Login successful", Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(getApplicationContext(), Homepage.class);
+                        startActivity(intent);
+                    }
+                    else {
+                        Toast.makeText(MainActivity.this, "Invalid username and password", Toast.LENGTH_SHORT).show();
+
+                    }
+                }
             }
         });
 

@@ -31,6 +31,9 @@
     <string name="menu">Menu</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="navigation_header">Navigation Header</string>
+    <string name="incognito5">Incognito5</string>
+    <string name="incognito5_gmail_com">incognito5@gmail.com</string>
     <string name="please_enter_your_username">please enter your username</string>
     <string name="username">USERNAME</string>
     <string name="username_">USERNAME:</string>
@@ -38,5 +41,4 @@
     <string name="register_here">Register Here</string>
     <string name="name">NAME:</string>
     <string name="please_enter_your_name">please_enter your name</string>
-
 </resources>
