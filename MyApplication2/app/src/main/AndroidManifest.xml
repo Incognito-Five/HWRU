@@ -14,9 +14,6 @@
         <activity android:name=".ResetPage"></activity>
         <activity android:name=".ForgotPasswordPage" />
         <activity android:name=".RegistrationPage" />
-        <activity android:name=".Settings" />
-        <activity android:name=".AboutUs" />
-        <activity android:name=".Profile" />
         <activity android:name=".BMI" />
         <activity android:name=".Timetable" />
         <activity android:name=".Calendar" />

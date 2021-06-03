@@ -87,7 +87,6 @@ public class Homepage extends AppCompatActivity implements View.OnClickListener,
         startActivity(intent);
     }
 
-
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()){
