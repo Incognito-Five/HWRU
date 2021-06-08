@@ -38,14 +38,19 @@ public class ResetPage extends AppCompatActivity {
                 String pw = password.getText().toString();
                 String repw = repassword.getText().toString();
                 if (pw.equals(repw)){
-                    Boolean checkUserPassUpdate = DBase.updatepass(user, pw);
-                    if (checkUserPassUpdate == true){
-                        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-                        startActivity(intent);
-                        Toast.makeText(ResetPage.this, "Password Updated Successfully!", Toast.LENGTH_SHORT).show();
+                    if(pw.equals("")||repw.equals("")){
+                        Toast.makeText(ResetPage.this, "Please enter all fields", Toast.LENGTH_SHORT).show();
                     }
-                    else {
-                        Toast.makeText(ResetPage.this, "Password Update Failed!", Toast.LENGTH_SHORT).show();
+                    else{
+                        Boolean checkUserPassUpdate = DBase.updatepass(user, pw);
+                        if (checkUserPassUpdate == true){
+                            Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                            startActivity(intent);
+                            Toast.makeText(ResetPage.this, "Password Updated Successfully!", Toast.LENGTH_SHORT).show();
+                        }
+                        else {
+                            Toast.makeText(ResetPage.this, "Password Update Failed!", Toast.LENGTH_SHORT).show();
+                        }
                     }
                 }
                 else {

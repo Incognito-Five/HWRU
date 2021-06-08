@@ -41,4 +41,6 @@
     <string name="register_here">Register Here</string>
     <string name="name">NAME:</string>
     <string name="please_enter_your_name">please_enter your name</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
