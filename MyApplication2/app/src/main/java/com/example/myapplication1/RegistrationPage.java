@@ -11,7 +11,7 @@ import android.widget.Toast;
 
 public class RegistrationPage extends AppCompatActivity {
 
-    EditText username, password, repassword;
+    EditText name, username, password, repassword;
     Button register, login;
     DatabaseHelper DBase;
 
@@ -20,6 +20,7 @@ public class RegistrationPage extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registration_page2);
 
+        name = (EditText) findViewById(R.id.txt_name);
         username = (EditText) findViewById(R.id.txt_username1);
         password = (EditText) findViewById(R.id.txt_pw1);
         repassword = (EditText) findViewById(R.id.txt_repw);
@@ -30,6 +31,7 @@ public class RegistrationPage extends AppCompatActivity {
         register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                String user_name = name.getText().toString();
                 String user = username.getText().toString();
                 String pw = password.getText().toString();
                 String repw = repassword.getText().toString();
@@ -41,7 +43,7 @@ public class RegistrationPage extends AppCompatActivity {
                     if (pw.equals(repw)){
                         Boolean checkUser = DBase.checkUsername(user);
                         if (checkUser == false){
-                            Boolean insertUser = DBase.insertData(user,pw);
+                            Boolean insertUser = DBase.insertData(user_name,user,pw);
                             if (insertUser == true){
                                 Toast.makeText(RegistrationPage.this, "Registered successfully!", Toast.LENGTH_SHORT).show();
                                 Intent intent = new Intent(getApplicationContext(), Homepage.class);
