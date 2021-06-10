@@ -41,4 +41,6 @@
     <string name="register_here">Register Here</string>
     <string name="name">NAME:</string>
     <string name="please_enter_your_name">please_enter your name</string>
+    <string name="set_dark">Dark Mode</string>
+    <string name="enable_dark_mode">Enable</string>
 </resources>
