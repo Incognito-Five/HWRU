@@ -13,8 +13,8 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="52dp"
-        android:layout_marginLeft="52dp"
+        android:layout_marginStart="44dp"
+        android:layout_marginLeft="44dp"
         android:layout_marginTop="16dp"
         android:layout_marginBottom="44dp"
         android:contentDescription="@string/themes"
@@ -34,8 +34,8 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
         android:layout_marginTop="16dp"
-        android:layout_marginEnd="252dp"
-        android:layout_marginRight="252dp"
+        android:layout_marginEnd="260dp"
+        android:layout_marginRight="260dp"
         android:layout_marginBottom="826dp"
         android:text="@string/themes"
         android:textColor="@color/text"
@@ -43,7 +43,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="1.0" />
 
     <TextView
         android:id="@+id/txt_themes"
@@ -55,32 +55,25 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
+        android:layout_marginStart="52dp"
+        android:layout_marginLeft="52dp"
         android:layout_marginBottom="751dp"
         android:text="@string/set_dark"
         android:textColor="@color/text"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/btn_themes"
-        app:layout_constraintHorizontal_bias="0.295"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imagetheme" />
 
-    <Button
-        android:id="@+id/btn_themes"
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/switch_themes"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_marginTop="80dp"
-        android:layout_marginEnd="48dp"
-        android:layout_marginRight="48dp"
-        android:layout_marginBottom="741dp"
-        android:text="@string/enable_dark_mode"
-        android:textColor="@color/white"
-        app:backgroundTint="@color/button_themes"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginEnd="44dp"
+        android:layout_marginRight="44dp"
+        app:layout_constraintBottom_toBottomOf="@+id/txt_themes"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="@+id/txt_themes"
+        app:layout_constraintVertical_bias="0.571" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
