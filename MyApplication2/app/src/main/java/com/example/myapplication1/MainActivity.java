@@ -46,6 +46,8 @@ public class MainActivity extends AppCompatActivity {
                         Toast.makeText(MainActivity.this, "Login successful", Toast.LENGTH_SHORT).show();
                         Intent intent = new Intent(getApplicationContext(), Homepage.class);
                         startActivity(intent);
+                        Intent i = new Intent(getBaseContext(), HeaderActivity.class);
+                        i.putExtra("username", user);
                     }
                     else {
                         Toast.makeText(MainActivity.this, "Invalid username and password", Toast.LENGTH_SHORT).show();

@@ -40,6 +40,8 @@ public class Homepage extends AppCompatActivity implements View.OnClickListener,
         navigationView.bringToFront();
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this,drawerLayout,toolbar,
                 R.string.navigation_drawer_open,R.string.navigation_drawer_close);
+        Intent intent = new Intent(getApplicationContext(), HeaderActivity.class);
+
         drawerLayout.addDrawerListener(toggle);
         toggle.syncState();
 
