@@ -21,8 +21,7 @@ import java.util.Objects;
 
 public class AccountFragment extends Fragment {
 
-    ImageView profile;
-    TextView prof_name, prof_username;
+    ImageView profile, home;
     Button switch_account, delete_account;
     DatabaseHelper DBase;
 
@@ -35,7 +34,16 @@ public class AccountFragment extends Fragment {
         profile = (ImageView) rootView.findViewById(R.id.profileImg);
         switch_account = (Button) rootView.findViewById(R.id.switch_acc);
         delete_account = (Button) rootView.findViewById(R.id.delete_acc);
+        home = (ImageView) rootView.findViewById(R.id.home_icon);
         DBase = new DatabaseHelper(getActivity());
+
+        home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(AccountFragment.this.getActivity(), Homepage.class);
+                startActivity(intent);
+            }
+        });
 
         switch_account.setOnClickListener(new View.OnClickListener() {
             @Override
