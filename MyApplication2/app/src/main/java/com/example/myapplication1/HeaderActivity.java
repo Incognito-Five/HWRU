@@ -1,11 +1,14 @@
 package com.example.myapplication1;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.database.Cursor;
 import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class HeaderActivity extends AppCompatActivity {
 
@@ -21,12 +24,6 @@ public class HeaderActivity extends AppCompatActivity {
         imageProfile = (ImageView) findViewById(R.id.imageProfile);
         profileName = (TextView) findViewById(R.id.profile_name);
         profileUsername = (TextView) findViewById(R.id.profile_username);
-
-        Intent intent = i
-
-        String name = profileName.getText().toString();
-
-
 
     }
 }

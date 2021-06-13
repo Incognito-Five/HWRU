@@ -48,8 +48,6 @@ public class RegistrationPage extends AppCompatActivity {
                                 Toast.makeText(RegistrationPage.this, "Registered successfully!", Toast.LENGTH_SHORT).show();
                                 Intent intent = new Intent(getApplicationContext(), Homepage.class);
                                 startActivity(intent);
-                                Intent i = new Intent(getApplicationContext(), HeaderActivity.class);
-                                intent.putExtra("username", user);
                             }
                             else{
                                 Toast.makeText(RegistrationPage.this, "Registration failed", Toast.LENGTH_SHORT).show();

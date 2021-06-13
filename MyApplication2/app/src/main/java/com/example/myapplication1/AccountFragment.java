@@ -2,6 +2,7 @@ package com.example.myapplication1;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.database.Cursor;
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;
@@ -32,18 +33,9 @@ public class AccountFragment extends Fragment {
         // Inflate the layout for this fragment
         View rootView =  inflater.inflate(R.layout.fragment_account, container, false);
         profile = (ImageView) rootView.findViewById(R.id.profileImg);
-        prof_name = (TextView) rootView.findViewById(R.id.txt_name);
-        prof_username = (TextView) rootView.findViewById(R.id.txt_username);
         switch_account = (Button) rootView.findViewById(R.id.switch_acc);
         delete_account = (Button) rootView.findViewById(R.id.delete_acc);
         DBase = new DatabaseHelper(getActivity());
-
-        Intent intent = getActivity().getIntent();
-        prof_name.setText(intent.getStringExtra("name"));
-        prof_username.setText(intent.getStringExtra("username"));
-
-        profile.setOnClickListener(v -> {
-        });
 
         switch_account.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -57,16 +49,8 @@ public class AccountFragment extends Fragment {
         delete_account.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String profile_username = prof_username.getText().toString();
-                Boolean deleteuser = DBase.deleteData(profile_username);
-                if (deleteuser == true){
-                    Toast.makeText(AccountFragment.this.getActivity(), "User successfully deleted!", Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(getActivity(), RegistrationPage.class);
-                    startActivity(intent);
-                }
-                else {
-                    Toast.makeText(AccountFragment.this.getActivity(), "Failed to delete user!", Toast.LENGTH_SHORT).show();
-                }
+                Intent intent = new Intent(getActivity(), DeleteAccount.class);
+                startActivity(intent);
             }
         });
 
