@@ -2,6 +2,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:showIn="navigation_view">
 
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/home"
+            android:icon="@drawable/home_icon"
+            android:title="@string/home">
+        </item>
+    </group>
     <item android:title="@string/profile">
 
         <menu>

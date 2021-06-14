@@ -53,8 +53,7 @@ public class ThemesFragment extends Fragment {
         switch_themes.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                // When user taps the enable/disable
-                // dark mode button
+                // When user click on and off dark mode switch
                 if (isDarkModeOn){
                     AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
                     editor.putBoolean("isDarkModeOn", false);
