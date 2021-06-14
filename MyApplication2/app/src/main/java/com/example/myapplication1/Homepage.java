@@ -59,6 +59,8 @@ public class Homepage extends AppCompatActivity implements View.OnClickListener,
         card_bmi.setOnClickListener(this);
         card_water.setOnClickListener(this);
 
+        navigationView.setCheckedItem(R.id.home);
+
     }
 
     @Override
