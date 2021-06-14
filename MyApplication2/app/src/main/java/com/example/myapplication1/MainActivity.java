@@ -74,10 +74,7 @@ public class MainActivity extends AppCompatActivity {
 
         SharedPreferences sharedPreferences = getSharedPreferences("sharedPrefs", MODE_PRIVATE);
         final boolean isDarkModeOn = sharedPreferences.getBoolean("isDarkModeOn", false);
-
-        // When user reopens the app
-        // after applying dark/light mode
-
+        // When user reopens the app after applying dark/light mode
         if (isDarkModeOn){
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
         }

@@ -9,9 +9,9 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.MyApplication1"
+        android:theme="@style/Theme.MyApplication1.NoActionBar"
         tools:ignore="AllowBackup">
-        <activity android:name=".DeleteAccount"></activity>
+        <activity android:name=".DeleteAccount"/>
         <activity android:name=".HeaderActivity" />
         <activity android:name=".ResetPage" />
         <activity android:name=".ForgotPasswordPage" />
