@@ -11,7 +11,7 @@ import androidx.annotation.Nullable;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
     public DatabaseHelper(Context context) {
-        super(context, "Login.db", null, 1);
+        super(context, "Users.db", null, 1);
     }
 
     @Override
@@ -89,6 +89,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         else{
             return false;
         }
+    }
+
+    public Cursor getData(){
+        SQLiteDatabase DBase =this.getWritableDatabase();
+        Cursor cursor = DBase.rawQuery("Select * from users", null);
+        return cursor;
     }
 
 }

@@ -45,7 +45,6 @@ public class ResetPage extends AppCompatActivity {
                         Boolean checkUserPassUpdate = DBase.updatepass(user, pw);
                         if (checkUserPassUpdate == true){
                             Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-                            startActivity(intent);
                             Toast.makeText(ResetPage.this, "Password Updated Successfully!", Toast.LENGTH_SHORT).show();
                         }
                         else {
