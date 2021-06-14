@@ -59,6 +59,8 @@ public class Homepage extends AppCompatActivity implements View.OnClickListener,
         card_bmi.setOnClickListener(this);
         card_water.setOnClickListener(this);
 
+        navigationView.setCheckedItem(R.id.home);
+
     }
 
     @Override
@@ -91,6 +93,10 @@ public class Homepage extends AppCompatActivity implements View.OnClickListener,
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()){
+            case R.id.home:
+                Intent intent = new Intent(this, getClass());
+                startActivity(intent);
+                break;
             case R.id.account:
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new AccountFragment()).commit();
                 break;

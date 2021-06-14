@@ -8,32 +8,16 @@
     android:clickable="true"
     android:background="@drawable/homebg">
 
-    <ImageView
-        android:id="@+id/imagebackup"
-        android:layout_width="42dp"
-        android:layout_height="37dp"
-        android:layout_marginStart="44dp"
-        android:layout_marginLeft="44dp"
-        android:contentDescription="@string/back_up_storage"
-        app:layout_constraintBottom_toBottomOf="@+id/txt_backupbar"
-        app:layout_constraintEnd_toStartOf="@+id/txt_backupbar"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/txt_backupbar"
-        app:srcCompat="@drawable/back_up_icon"
-        tools:ignore="VectorDrawableCompat" />
-
     <TextView
         android:id="@+id/txt_backupbar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="28dp"
-        android:layout_marginEnd="190dp"
-        android:layout_marginRight="190dp"
         android:text="@string/back_up_storage"
         android:textColor="@color/text"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/imagebackup"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
@@ -53,14 +37,10 @@
         android:id="@+id/switch_backup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="113dp"
-        android:layout_marginLeft="113dp"
-        android:layout_marginTop="84dp"
+        android:layout_marginTop="29dp"
         android:layout_marginEnd="52dp"
         android:layout_marginRight="52dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/txt_backup"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/txt_backupbar" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
