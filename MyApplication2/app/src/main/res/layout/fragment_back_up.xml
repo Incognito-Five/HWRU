@@ -25,18 +25,62 @@
         android:layout_height="27dp"
         android:layout_marginStart="48dp"
         android:layout_marginLeft="48dp"
-        android:layout_marginTop="96dp"
-        android:text="Back up data"
+        android:layout_marginTop="84dp"
+        android:text="@string/back_up_data"
         android:textColor="@color/text"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/backup_abt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/abt_backup"
+        android:textSize="10sp"
+        app:layout_constraintStart_toStartOf="@+id/txt_backup"
+        app:layout_constraintTop_toBottomOf="@+id/txt_backup" />
 
     <androidx.appcompat.widget.SwitchCompat
         android:id="@+id/switch_backup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="29dp"
+        android:layout_marginEnd="52dp"
+        android:layout_marginRight="52dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_backupbar" />
+
+    <TextView
+        android:id="@+id/txt_restore"
+        android:layout_width="wrap_content"
+        android:layout_height="27dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginLeft="48dp"
+        android:layout_marginTop="156dp"
+        android:text="@string/restore_data"
+        android:textColor="@color/text"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/restore_abt"
+        android:layout_width="246dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginLeft="48dp"
+        android:text="@string/restore_abt"
+        android:textSize="10sp"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="190dp" />
+
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/switch_restore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="112dp"
         android:layout_marginEnd="52dp"
         android:layout_marginRight="52dp"
         app:layout_constraintEnd_toEndOf="parent"
