@@ -55,8 +55,10 @@
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_gravity="start"
+        android:theme="@style/Theme.MyApplication1"
         app:headerLayout="@layout/activity_header"
-        app:menu="@menu/main_menu"
-        android:theme="@style/Theme.MyApplication1">
-    </com.google.android.material.navigation.NavigationView>
+        app:itemIconTint="@color/text"
+        app:itemShapeFillColor="@color/drawer_item"
+        app:itemTextColor="@color/text"
+        app:menu="@menu/main_menu"/>
 </androidx.drawerlayout.widget.DrawerLayout>

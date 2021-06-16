@@ -5,7 +5,7 @@
     android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/homebg"
+    android:background="@drawable/bg1"
     android:fitsSystemWindows="true"
     tools:context=".Timetable"
     tools:openDrawer="end">
@@ -27,8 +27,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@android:color/transparent"
-            app:tabContentStart="56dp"
-            android:minHeight="?attr/actionBarSize">
+            android:minHeight="?attr/actionBarSize"
+            app:tabContentStart="56dp">
 
             <androidx.appcompat.widget.Toolbar
                 android:id="@+id/tb_ttable"
@@ -47,29 +47,48 @@
                 android:layout_height="wrap_content"
                 app:layout_scrollFlags="scroll|enterAlways"
                 app:tabIconTint="@color/primary"
+                app:tabIndicator="@drawable/bmibuttonbackground"
                 app:tabIndicatorColor="@color/text"
                 app:tabSelectedTextColor="@color/text"
                 app:tabTextColor="@color/middle_gray">
 
                 <com.google.android.material.tabs.TabItem
+                    android:id="@+id/tab_timetable"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/timetable" />
 
                 <com.google.android.material.tabs.TabItem
+                    android:id="@+id/tab_courses"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/course" />
+                    android:text="@string/courses" />
 
             </com.google.android.material.tabs.TabLayout>
         </com.google.android.material.appbar.AppBarLayout>
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/view_pager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:layout_margin="@dimen/fab_margin"
+            android:contentDescription="fab"
+            app:srcCompat="@drawable/add_icon"
+            tools:ignore="VectorDrawableCompat" />
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
     <FrameLayout
         android:id="@+id/fragment_container"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent" />
 
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/nav_view"
@@ -78,5 +97,8 @@
         android:layout_gravity="start"
         android:theme="@style/Theme.MyApplication1"
         app:headerLayout="@layout/activity_header"
+        app:itemIconTint="@color/text"
+        app:itemShapeFillColor="@color/drawer_item"
+        app:itemTextColor="@color/text"
         app:menu="@menu/main_menu"/>
 </androidx.drawerlayout.widget.DrawerLayout>
