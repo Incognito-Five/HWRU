@@ -28,7 +28,8 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:navigationIcon="@drawable/navi" />
+                app:navigationIcon="@drawable/navi"
+                />
 
             <TextView
                 android:id="@+id/textView"
@@ -263,6 +264,7 @@
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
+
     <FrameLayout
         android:id="@+id/fragment_container"
         android:layout_width="match_parent"
