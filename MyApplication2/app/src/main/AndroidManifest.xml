@@ -11,7 +11,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication1.NoActionBar"
         tools:ignore="AllowBackup">
-        <activity android:name=".DeleteAccount"/>
+        <activity android:name=".bmicalculation"></activity>
+        <activity android:name=".DeleteAccount" />
         <activity android:name=".HeaderActivity" />
         <activity android:name=".ResetPage" />
         <activity android:name=".ForgotPasswordPage" />

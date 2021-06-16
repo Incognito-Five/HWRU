@@ -29,15 +29,15 @@
         </RelativeLayout>
 
         <RelativeLayout
+        	android:id="@+id/weightlayout"	
             android:layout_width="340dp"
             android:layout_height="150dp"
             android:layout_above="@id/centerhorizontalline"
-            android:layout_marginBottom="-60dp"
+            android:layout_centerHorizontal="true"
             android:layout_marginLeft="25dp"
             android:layout_marginRight="25dp"
-            android:layout_centerHorizontal="true"
-            android:background="@drawable/bmicardbackground"
-            android:id="@+id/weightlayout">
+            android:layout_marginBottom="-80dp"
+            android:background="@drawable/bmicardbackground">
 
             <TextView
                 android:layout_width="match_parent"
@@ -84,6 +84,7 @@
                 android:layout_marginBottom="20dp"
                 android:layout_marginLeft="10dp"
                 android:progressTint="#626C6C"
+                android:thumbTint="#B3B4B0"
                 android:layout_marginRight="10dp"
                 android:id="@+id/weightseekbar">
             </SeekBar>
@@ -116,6 +117,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textStyle="bold"
                 android:text="180"
                 android:layout_marginBottom="50dp"
                 android:textSize="40sp"
@@ -145,25 +147,27 @@
                 android:layout_marginBottom="20dp"
                 android:layout_marginLeft="10dp"
                 android:progressTint="#626C6C"
+                android:thumbTint="#B3B4B0"
                 android:layout_marginRight="10dp"
                 android:id="@+id/heightseekbar">
             </SeekBar>
         </RelativeLayout>
 
-        <android.widget.Button
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:id="@+id/calculateBMI"
-            android:layout_alignParentBottom="true"
-            android:textSize="15sp"
-            android:layout_marginBottom="20dp"
-            android:text="Calculate BMI"
-            android:textColor="#443C3E"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:background="@drawable/bmibuttonbackground"
-            android:textStyle="bold">
-        </android.widget.Button>
+	    <android.widget.Button
+	        android:layout_width="match_parent"
+	        android:layout_height="40dp"
+	        android:id="@+id/calculatebmi"
+	        android:layout_alignParentBottom="true"
+	        android:textSize="15sp"
+	        android:layout_marginBottom="20dp"
+	        android:text="Calculate BMI"
+	        android:textColor="#443C3E"
+	        android:layout_marginLeft="20dp"
+	        android:layout_marginRight="20dp"
+	        android:background="@drawable/bmibuttonbackground"
+	        android:textStyle="bold">
+	    </android.widget.Button>
+
     </RelativeLayout>
 
     <com.google.android.material.appbar.AppBarLayout
@@ -200,6 +204,5 @@
         app:headerLayout="@layout/activity_header"
         app:menu="@menu/main_menu" />
 </androidx.drawerlayout.widget.DrawerLayout>
-
 
 
