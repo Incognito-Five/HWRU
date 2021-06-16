@@ -22,63 +22,62 @@
     </RelativeLayout>
 
     <RelativeLayout
+        android:id="@+id/weightlayout"
         android:layout_width="340dp"
         android:layout_height="150dp"
         android:layout_above="@id/centerhorizontalline"
-        android:layout_marginBottom="-60dp"
+        android:layout_centerHorizontal="true"
         android:layout_marginLeft="25dp"
         android:layout_marginRight="25dp"
-        android:layout_centerHorizontal="true"
-        android:background="@drawable/bmicardbackground"
-        android:id="@+id/weightlayout">
+        android:layout_marginBottom="-80dp"
+        android:background="@drawable/bmicardbackground">
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textAlignment="center"
+            android:layout_marginTop="15dp"
             android:gravity="center_horizontal"
             android:text="Weight"
-            android:textSize="20sp"
+            android:textAlignment="center"
             android:textColor="#443C3E"
-            android:textStyle="bold"
-            android:layout_marginTop="15dp">
-        </TextView>
+            android:textSize="20sp"
+            android:textStyle="bold"></TextView>
 
         <TextView
+            android:id="@+id/currentweight"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="300"
-            android:layout_marginBottom="50dp"
-            android:textSize="40sp"
             android:layout_alignParentBottom="true"
-            android:textColor="#443C3E"
-            android:textStyle="bold"
             android:layout_centerInParent="true"
-            android:id="@+id/currentweight">
-        </TextView>
+            android:layout_marginBottom="50dp"
+            android:text="300"
+            android:textColor="#443C3E"
+            android:textSize="40sp"
+            android:textStyle="bold"></TextView>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="kg"
-            android:textSize="20sp"
-            android:textColor="#443C3E"
             android:layout_centerInParent="true"
-            android:layout_toRightOf="@id/currentweight"
-            android:layout_toEndOf="@id/currentweight"
             android:layout_marginStart="15dp"
-            android:layout_marginLeft="15dp">
-        </TextView>
+            android:layout_marginLeft="15dp"
+            android:layout_toEndOf="@id/currentweight"
+            android:layout_toRightOf="@id/currentweight"
+            android:text="kg"
+            android:textColor="#443C3E"
+            android:textSize="20sp"></TextView>
 
         <SeekBar
+            android:id="@+id/weightseekbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
-            android:layout_marginBottom="20dp"
             android:layout_marginLeft="10dp"
-            android:progressTint="#626C6C"
             android:layout_marginRight="10dp"
-            android:id="@+id/weightseekbar">
+            android:layout_marginBottom="20dp"
+            android:progressTint="#626C6C"
+            android:thumbTint="#B3B4B0">
+
         </SeekBar>
     </RelativeLayout>
 
@@ -110,6 +109,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="180"
+            android:textStyle="bold"
             android:layout_marginBottom="50dp"
             android:textSize="40sp"
             android:layout_alignParentBottom="true"
@@ -132,21 +132,21 @@
         </TextView>
 
         <SeekBar
+            android:id="@+id/heightseekbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
-            android:layout_marginBottom="20dp"
             android:layout_marginLeft="10dp"
-            android:progressTint="#626C6C"
             android:layout_marginRight="10dp"
-            android:id="@+id/heightseekbar">
-        </SeekBar>
+            android:layout_marginBottom="20dp"
+            android:progressTint="#626C6C"
+            android:thumbTint="#B3B4B0"></SeekBar>
     </RelativeLayout>
 
     <android.widget.Button
         android:layout_width="match_parent"
         android:layout_height="40dp"
-        android:id="@+id/calculateBMI"
+        android:id="@+id/calculatebmi"
         android:layout_alignParentBottom="true"
         android:textSize="15sp"
         android:layout_marginBottom="20dp"
