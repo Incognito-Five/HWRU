@@ -3,6 +3,7 @@ package com.example.myapplication1;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
@@ -11,18 +12,39 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
 
 public class Notebook extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
+    FloatingActionButton mcreatenewnotefab;
     Toolbar toolbar;
     DrawerLayout drawerLayout;
     NavigationView navigationView;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_notebook);
+
+        //create new notes by clicking the fab button
+        mcreatenewnotefab=findViewById(R.id.createnewnotefab);
+
+        //to show all notes
+        getSupportActionBar().setTitle("All Notes");
+
+
+        //create new notes by clicking the fab button
+        mcreatenewnotefab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                startActivity(new Intent(Notebook.this,Createnewnotebook.class));
+
+            }
+        });
+
         toolbar = findViewById(R.id.tb_nbook);
         setSupportActionBar(toolbar);
 

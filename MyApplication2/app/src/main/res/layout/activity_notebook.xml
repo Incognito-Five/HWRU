@@ -8,7 +8,7 @@
     android:background="@drawable/homebg"
     android:fitsSystemWindows="true"
     tools:context=".Notebook"
-    tools:openDrawer="start">
+    tools:openDrawer="end">
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
@@ -19,6 +19,29 @@
             android:layout_height="match_parent">
 
             <!--Main Content Here-->
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginBottom="30dp"
+                android:layout_marginRight="30dp"
+                android:layout_gravity="bottom|end"
+                android:background="#BE8C67"
+                app:maxImageSize="50dp"
+                android:src="@drawable/notebook_createnewnoteicon"
+                android:id="@+id/createnewnotefab">
+
+            </com.google.android.material.floatingactionbutton.FloatingActionButton>
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/recyclerview"
+                android:scrollbars="vertical">
+
+            </androidx.recyclerview.widget.RecyclerView>
 
         </androidx.core.widget.NestedScrollView>
 
