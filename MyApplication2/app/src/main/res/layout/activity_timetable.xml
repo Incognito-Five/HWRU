@@ -62,7 +62,7 @@
                     android:id="@+id/tab_courses"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/courses" />
+                    android:text="COURSES" />
 
             </com.google.android.material.tabs.TabLayout>
         </com.google.android.material.appbar.AppBarLayout>

@@ -43,7 +43,7 @@ public class RegistrationPage extends AppCompatActivity {
                     if (pw.equals(repw)){
                         Boolean checkUser = DBase.checkUsername(user);
                         if (checkUser == false){
-                            Boolean insertUser = DBase.insertData(user_name,user,pw);
+                            Boolean insertUser = DBase.insertData(user,pw);
                             if (insertUser == true){
                                 Toast.makeText(RegistrationPage.this, "Registered successfully!", Toast.LENGTH_SHORT).show();
                                 Intent intent = new Intent(getApplicationContext(), Homepage.class);
