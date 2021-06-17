@@ -4,6 +4,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
+    <!--Note Card -->
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -12,6 +13,7 @@
         app:cardMaxElevation="5dp"
         android:id="@+id/notecard">
 
+        <!--Note-->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -24,6 +26,7 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
 
+                <!--Note Title -->
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -38,6 +41,7 @@
                     android:layout_weight="1">
                 </TextView>
 
+                <!--menu pop up button where user can edit or delete their notes -->
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
@@ -45,8 +49,10 @@
                     android:layout_weight="0"
                     android:src="@drawable/notebookmenu">
                 </ImageView>
+
             </LinearLayout>
 
+            <!-- User's Notebook-->
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

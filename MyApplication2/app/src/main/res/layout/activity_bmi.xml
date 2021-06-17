@@ -9,6 +9,8 @@
     android:fitsSystemWindows="true"
     tools:context=".BMI"
     tools:openDrawer="end">
+    <!--THE BMI RESULTS SHALL BE ABOVE THE WEIGHT LAYOUT, ONLY AFTER THE CODE HAS BEEN SAVED TO DATABASE -->
+    <!--to save the calculated BMI this part should be connected to database-->
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -26,6 +28,7 @@
             android:layout_height="match_parent"
             android:layout_centerHorizontal="true"></RelativeLayout>
 
+        <!--weight layout-->
         <RelativeLayout
             android:id="@+id/weightlayout"
             android:layout_width="340dp"
@@ -34,7 +37,7 @@
             android:layout_centerHorizontal="true"
             android:layout_marginLeft="25dp"
             android:layout_marginRight="25dp"
-            android:layout_marginBottom="-80dp"
+            android:layout_marginBottom="-79dp"
             android:background="@drawable/bmicardbackground">
 
             <TextView
@@ -83,7 +86,7 @@
                 android:progressTint="#626C6C"
                 android:thumbTint="#B3B4B0"></SeekBar>
         </RelativeLayout>
-
+        <!--Height Layout -->
         <RelativeLayout
             android:id="@+id/heightlayout"
             android:layout_width="340dp"
@@ -143,6 +146,7 @@
                 android:thumbTint="#B3B4B0"></SeekBar>
         </RelativeLayout>
 
+        <!--calculate button-->
         <android.widget.Button
             android:id="@+id/calculatebmi"
             android:layout_width="match_parent"

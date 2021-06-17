@@ -6,7 +6,8 @@
     android:layout_height="match_parent"
     android:background="#626C6C"
     tools:context=".bmicalculation">
-
+    <!--*A SAVE BUTTON SHALL BE PUT UNDER RECALCULATE BMI AFTER THE CODE HAS BEEN CONNECTED TO DATABASE-->
+    <!-- BMI ICON-->
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -17,7 +18,7 @@
         android:src="@drawable/bmi"
         android:id="@+id/BMIimageview">
     </ImageView>
-
+    <!--BMI Result-->
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -27,7 +28,7 @@
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:id="@+id/contentlayout">
-
+        <!--calculated BMI-->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -39,7 +40,7 @@
             android:layout_centerHorizontal="true"
             android:id="@+id/bmiresult">
         </TextView>
-
+        <!--BMI Category -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -54,6 +55,7 @@
         </TextView>
     </RelativeLayout>
 
+    <!--Recalculate BMI-->
     <android.widget.Button
         android:id="@+id/recalculatebmi"
         android:layout_width="match_parent"
