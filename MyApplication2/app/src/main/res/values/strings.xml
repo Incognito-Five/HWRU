@@ -59,4 +59,5 @@
     <string name="abt_backup">Back up app data and other settings.</string>
     <string name="restore_abt">When reinstalling the app, restore backed up settings and data</string>
     <string name="course">COURSE</string>
+    <string name="title_activity_alarm_sounds_list">AlarmSoundsList</string>
 </resources>
