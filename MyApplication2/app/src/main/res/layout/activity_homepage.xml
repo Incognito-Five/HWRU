@@ -212,6 +212,7 @@
                 android:layout_height="185dp"
                 android:orientation="horizontal"
                 android:padding="12dp"
+                android:layout_below="@+id/linearLayout2"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent">
 
@@ -277,11 +278,9 @@
         android:layout_gravity="start"
         android:theme="@style/Theme.MyApplication1"
         app:headerLayout="@layout/activity_header"
-        app:itemIconTint="@color/primary"
-        app:itemShapeFillColor="@color/next"
-        app:itemTextColor="@color/primary"
-        app:menu="@menu/main_menu">
-
-    </com.google.android.material.navigation.NavigationView>
+        app:itemIconTint="@color/text"
+        app:itemShapeFillColor="@color/drawer_item"
+        app:itemTextColor="@color/text"
+        app:menu="@menu/main_menu"/>
 
 </androidx.drawerlayout.widget.DrawerLayout>

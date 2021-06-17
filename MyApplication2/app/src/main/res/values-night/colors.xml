@@ -12,5 +12,6 @@
     <color name="next">#222222</color>
     <color name="middle_gray">#707070</color>
     <color name="button_themes">#D3BA7F</color>
+    <color name="nav_view_selected">#9C9C9C</color>
 
 </resources>
