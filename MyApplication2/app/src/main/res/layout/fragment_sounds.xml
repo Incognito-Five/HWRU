@@ -8,7 +8,7 @@
     android:background="@drawable/homebg">
 
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/sounds"
         android:textSize="30sp"
@@ -23,37 +23,69 @@
         android:textSize="25sp"
         android:textColor="#443C3E"
         android:layout_marginHorizontal="16dp"
-        android:layout_marginTop="170dp">
+        android:layout_marginTop="270dp">
     </TextView>
 
     <ImageView
-        android:id="@+id/imageView6"
+        android:id="@+id/notification_icon"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:src="@drawable/volume_icon"
+        android:src="@drawable/notification_icon"
         android:layout_marginHorizontal="16dp"
-        android:layout_marginTop="222dp">
+        android:layout_marginTop="322dp">
     </ImageView>
 
     <SeekBar
-        android:id="@+id/volume"
+        android:id="@+id/notif_volume"
         android:layout_width="310dp"
         android:layout_height="26dp"
-        android:layout_toEndOf="@+id/imageView6"
-        android:layout_marginTop="233dp"
-        android:layout_toRightOf="@+id/imageView6">
+        android:layout_toEndOf="@+id/notification_icon"
+        android:layout_marginTop="333dp"
+        android:layout_toRightOf="@+id/notification_icon">
+    </SeekBar>
+
+    <ImageView
+        android:id="@+id/alarm_icon"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/alarm_icon"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="385dp">
+    </ImageView>
+
+    <SeekBar
+        android:id="@+id/alarm_volume"
+        android:layout_width="310dp"
+        android:layout_height="26dp"
+        android:layout_toEndOf="@+id/alarm_icon"
+        android:layout_marginTop="400dp"
+        android:layout_toRightOf="@+id/alarm_icon">
     </SeekBar>
 
     <Button
-        android:id="@+id/alarm_sounds"
-        style="?borderlessButtonStyle"
+        android:id="@+id/play_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Alarm Sound         >"
-        android:textSize="30sp"
-        android:textColor="#443C3E"
+        android:text="PLAY"
+        android:textColor="@color/black"
+        android:textSize="25sp"
+        android:layout_marginTop="500dp"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="311dp">
+        app:backgroundTint="#D3BA7F">
     </Button>
+
+    <Button
+        android:id="@+id/pause_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="PAUSE"
+        android:textColor="@color/black"
+        android:textSize="25sp"
+        android:layout_marginTop="560dp"
+        android:layout_centerHorizontal="true"
+        app:backgroundTint="#D3BA7F">
+    </Button>
+
+
 
 </RelativeLayout>
