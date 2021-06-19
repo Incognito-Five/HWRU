@@ -1,8 +1,12 @@
 package com.example.myapplication1;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
@@ -42,6 +46,7 @@ public class Timetable extends AppCompatActivity implements NavigationView.OnNav
         drawerLayout.addDrawerListener(toggle);
         toggle.syncState();
 
+
     }
 
     @Override
@@ -79,5 +84,7 @@ public class Timetable extends AppCompatActivity implements NavigationView.OnNav
         }
         drawerLayout.closeDrawer(GravityCompat.START);
         return true;
+
+
     }
 }

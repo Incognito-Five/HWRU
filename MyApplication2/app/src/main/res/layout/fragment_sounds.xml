@@ -62,30 +62,6 @@
         android:layout_toRightOf="@+id/alarm_icon">
     </SeekBar>
 
-    <Button
-        android:id="@+id/play_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="PLAY"
-        android:textColor="@color/black"
-        android:textSize="25sp"
-        android:layout_marginTop="500dp"
-        android:layout_centerHorizontal="true"
-        app:backgroundTint="#D3BA7F">
-    </Button>
-
-    <Button
-        android:id="@+id/pause_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="PAUSE"
-        android:textColor="@color/black"
-        android:textSize="25sp"
-        android:layout_marginTop="560dp"
-        android:layout_centerHorizontal="true"
-        app:backgroundTint="#D3BA7F">
-    </Button>
-
 
 
 </RelativeLayout>

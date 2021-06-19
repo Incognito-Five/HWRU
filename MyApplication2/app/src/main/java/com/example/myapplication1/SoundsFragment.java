@@ -20,7 +20,6 @@ import androidx.fragment.app.Fragment;
 public class SoundsFragment extends Fragment {
 
     SeekBar notif_bar, alarm_bar;
-    Button play, pause;
     MediaPlayer mediaPlayer;
     AudioManager audioManager;
 
@@ -58,24 +57,6 @@ public class SoundsFragment extends Fragment {
             @Override
             public void onStopTrackingTouch(SeekBar seekBar) {
 
-            }
-        });
-
-        //buttons
-        play = (Button) rootView.findViewById(R.id.play_btn);
-        pause = (Button) rootView.findViewById(R.id.pause_btn);
-
-        play.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                mediaPlayer.start();
-            }
-        });
-
-        pause.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                mediaPlayer.pause();
             }
         });
 
