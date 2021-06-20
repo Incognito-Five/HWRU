@@ -59,4 +59,18 @@
     <string name="abt_backup">Back up app data and other settings.</string>
     <string name="restore_abt">When reinstalling the app, restore backed up settings and data</string>
     <string name="course">COURSE</string>
+
+    <!---Strings used in Timetable-->
+    <string name="course_name">Course Name</string>
+    <string name="course_code">Course Code</string>
+    <string name="professor">Professor</string>
+    <string name="room_location">Room/Location</string>
+    <string name="description">Description</string>
+    <string name="add">Add</string>
+    <string name="cancel">Cancel</string>
+    <string name="add_course">Add Course</string>
+    <string name="courses">Courses</string>
+    <string name="course_menu">Course menu</string>
+    <string name="start_time">Start Time</string>
+    <string name="end_time">End Time</string>
 </resources>

@@ -13,6 +13,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
+import com.google.android.material.tabs.TabLayout;
 
 public class Timetable extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -20,6 +21,7 @@ public class Timetable extends AppCompatActivity implements NavigationView.OnNav
     Toolbar toolbar;
     DrawerLayout drawerLayout;
     NavigationView navigationView;
+    TabLayout tabLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +43,8 @@ public class Timetable extends AppCompatActivity implements NavigationView.OnNav
 
         drawerLayout.addDrawerListener(toggle);
         toggle.syncState();
+
+        //
 
     }
 
