@@ -8,23 +8,59 @@
     android:background="@drawable/homebg">
 
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="30dp"
         android:text="@string/sounds"
-        android:textSize="30sp">
+        android:textSize="30sp"
+        android:layout_marginHorizontal="155dp"
+        android:layout_marginTop="42dp">
     </TextView>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="30dp"
-        android:text="@string/sounds"
-        android:textSize="30sp">
+        android:text="Volume"
+        android:textSize="25sp"
+        android:textColor="#443C3E"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="270dp">
     </TextView>
 
+    <ImageView
+        android:id="@+id/notification_icon"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/notification_icon"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="322dp">
+    </ImageView>
+
+    <SeekBar
+        android:id="@+id/notif_volume"
+        android:layout_width="310dp"
+        android:layout_height="26dp"
+        android:layout_toEndOf="@+id/notification_icon"
+        android:layout_marginTop="333dp"
+        android:layout_toRightOf="@+id/notification_icon">
+    </SeekBar>
+
+    <ImageView
+        android:id="@+id/alarm_icon"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/alarm_icon"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="385dp">
+    </ImageView>
+
+    <SeekBar
+        android:id="@+id/alarm_volume"
+        android:layout_width="310dp"
+        android:layout_height="26dp"
+        android:layout_toEndOf="@+id/alarm_icon"
+        android:layout_marginTop="400dp"
+        android:layout_toRightOf="@+id/alarm_icon">
+    </SeekBar>
 
 
 
