@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">calendar</string>
+    <string name="back"><![CDATA[<<]]></string>
+    <string name="forward"><![CDATA[>>]]></string>
+    <string name="_1">1</string>
+    <string name="June_2021">JUNE 2021</string>
+    <string name="Sunday">SUN</string>
+    <string name="Monday">MON</string>
+    <string name="Tuesday">TUE</string>
+    <string name="Wednesday">WED</string>
+    <string name="Thursday">THU</string>
+    <string name="Friday">FRI</string>
+    <string name="Saturday">SAT</string>
+</resources>
