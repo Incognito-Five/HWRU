@@ -12,6 +12,5 @@
     <color name="primary">#D3BA7F</color>
     <color name="next">#E4D3BA</color>
     <color name="middle_gray">#b3b4b0</color>
-    <color name="button_themes">#FF000000</color>
-    <color name="nav_view_selected">#A3F4E2B6</color>
+
 </resources>

@@ -5,9 +5,18 @@
     android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fitsSystemWindows="true"
-    tools:context=".Homepage"
-    tools:openDrawer="start">
+    tools:context=".Homepage">
+
+
+    <com.google.android.material.navigation.NavigationView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:id="@+id/nav_view"
+        app:headerLayout="@layout/header"
+        app:menu="@menu/main_menu"
+        android:layout_gravity="start">
+
+    </com.google.android.material.navigation.NavigationView>
 
     <ScrollView
         android:layout_width="match_parent"
@@ -212,7 +221,6 @@
                 android:layout_height="185dp"
                 android:orientation="horizontal"
                 android:padding="12dp"
-                android:layout_below="@+id/linearLayout2"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent">
 
@@ -259,28 +267,8 @@
                     android:layout_height="match_parent"
                     android:layout_weight="0.45" />
             </LinearLayout>
-
-
-
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 
-    <FrameLayout
-        android:id="@+id/fragment_container"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-    </FrameLayout>
-
-    <com.google.android.material.navigation.NavigationView
-        android:id="@+id/nav_view"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:layout_gravity="start"
-        android:theme="@style/Theme.MyApplication1"
-        app:headerLayout="@layout/activity_header"
-        app:itemIconTint="@color/text"
-        app:itemShapeFillColor="@color/drawer_item"
-        app:itemTextColor="@color/text"
-        app:menu="@menu/main_menu"/>
 
 </androidx.drawerlayout.widget.DrawerLayout>
