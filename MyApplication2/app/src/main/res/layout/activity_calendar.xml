@@ -38,7 +38,7 @@
                 android:minHeight="?attr/actionBarSize"
                 android:theme="?attr/actionBarTheme"
                 app:layout_scrollFlags="scroll|enterAlways"
-                app:navigationIcon="@drawable/"
+                app:navigationIcon="@drawable/navi"
                 app:title="@string/calendar" />
         </com.google.android.material.appbar.AppBarLayout>
 
