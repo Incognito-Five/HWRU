@@ -72,6 +72,7 @@
       <list>
         <option value="layoutResourceFile" />
         <option value="resourceFile" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -90,6 +91,11 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="RecentsManager">
+    <key name="ExtractSuperBase.RECENT_KEYS">
+      <recent name="com.example.myapplication1" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration default="true" type="AndroidJUnit" factoryName="Android JUnit">
@@ -185,10 +191,10 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="958" y="123" key="#com.intellij.ide.util.MemberChooser" timestamp="1624717038880">
+    <state x="958" y="123" key="#com.intellij.ide.util.MemberChooser" timestamp="1624720076209">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="958" y="123" key="#com.intellij.ide.util.MemberChooser/0.0.1536.834@0.0.1536.834" timestamp="1624717038880" />
+    <state x="958" y="123" key="#com.intellij.ide.util.MemberChooser/0.0.1536.834@0.0.1536.834" timestamp="1624720076209" />
     <state x="660" y="172" key="AndroidCreateResourceFileDialog" timestamp="1624707220956">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
