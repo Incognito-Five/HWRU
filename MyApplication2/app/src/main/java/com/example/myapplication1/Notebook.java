@@ -15,12 +15,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
 
-public class Notebook extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
-
-    FloatingActionButton mcreatenewnotefab;
-    Toolbar toolbar;
-    DrawerLayout drawerLayout;
-    NavigationView navigationView;
+public class Notebook extends AppCompatActivity {
 
 
     @Override
@@ -28,74 +23,5 @@ public class Notebook extends AppCompatActivity implements NavigationView.OnNavi
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_notebook);
 
-        //create new notes by clicking the fab button
-        mcreatenewnotefab=findViewById(R.id.createnewnotefab);
-
-        //to show all notes
-        getSupportActionBar().setTitle("All Notes");
-
-
-        //create new notes by clicking the fab button
-        mcreatenewnotefab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                startActivity(new Intent(Notebook.this,Createnewnotebook.class));
-
-            }
-        });
-
-        toolbar = findViewById(R.id.tb_nbook);
-        setSupportActionBar(toolbar);
-
-        //drawer
-        drawerLayout = findViewById(R.id.drawer_layout);
-        navigationView = findViewById(R.id.nav_view);
-
-        navigationView.setNavigationItemSelectedListener(this);
-        navigationView.bringToFront();
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar,
-                R.string.navigation_drawer_open, R.string.navigation_drawer_close);
-
-        drawerLayout.addDrawerListener(toggle);
-        toggle.syncState();
-
-    }
-
-    @Override
-    public void onBackPressed() {
-
-        if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
-            drawerLayout.closeDrawer(GravityCompat.START);
-        } else {
-            super.onBackPressed();
-        }
-    }
-
-    @Override
-    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-        switch (item.getItemId()) {
-            case R.id.home:
-                Intent intent = new Intent(this, Homepage.class);
-                startActivity(intent);
-                break;
-            case R.id.account:
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new AccountFragment()).commit();
-                break;
-            case R.id.back_up_storage:
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new BackUpFragment()).commit();
-                break;
-            case R.id.themes:
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new ThemesFragment()).commit();
-                break;
-            case R.id.help:
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new HelpFragment()).commit();
-                break;
-            case R.id.sounds:
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new SoundsFragment()).commit();
-                break;
-        }
-        drawerLayout.closeDrawer(GravityCompat.START);
-        return true;
     }
 }
