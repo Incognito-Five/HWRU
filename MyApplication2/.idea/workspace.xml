@@ -71,8 +71,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="layoutResourceFile" />
-        <option value="resourceFile" />
         <option value="Class" />
+        <option value="resourceFile" />
       </list>
     </option>
   </component>
@@ -94,6 +94,9 @@
   </component>
   <component name="RecentsManager">
     <key name="ExtractSuperBase.RECENT_KEYS">
+      <recent name="com.example.myapplication1" />
+    </key>
+    <key name="android.template.-1070821362">
       <recent name="com.example.myapplication1" />
     </key>
   </component>
@@ -191,13 +194,17 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="958" y="123" key="#com.intellij.ide.util.MemberChooser" timestamp="1624720076209">
+    <state x="958" y="123" key="#com.intellij.ide.util.MemberChooser" timestamp="1624763245164">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="958" y="123" key="#com.intellij.ide.util.MemberChooser/0.0.1536.834@0.0.1536.834" timestamp="1624720076209" />
-    <state x="660" y="172" key="AndroidCreateResourceFileDialog" timestamp="1624707220956">
+    <state x="958" y="123" key="#com.intellij.ide.util.MemberChooser/0.0.1536.834@0.0.1536.834" timestamp="1624763245164" />
+    <state x="883" y="167" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1624761065260">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="660" y="172" key="AndroidCreateResourceFileDialog/0.0.1536.834@0.0.1536.834" timestamp="1624707220956" />
+    <state x="883" y="167" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.834@0.0.1536.834" timestamp="1624761065260" />
+    <state x="660" y="172" key="AndroidCreateResourceFileDialog" timestamp="1624764395972">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="660" y="172" key="AndroidCreateResourceFileDialog/0.0.1536.834@0.0.1536.834" timestamp="1624764395972" />
   </component>
 </project>
