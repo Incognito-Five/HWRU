@@ -71,8 +71,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="layoutResourceFile" />
-        <option value="Class" />
         <option value="resourceFile" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -194,10 +194,10 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="958" y="123" key="#com.intellij.ide.util.MemberChooser" timestamp="1624763245164">
+    <state x="958" y="123" key="#com.intellij.ide.util.MemberChooser" timestamp="1624866390249">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="958" y="123" key="#com.intellij.ide.util.MemberChooser/0.0.1536.834@0.0.1536.834" timestamp="1624763245164" />
+    <state x="958" y="123" key="#com.intellij.ide.util.MemberChooser/0.0.1536.834@0.0.1536.834" timestamp="1624866390249" />
     <state x="883" y="167" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1624761065260">
       <screen x="0" y="0" width="1536" height="834" />
     </state>

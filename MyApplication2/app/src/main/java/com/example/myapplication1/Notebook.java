@@ -1,11 +1,13 @@
 package com.example.myapplication1;
 
 import android.content.Intent;
+import android.database.Cursor;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Adapter;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
@@ -29,6 +31,7 @@ public class Notebook extends AppCompatActivity {
     FloatingActionButton fab;
     NotebookAdapter adapter;
     List<NotebookModel> notebookModelList;
+    NotebookDatabaseClass databaseClass;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,15 +50,34 @@ public class Notebook extends AppCompatActivity {
             }
         });
 
+
         notebookModelList=new ArrayList<>();
+        //database instance class
+        databaseClass=new NotebookDatabaseClass(this);
+        //method to fetch all notes from database
+        fetchAllNotesFromDataBase();
+
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         //adapter instance
         adapter= new NotebookAdapter(this, Notebook.this,notebookModelList);
         //set adapter to recycler view
         recyclerView.setAdapter(adapter);
+    }
 
-
-
+    void fetchAllNotesFromDataBase()
+    {
+        Cursor cursor = databaseClass.readAllData();
+        if (cursor.getCount()==0)
+        {
+            Toast.makeText(this, "No Data to Show", Toast.LENGTH_SHORT).show();
+        }
+        else
+        {
+            while(cursor.moveToNext())
+            {
+                notebookModelList.add(new NotebookModel(cursor.getString(0),cursor.getString(1),cursor.getString(2)));
+            }
+        }
     }
 
     @Override
