@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -19,7 +20,10 @@ import java.io.File;
 
 public class BackUpFragment extends Fragment {
 
+    BackUpHelper backUpHelper;
+
     SwitchCompat switch_backup, switch_restore;
+
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         // Inflate the layout for this fragment
@@ -27,21 +31,36 @@ public class BackUpFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_back_up, container, false);
         switch_backup = view.findViewById(R.id.switch_backup);
         switch_restore = view.findViewById(R.id.switch_restore);
-        final DatabaseHelper db = new DatabaseHelper(requireActivity().getApplicationContext());
 
-        switch_backup.setOnCheckedChangeListener((buttonView, isChecked) -> {
-            //backup all data and settings
-            String outFileName = Environment.getExternalStorageDirectory() + File.separator + getResources().getString(R.string.app_name) + File.separator;
-            performBackup(db, outFileName);
+        backUpHelper = new BackUpHelper(this);
+        final DatabaseHelper db = new DatabaseHelper(getActivity().getApplicationContext());
+
+        switch_backup.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    //backup all data and settings
+                    String outFileName = Environment.getExternalStorageDirectory() + File.separator + getResources().getString(R.string.app_name) + File.separator;
+                    backUpHelper.performBackup(db, outFileName);
+                } else {
+                    switch_backup.setChecked(false);
+                }
+            }
         });
-
-        switch_restore.setOnCheckedChangeListener((buttonView, isChecked) -> performRestore(db));
-
+        switch_restore.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    backUpHelper.performRestore(db);
+                } else {
+                    switch_restore.setChecked(false);
+                }
+            }
+        });
         return view;
     }
 
-
-    //ask to the user a name for the backup and perform it. The backup will be saved to a custom folder.
+    /*//ask to the user a name for the backup and perform it. The backup will be saved to a custom folder.
     public void performBackup(final DatabaseHelper db, final String outFileName) {
 
         Permissions.verifyStoragePermissions(getActivity());
@@ -104,5 +123,5 @@ public class BackUpFragment extends Fragment {
         } else
             Toast.makeText(getActivity(), "Backup folder not present.\nDo a backup before a restore!", Toast.LENGTH_SHORT).show();
             switch_restore.setChecked(false);
-    }
+    }*/
 }

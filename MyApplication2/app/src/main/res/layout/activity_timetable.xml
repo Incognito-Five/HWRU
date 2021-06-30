@@ -57,18 +57,6 @@
                 app:tabSelectedTextColor="@color/text"
                 app:tabTextColor="@color/middle_gray">
 
-                <com.google.android.material.tabs.TabItem
-                    android:id="@+id/tab_timetable"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/timetable" />
-
-                <com.google.android.material.tabs.TabItem
-                    android:id="@+id/tab_courses"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="COURSES" />
-
             </com.google.android.material.tabs.TabLayout>
         </com.google.android.material.appbar.AppBarLayout>
 
