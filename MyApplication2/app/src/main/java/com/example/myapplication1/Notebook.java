@@ -1,101 +1,108 @@
 package com.example.myapplication1;
 
 import android.content.Intent;
+import android.database.Cursor;
 import android.os.Bundle;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Adapter;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.SearchView;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
 
-public class Notebook extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+import java.util.ArrayList;
+import java.util.List;
 
-    FloatingActionButton mcreatenewnotefab;
-    Toolbar toolbar;
-    DrawerLayout drawerLayout;
-    NavigationView navigationView;
+public class Notebook extends AppCompatActivity {
 
+    RecyclerView recyclerView;
+    FloatingActionButton fab;
+    NotebookAdapter adapter;
+    List<NotebookModel> notebookModelList;
+    NotebookDatabaseClass databaseClass;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_notebook);
 
-        //create new notes by clicking the fab button
-        mcreatenewnotefab=findViewById(R.id.createnewnotefab);
+        recyclerView=findViewById(R.id.notebookrecyclerview);
+        fab=findViewById(R.id.notebookfab);
 
-        //to show all notes
-        getSupportActionBar().setTitle("All Notes");
-
-
-        //create new notes by clicking the fab button
-        mcreatenewnotefab.setOnClickListener(new View.OnClickListener() {
+        //will go to new activity when the fab is clicked
+        fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                startActivity(new Intent(Notebook.this,Createnewnotebook.class));
-
+                Intent intent=new Intent(Notebook.this,Notebook_AddNotesActivity.class);
+                startActivity(intent);
             }
         });
 
-        toolbar = findViewById(R.id.tb_nbook);
-        setSupportActionBar(toolbar);
 
-        //drawer
-        drawerLayout = findViewById(R.id.drawer_layout);
-        navigationView = findViewById(R.id.nav_view);
+        notebookModelList=new ArrayList<>();
+        //database instance class
+        databaseClass=new NotebookDatabaseClass(this);
+        //method to fetch all notes from database
+        fetchAllNotesFromDataBase();
 
-        navigationView.setNavigationItemSelectedListener(this);
-        navigationView.bringToFront();
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar,
-                R.string.navigation_drawer_open, R.string.navigation_drawer_close);
-
-        drawerLayout.addDrawerListener(toggle);
-        toggle.syncState();
-
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        //adapter instance
+        adapter= new NotebookAdapter(this, Notebook.this,notebookModelList);
+        //set adapter to recycler view
+        recyclerView.setAdapter(adapter);
     }
 
-    @Override
-    public void onBackPressed() {
-
-        if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
-            drawerLayout.closeDrawer(GravityCompat.START);
-        } else {
-            super.onBackPressed();
+    void fetchAllNotesFromDataBase()
+    {
+        Cursor cursor = databaseClass.readAllData();
+        if (cursor.getCount()==0)
+        {
+            Toast.makeText(this, "No Data to Show", Toast.LENGTH_SHORT).show();
+        }
+        else
+        {
+            while(cursor.moveToNext())
+            {
+                notebookModelList.add(new NotebookModel(cursor.getString(0),cursor.getString(1),cursor.getString(2)));
+            }
         }
     }
 
     @Override
-    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-        switch (item.getItemId()) {
-            case R.id.home:
-                Intent intent = new Intent(this, Homepage.class);
-                startActivity(intent);
-                break;
-            case R.id.account:
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new AccountFragment()).commit();
-                break;
-            case R.id.back_up_storage:
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new BackUpFragment()).commit();
-                break;
-            case R.id.themes:
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new ThemesFragment()).commit();
-                break;
-            case R.id.help:
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new HelpFragment()).commit();
-                break;
-            case R.id.sounds:
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new SoundsFragment()).commit();
-                break;
-        }
-        drawerLayout.closeDrawer(GravityCompat.START);
-        return true;
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.notebook_options_menu,menu);
+        //search bar
+        MenuItem searchItem=menu.findItem(R.id.search_notebook);
+        SearchView searchView=(SearchView) searchItem.getActionView();
+        searchView.setQueryHint("Search Note Here");
+
+        //shows texts in the search bar
+        SearchView.OnQueryTextListener listener=new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                return true;
+            }
+        };
+
+        searchView.setOnQueryTextListener(listener);
+
+        return super.onCreateOptionsMenu(menu);
     }
 }
