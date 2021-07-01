@@ -97,6 +97,7 @@ public class Notebook extends AppCompatActivity {
 
             @Override
             public boolean onQueryTextChange(String newText) {
+                adapter.getFilter().filter(newText);
                 return true;
             }
         };
@@ -108,7 +109,7 @@ public class Notebook extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-
+        //delete all notes when selected
         if (item.getItemId()==R.id.delete_all_notebooks)
         {
             deleteAllNotebooks();
@@ -117,6 +118,7 @@ public class Notebook extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    //delete notes
     private void deleteAllNotebooks()
     {
         NotebookDatabaseClass db = new NotebookDatabaseClass(Notebook.this);

@@ -85,12 +85,14 @@ public class NotebookDatabaseClass extends SQLiteOpenHelper {
             return cursor;
     }
 
+    //method for deleting all notes
     void deleteAllNotebooks(){
         SQLiteDatabase database = this.getWritableDatabase();
         String query = "DELETE FROM " + TableName;
         database.execSQL(query);
     }
 
+    //method for updating notes
     void updateNotes(String title, String content, String id){
         SQLiteDatabase database = this.getWritableDatabase();
 
@@ -100,10 +102,10 @@ public class NotebookDatabaseClass extends SQLiteOpenHelper {
 
         long result = database.update(TableName, cv, "id=?", new String[]{id});
         if (result == -1){
-            Toast.makeText(context, "Failed", Toast.LENGTH_SHORT).show();
+            Toast.makeText(context, "Note Update Failed", Toast.LENGTH_SHORT).show();
         }
         else{
-            Toast.makeText(context, "Done", Toast.LENGTH_SHORT).show();
+            Toast.makeText(context, "Note Updated Successfully", Toast.LENGTH_SHORT).show();
         }
     }
 }

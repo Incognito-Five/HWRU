@@ -33,12 +33,13 @@ public class Notebook_UpdateNotesActivity extends AppCompatActivity {
         updateNote.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                //will check if both title and content has text
                 if (!TextUtils.isEmpty(title.getText().toString()) && !TextUtils.isEmpty(content.getText().toString()))
                 {
                     NotebookDatabaseClass db = new NotebookDatabaseClass(Notebook_UpdateNotesActivity.this);
                     db.updateNotes(title.getText().toString(),content.getText().toString(),id);
 
+                    //will show data on the recycler view
                     Intent intent = new Intent(Notebook_UpdateNotesActivity.this,Notebook.class);
                     intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
                     startActivity(intent);
