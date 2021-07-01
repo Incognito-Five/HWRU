@@ -118,4 +118,20 @@ public class NotebookAdapter extends RecyclerView.Adapter<NotebookAdapter.MyView
             layout=itemView.findViewById(R.id.notebooklayout);
         }
     }
+
+    public List<NotebookModel> getList(){
+        return noteslist;
+    }
+
+    //method for removing a note
+    public void removeItem(int position){
+        noteslist.remove(position);
+        notifyItemRemoved(position);
+    }
+
+    //method for restoring a note
+    public void restoreItem(NotebookModel item, int position){
+        noteslist.add(position,item);
+        notifyItemInserted(position);
+    }
 }
