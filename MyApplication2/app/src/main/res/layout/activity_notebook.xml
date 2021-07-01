@@ -8,7 +8,7 @@
     android:background="@drawable/homebg"
     android:fitsSystemWindows="true"
     tools:context=".Notebook"
-    tools:openDrawer="end"
+    tools:openDrawer="start"
     >
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
