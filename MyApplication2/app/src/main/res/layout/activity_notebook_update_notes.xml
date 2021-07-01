@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Notebook_UpdateNotesActivity">
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:textColor="@color/text"
+        android:hint="Title"
+        android:id="@+id/notebooktitle">
+    </EditText>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:textColor="@color/text"
+        android:layout_below="@id/notebooktitle"
+        android:hint="Contents"
+        android:id="@+id/notebookcontent">
+    </EditText>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/custom_btn_bg"
+        android:text="Update Note"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:textColor="@color/text"
+        android:id="@+id/updatenote">
+
+    </Button>
+
+</RelativeLayout>

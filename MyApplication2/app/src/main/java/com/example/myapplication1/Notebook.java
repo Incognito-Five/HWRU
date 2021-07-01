@@ -105,4 +105,22 @@ public class Notebook extends AppCompatActivity {
 
         return super.onCreateOptionsMenu(menu);
     }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+
+        if (item.getItemId()==R.id.delete_all_notebooks)
+        {
+            deleteAllNotebooks();
+            
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    private void deleteAllNotebooks()
+    {
+        NotebookDatabaseClass db = new NotebookDatabaseClass(Notebook.this);
+        db.deleteAllNotebooks();
+        recreate();
+    }
 }

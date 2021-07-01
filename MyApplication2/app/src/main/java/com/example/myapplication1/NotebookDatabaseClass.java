@@ -84,4 +84,26 @@ public class NotebookDatabaseClass extends SQLiteOpenHelper {
         }
             return cursor;
     }
+
+    void deleteAllNotebooks(){
+        SQLiteDatabase database = this.getWritableDatabase();
+        String query = "DELETE FROM " + TableName;
+        database.execSQL(query);
+    }
+
+    void updateNotes(String title, String content, String id){
+        SQLiteDatabase database = this.getWritableDatabase();
+
+        ContentValues cv = new ContentValues();
+        cv.put(ColumnTitle,title);
+        cv.put(ColumnContents,content);
+
+        long result = database.update(TableName, cv, "id=?", new String[]{id});
+        if (result == -1){
+            Toast.makeText(context, "Failed", Toast.LENGTH_SHORT).show();
+        }
+        else{
+            Toast.makeText(context, "Done", Toast.LENGTH_SHORT).show();
+        }
+    }
 }

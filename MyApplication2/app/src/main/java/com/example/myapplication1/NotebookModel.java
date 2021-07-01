@@ -6,7 +6,7 @@ public class NotebookModel {
     String content;
     String id;
 
-    public NotebookModel(String title, String content, String id) {
+    public NotebookModel(String id, String title, String content) {
         this.title = title;
         this.content = content;
         this.id = id;

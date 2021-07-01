@@ -4,7 +4,7 @@
     package="com.example.myapplication1">
 
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -14,7 +14,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication1.NoActionBar"
         tools:ignore="AllowBackup">
-        <activity android:name=".Notebook_AddNotesActivity"></activity>
+        <activity android:name=".Notebook_UpdateNotesActivity"></activity>
+        <activity android:name=".Notebook_AddNotesActivity" />
         <activity android:name=".bmicalculation" />
         <activity android:name=".DeleteAccount" />
         <activity android:name=".HeaderActivity" />
