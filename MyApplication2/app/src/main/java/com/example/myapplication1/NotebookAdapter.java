@@ -30,7 +30,7 @@ public class NotebookAdapter extends RecyclerView.Adapter<NotebookAdapter.MyView
         this.context = context;
         this.activity = activity;
         this.noteslist = noteslist;
-        newList= new ArrayList<>();
+        newList= new ArrayList<>(noteslist);
     }
 
     @NonNull
