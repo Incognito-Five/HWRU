@@ -47,7 +47,7 @@
                     android:layout_height="match_parent"
                     android:id="@+id/menupopupbutton"
                     android:layout_weight="0"
-                    android:src="@drawable/notebookmenu">
+                    android:src="@drawable/addnotebooki_icon">
                 </ImageView>
 
             </LinearLayout>
