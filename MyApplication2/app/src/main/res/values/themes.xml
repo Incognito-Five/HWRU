@@ -13,8 +13,8 @@
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
         <item name="colorControlActivated">@color/primary</item>
-        <item name="android:windowAnimationStyle">@style/animation</item>
     </style>
+
     <style name="Theme.MyApplication1.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
@@ -32,19 +32,4 @@
     <style name="Theme.MyApplication1.NoActionBar.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="Theme.MyApplication1.NoActionBar.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
-
-    <!--    FOR DIALOG FRAGMENT-->
-<!--    <style name="Theme.MyApplication1.DialogFrag" parent="Theme.MaterialComponents.DayNight.NoActionBar">
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
-        <item name="android:colorBackground">@color/colorPrimaryDark</item>
-    </style>
-    <style name="Theme.MyApplication1.FullScreenDialog" parent="Theme.MaterialComponents.DayNight.Dialog">
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
-        <item name="android:windowIsFloating">false</item>
-        <item name="android:windowBackground">@android:color/white</item>
-    </style>-->
 </resources>

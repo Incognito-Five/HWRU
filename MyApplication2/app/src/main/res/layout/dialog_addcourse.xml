@@ -1,34 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/dialog_course"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
     android:orientation="vertical">
-
-    <TextView
-        android:id="@+id/add_course_dialog"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="14dp"
-        android:layout_marginRight="16dp"
-        android:gravity="center"
-        android:text="Add Course"
-        android:textSize="24dp" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/add_course_name"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/add_course_dialog"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="36dp"
         android:layout_marginEnd="14dp"
         android:layout_marginRight="16dp"
         android:hint="@string/course_name"
@@ -77,18 +60,12 @@
         android:layout_width="189dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/add_professor"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
         android:layout_marginTop="10dp"
-        android:layout_toStartOf="@+id/add_end_time"
-        android:layout_toLeftOf="@+id/add_end_time"
-        android:gravity="fill"
         android:hint="@string/start_time">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/pick_start_time"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="time" />
@@ -99,28 +76,25 @@
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="189dp"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/add_description"
         android:layout_below="@+id/add_professor"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
-        android:gravity="fill"
+        android:layout_toEndOf="@id/add_start_time"
+        android:layout_toRightOf="@id/add_start_time"
         android:hint="@string/end_time">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/pick_end_time"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="" />
+            android:inputType="time" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/add_description"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
-        android:layout_height="130dp"
+        android:layout_height="150dp"
         android:layout_below="@+id/add_start_time"
         android:layout_marginLeft="16dp"
         android:layout_marginTop="10dp"
@@ -131,32 +105,5 @@
             android:layout_width="match_parent"
             android:layout_height="150dp" />
     </com.google.android.material.textfield.TextInputLayout>
-
-    <Button
-        android:id="@+id/save_btn"
-        android:layout_width="170dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/add_description"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="10dp"
-        android:text="@string/save"
-        app:backgroundTint="@color/primary" />
-
-    <Button
-        android:id="@+id/cancel_btn"
-        android:layout_width="170dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/add_description"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
-        android:layout_marginBottom="10dp"
-        android:text="@string/cancel"
-        app:backgroundTint="@color/primary" />
 
 </RelativeLayout>
