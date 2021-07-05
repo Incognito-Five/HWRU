@@ -73,6 +73,8 @@
             android:layout_gravity="bottom|end"
             android:layout_margin="@dimen/fab_margin"
             android:contentDescription="fab"
+            app:backgroundTint="@color/nav_view_selected"
+            app:fabSize="normal"
             app:srcCompat="@drawable/add_icon"
             tools:ignore="VectorDrawableCompat" />
 

@@ -1,12 +1,9 @@
 package com.example.myapplication1;
 
 import android.content.Intent;
-import android.media.MediaPlayer;
 import android.os.Bundle;
-import android.provider.MediaStore;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
@@ -17,13 +14,13 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.FragmentManager;
 import androidx.viewpager2.widget.ViewPager2;
 
-import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.tabs.TabLayout;
 
 public class Timetable extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
-    ExtendedFloatingActionButton fab;
+    FloatingActionButton fab;
     Toolbar toolbar;
     DrawerLayout drawerLayout;
     NavigationView navigationView;
@@ -36,7 +33,7 @@ public class Timetable extends AppCompatActivity implements NavigationView.OnNav
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_timetable);
 
-        //fab = findViewById(R.id.fab_course);
+        fab = findViewById(R.id.fab);
         toolbar = findViewById(R.id.tb_ttable);
         setSupportActionBar(toolbar);
 
@@ -62,6 +59,13 @@ public class Timetable extends AppCompatActivity implements NavigationView.OnNav
         tabLayout.addTab(tabLayout.newTab().setText("Timetable"));
         tabLayout.addTab(tabLayout.newTab().setText("Courses"));
 
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                DialogAddCourse dialogAddCourse = new DialogAddCourse();
+                dialogAddCourse.show(getSupportFragmentManager(),"dialog_course");
+            }
+        });
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
