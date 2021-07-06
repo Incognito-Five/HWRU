@@ -210,9 +210,9 @@
                 android:id="@+id/linearLayout3"
                 android:layout_width="match_parent"
                 android:layout_height="185dp"
+                android:layout_below="@+id/linearLayout2"
                 android:orientation="horizontal"
                 android:padding="12dp"
-                android:layout_below="@+id/linearLayout2"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent">
 
@@ -261,15 +261,13 @@
             </LinearLayout>
 
 
-
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 
     <FrameLayout
         android:id="@+id/fragment_container"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-    </FrameLayout>
+        android:layout_height="match_parent"></FrameLayout>
 
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/nav_view"
@@ -281,6 +279,6 @@
         app:itemIconTint="@color/text"
         app:itemShapeFillColor="@color/drawer_item"
         app:itemTextColor="@color/text"
-        app:menu="@menu/main_menu"/>
+        app:menu="@menu/main_menu" />
 
 </androidx.drawerlayout.widget.DrawerLayout>

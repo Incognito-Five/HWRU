@@ -7,12 +7,17 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
+
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class RegistrationPage extends AppCompatActivity {
 
     EditText name, username, password, repassword;
-    Button register, login;
+    FloatingActionButton register;
+    TextView login;
+/*    Button register, login;*/
     DatabaseHelper DBase;
 
     @Override
@@ -24,8 +29,10 @@ public class RegistrationPage extends AppCompatActivity {
         username = (EditText) findViewById(R.id.txt_username1);
         password = (EditText) findViewById(R.id.txt_pw1);
         repassword = (EditText) findViewById(R.id.txt_repw);
-        register = (Button) findViewById(R.id.button_reg1);
-        login = (Button) findViewById(R.id.button_log1);
+        register = (FloatingActionButton) findViewById(R.id.fab_signup);
+        login = (TextView) findViewById(R.id.txt_signin);
+/*        register = (Button) findViewById(R.id.button_reg1);
+        login = (Button) findViewById(R.id.button_log1);*/
         DBase = new DatabaseHelper(this);
 
         register.setOnClickListener(new View.OnClickListener() {

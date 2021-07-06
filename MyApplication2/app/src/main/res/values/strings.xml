@@ -5,10 +5,10 @@
     <string name="textview">TextView</string>
     <string name="personal_planner">PERSONAL PLANNER</string>
     <string name="email">EMAIL:</string>
-    <string name="please_enter_your_email">please enter your email</string>
+    <string name="please_enter_your_email">Email/Username</string>
     <string name="email_address">Email Address</string>
     <string name="password">PASSWORD:</string>
-    <string name="please_enter_your_password" />
+    <string name="please_enter_your_password">Password</string>
     <string name="forgot_password">Forgot Password</string>
     <string name="register">Register</string>
 
@@ -34,13 +34,13 @@
     <string name="navigation_header">Navigation Header</string>
     <string name="incognito5">Incognito5</string>
     <string name="incognito5_gmail_com">incognito5@gmail.com</string>
-    <string name="please_enter_your_username">please enter your username</string>
+    <string name="please_enter_your_username">Username/Email</string>
     <string name="username">USERNAME</string>
     <string name="username_">USERNAME:</string>
     <string name="new_user_register_here">New user? Register here</string>
     <string name="register_here">Register Here</string>
     <string name="name">NAME:</string>
-    <string name="please_enter_your_name">please_enter your name</string>
+    <string name="please_enter_your_name">Name</string>
     <string name="set_dark">Dark Mode</string>
     <string name="enable_dark_mode">Enable</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
@@ -168,4 +168,5 @@
     </string>
     <string name="action_settings">Settings</string>
     <string name="save">Save</string>
+    <string name="please_reenter_password">Reenter Password</string>
 </resources>

@@ -2,7 +2,9 @@
 <project version="4">
   <component name="AndroidLayouts">
     <shared>
-      <config />
+      <config>
+        <device id="pixel_4_xl" />
+      </config>
     </shared>
   </component>
   <component name="AutoImportSettings">
@@ -88,7 +90,7 @@
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/TimetableView-master" />
   </component>
   <component name="RecentsManager">
     <key name="ExtractSuperBase.RECENT_KEYS">
@@ -201,10 +203,14 @@
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state x="689" y="124" key="#com.intellij.refactoring.typeMigration.ui.FailedConversionsDialog/0.0.1366.768@0.0.1366.768" timestamp="1624852027906" />
-    <state x="851" y="194" key="AndroidCreateXmlResourceDialog" timestamp="1625486727908">
+    <state x="851" y="194" key="AndroidCreateXmlResourceDialog" timestamp="1625541309155">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state x="851" y="194" key="AndroidCreateXmlResourceDialog/0.0.1366.768@0.0.1366.768" timestamp="1625486727908" />
+    <state x="851" y="194" key="AndroidCreateXmlResourceDialog/0.0.1366.768@0.0.1366.768" timestamp="1625541309155" />
+    <state x="785" y="141" key="FileChooserDialogImpl" timestamp="1625505008890">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="785" y="141" key="FileChooserDialogImpl/0.0.1366.768@0.0.1366.768" timestamp="1625505008890" />
     <state width="696" height="178" key="GridCell.Tab.0.bottom" timestamp="1624852856402">
       <screen x="0" y="0" width="1366" height="768" />
     </state>

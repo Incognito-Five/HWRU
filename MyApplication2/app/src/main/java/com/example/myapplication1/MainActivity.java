@@ -13,10 +13,15 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
 public class MainActivity extends AppCompatActivity {
 
+
     EditText username, password;
-    Button login, forget_pass, register;
+    TextView forget_pass, register;
+    FloatingActionButton fab_signin;
+/*    Button login, forget_pass, register;*/
     DatabaseHelper DBase;
 
     @Override
@@ -26,13 +31,17 @@ public class MainActivity extends AppCompatActivity {
 
         username = (EditText) findViewById(R.id.txt_username);
         password = (EditText) findViewById(R.id.txt_pw);
-        login = (Button) findViewById(R.id.button_login);
+        fab_signin = (FloatingActionButton) findViewById(R.id.fab_signin);
+        forget_pass = (TextView) findViewById(R.id.txt_forgotpass);
+        register = (TextView) findViewById(R.id.txt_signup);
+
+/*        login = (Button) findViewById(R.id.button_login);
         forget_pass = (Button) findViewById(R.id.button_forg);
-        register = (Button) findViewById(R.id.button_reg);
+        register = (Button) findViewById(R.id.button_reg);*/
         DBase = new DatabaseHelper(this);
 
 
-        login.setOnClickListener(new View.OnClickListener() {
+        fab_signin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String user = username.getText().toString();
@@ -55,6 +64,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+
         register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -70,7 +80,6 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
 
         SharedPreferences sharedPreferences = getSharedPreferences("sharedPrefs", MODE_PRIVATE);
         final boolean isDarkModeOn = sharedPreferences.getBoolean("isDarkModeOn", false);
