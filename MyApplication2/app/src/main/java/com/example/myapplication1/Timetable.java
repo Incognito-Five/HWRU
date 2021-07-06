@@ -33,7 +33,7 @@ public class Timetable extends AppCompatActivity implements NavigationView.OnNav
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_timetable);
 
-        fab = findViewById(R.id.fab);
+        fab = findViewById(R.id.fab_course);
         toolbar = findViewById(R.id.tb_ttable);
         setSupportActionBar(toolbar);
 
@@ -56,7 +56,7 @@ public class Timetable extends AppCompatActivity implements NavigationView.OnNav
         adapter = new FragmentAdapter(fm, getLifecycle());
         pager2.setAdapter(adapter);
 
-        tabLayout.addTab(tabLayout.newTab().setText("Timetable"));
+        tabLayout.addTab(tabLayout.newTab().setText("Schedule"));
         tabLayout.addTab(tabLayout.newTab().setText("Courses"));
 
         fab.setOnClickListener(new View.OnClickListener() {
@@ -66,6 +66,7 @@ public class Timetable extends AppCompatActivity implements NavigationView.OnNav
                 dialogAddCourse.show(getSupportFragmentManager(),"dialog_course");
             }
         });
+
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
@@ -126,7 +127,6 @@ public class Timetable extends AppCompatActivity implements NavigationView.OnNav
         }
         drawerLayout.closeDrawer(GravityCompat.START);
         return true;
-
 
     }
 }

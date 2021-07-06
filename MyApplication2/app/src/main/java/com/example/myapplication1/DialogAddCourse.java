@@ -60,6 +60,7 @@ public class DialogAddCourse extends DialogFragment {
                 if(checkinsertdata){
                     Toast.makeText(getActivity(),"New Course Added", Toast.LENGTH_SHORT).show();
                     dismiss();
+/*                    createTable();*/
                 } else {
                     Toast.makeText(getActivity(),"Course not added.Try Again.", Toast.LENGTH_SHORT).show();
                     dismiss();

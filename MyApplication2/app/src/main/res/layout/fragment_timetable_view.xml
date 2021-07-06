@@ -1,16 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".TimetableViewFragment"
-    android:background="@color/text">
+    android:orientation="vertical"
+    tools:context=".TimetableViewFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <TableLayout
+        android:id="@+id/table_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment"
-        android:gravity="center"/>
+        android:layout_weight="1">
 
-</FrameLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TableLayout
+                android:id="@+id/table"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="Schedule" />
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+</LinearLayout>
