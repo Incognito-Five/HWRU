@@ -27,7 +27,6 @@ import java.util.Date;
 
 public class DialogAddCourse extends DialogFragment {
 
-
     Button save_btn, cancel_btn;
     TextInputEditText start_time, end_time, course_name, course_code, professor, location, description;
     TimePickerDialog timePickerDialog, timePickerDialog2;
