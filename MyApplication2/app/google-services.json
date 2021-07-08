@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "542377558071",
+    "project_id": "hwru-app",
+    "storage_bucket": "hwru-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:542377558071:android:234d0e14b664bfc2c77fb2",
+        "android_client_info": {
+          "package_name": "com.example.myapplication1"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "542377558071-g0a01ncfib16ovcg56pcunq4ciifsk3g.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAmSYE84StoZz0XMdmVY4zb0dGerI4xl_U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "542377558071-g0a01ncfib16ovcg56pcunq4ciifsk3g.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

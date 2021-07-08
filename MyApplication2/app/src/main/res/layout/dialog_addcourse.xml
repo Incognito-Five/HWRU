@@ -17,8 +17,10 @@
         android:layout_marginEnd="14dp"
         android:layout_marginRight="16dp"
         android:gravity="center"
-        android:text="Add Course"
-        android:textSize="24dp" />
+        android:text="Add Course Subject"
+        android:textColor="@color/text"
+        android:textSize="24dp"
+        android:textStyle="bold" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/add_course_name"
@@ -32,7 +34,11 @@
         android:layout_marginEnd="14dp"
         android:layout_marginRight="16dp"
         android:hint="@string/course_name"
-        android:inputType="text">
+        android:inputType="text"
+        android:textColorHint="@color/text"
+        app:boxStrokeColor="@color/next"
+        app:helperText="required"
+        app:hintTextColor="@color/text">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/input_course_name"
@@ -50,7 +56,10 @@
         android:layout_marginLeft="16dp"
         android:layout_marginTop="10dp"
         android:layout_marginRight="16dp"
-        android:hint="@string/course_code">
+        android:hint="@string/course_code"
+        android:textColorHint="@color/text"
+        app:boxStrokeColor="@color/next"
+        app:hintTextColor="@color/text">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/input_course_code"
@@ -59,90 +68,97 @@
             android:inputType="text" />
     </com.google.android.material.textfield.TextInputLayout>
 
-    <LinearLayout
+
+    <HorizontalScrollView
         android:id="@+id/week_cbox"
         android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_below="@+id/add_course_code"
         android:layout_marginLeft="13dp"
         android:layout_marginTop="10dp"
-        android:layout_marginRight="13dp"
-        android:layout_height="wrap_content">
+        android:layout_marginRight="13dp">
 
-        <ScrollView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
 
-            <LinearLayout
+            <CheckBox
+                android:id="@+id/mon"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:padding="5dp"
+                android:text="@string/monday" />
 
-                <CheckBox
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Mon"/>
-                <CheckBox
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Tue"/>
-                <CheckBox
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Wed"/>
-                <CheckBox
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Thu"/>
-                <CheckBox
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Fri"/>
-                <CheckBox
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Sat"/>
+            <CheckBox
+                android:id="@+id/tues"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:text="@string/tuesday" />
 
-                <CheckBox
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Sun"/>
+            <CheckBox
+                android:id="@+id/wed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:text="@string/wednesday" />
 
-            </LinearLayout>
-        </ScrollView>
-    </LinearLayout>
+            <CheckBox
+                android:id="@+id/thurs"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:text="@string/thursday" />
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/add_professor"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            <CheckBox
+                android:id="@+id/fri"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:text="@string/friday" />
+
+            <CheckBox
+                android:id="@+id/sat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:text="@string/saturday" />
+
+            <CheckBox
+                android:id="@+id/sun"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:text="@string/sunday" />
+        </LinearLayout>
+    </HorizontalScrollView>
+    <TextView
+        android:id="@+id/required"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/week_cbox"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginRight="16dp"
-        android:hint="@string/professor">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/input_professor"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="textPersonName" />
-    </com.google.android.material.textfield.TextInputLayout>
-
+        android:layout_marginLeft="32dp"
+        android:layout_marginRight="32dp"
+        android:text="required"
+        android:textSize="12sp"/>
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/add_start_time"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="189dp"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/add_professor"
+        android:layout_below="@+id/required"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
+        android:layout_centerInParent="true"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
         android:layout_marginTop="10dp"
-        android:layout_toStartOf="@+id/add_end_time"
-        android:layout_toLeftOf="@+id/add_end_time"
-        android:hint="@string/start_time">
+        android:hint="@string/start_time"
+        android:textColorHint="@color/text"
+        app:boxStrokeColor="@color/next"
+        app:helperText="required"
+        app:hintTextColor="@color/text">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/pick_start_time"
@@ -156,13 +172,18 @@
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="189dp"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/add_professor"
+        android:layout_below="@+id/required"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
+        android:layout_centerInParent="true"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
-        android:hint="@string/end_time">
+        android:hint="@string/end_time"
+        android:textColorHint="@color/text"
+        app:boxStrokeColor="@color/next"
+        app:helperText="required"
+        app:hintTextColor="@color/text">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/pick_end_time"
@@ -172,21 +193,66 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/add_description"
+        android:id="@+id/add_professor"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
-        android:layout_height="130dp"
+        android:layout_height="wrap_content"
         android:layout_below="@+id/add_start_time"
         android:layout_marginLeft="16dp"
         android:layout_marginTop="10dp"
         android:layout_marginRight="16dp"
-        android:hint="@string/description">
+        android:hint="@string/professor"
+        android:textColorHint="@color/text"
+        app:boxStrokeColor="@color/next"
+        app:hintTextColor="@color/text">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/input_professor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/add_location"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/add_professor"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="16dp"
+        android:hint="@string/room_location"
+        android:textColorHint="@color/text"
+        app:boxStrokeColor="@color/next"
+        app:hintTextColor="@color/text">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/input_location"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/add_description"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="130dp"
+        android:layout_below="@+id/add_location"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="16dp"
+        android:hint="@string/description"
+        android:textColorHint="@color/text"
+        app:boxStrokeColor="@color/next"
+        app:hintTextColor="@color/text">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/input_description"
             android:layout_width="match_parent"
             android:layout_height="130dp"
-            android:inputType="text" />
+            android:inputType="textMultiLine" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button

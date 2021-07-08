@@ -2,8 +2,10 @@ package com.example.myapplication1;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
@@ -90,6 +92,28 @@ public class Timetable extends AppCompatActivity implements NavigationView.OnNav
                 tabLayout.selectTab(tabLayout.getTabAt(position));
             }
         });
+
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        super.onCreateOptionsMenu(menu);
+        getMenuInflater().inflate(R.menu.menu_timetable, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()){
+            case R.id.delete_all_courses:
+                Toast.makeText(this, "working", Toast.LENGTH_SHORT).show();
+                return true;
+            case R.id.save_image_schedule:
+                Toast.makeText(this, "working too...", Toast.LENGTH_SHORT).show();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 
     @Override
@@ -127,6 +151,6 @@ public class Timetable extends AppCompatActivity implements NavigationView.OnNav
         }
         drawerLayout.closeDrawer(GravityCompat.START);
         return true;
-
     }
+
 }

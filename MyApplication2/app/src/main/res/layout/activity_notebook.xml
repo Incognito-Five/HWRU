@@ -8,8 +8,7 @@
     android:background="@drawable/homebg"
     android:fitsSystemWindows="true"
     tools:context=".Notebook"
-    tools:openDrawer="start"
-    >
+    tools:openDrawer="start">
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"

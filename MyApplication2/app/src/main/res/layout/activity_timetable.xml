@@ -20,19 +20,16 @@
 
             <!--Main Content Here-->
 
-            <Button
-                android:id="@+id/button"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Button" />
         </androidx.core.widget.NestedScrollView>
 
         <com.google.android.material.appbar.AppBarLayout
             android:id="@+id/appbar_timetable"
             android:layout_width="match_parent"
+            style="@style/Theme.AppCompat.Light"
             android:layout_height="wrap_content"
             android:background="@android:color/transparent"
             android:minHeight="?attr/actionBarSize"
+            app:liftOnScroll="true"
             app:tabContentStart="56dp">
 
             <androidx.appcompat.widget.Toolbar
@@ -43,6 +40,7 @@
                 android:minHeight="?attr/actionBarSize"
                 android:theme="?attr/actionBarTheme"
                 app:layout_scrollFlags="scroll|enterAlways"
+                app:menu="@menu/menu_timetable"
                 app:navigationIcon="@drawable/navi"
                 app:title="@string/timetable" />
 

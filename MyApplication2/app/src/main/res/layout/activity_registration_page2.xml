@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".RegistrationPage"
-    android:background="@drawable/bg3">
+    android:background="@drawable/bg3"
+    tools:context=".RegistrationPage">
 
     <TextView
         android:layout_width="wrap_content"
@@ -31,7 +31,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="40dp"
-            android:layout_marginEnd="40dp">
+            android:layout_marginEnd="40dp"
+            android:textColorHint="@color/text"
+            app:boxStrokeColor="@color/next"
+            app:hintTextColor="@color/text">
 
             <EditText
                 android:id="@+id/txt_name"
@@ -56,7 +59,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="40dp"
-            android:layout_marginEnd="40dp">
+            android:layout_marginEnd="40dp"
+            android:textColorHint="@color/text"
+            app:boxStrokeColor="@color/next"
+            app:hintTextColor="@color/text">
 
             <EditText
                 android:id="@+id/txt_username1"
@@ -81,7 +87,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="40dp"
-            android:layout_marginEnd="40dp">
+            android:layout_marginEnd="40dp"
+            android:textColorHint="@color/text"
+
+            app:boxStrokeColor="@color/next"
+            app:hintTextColor="@color/text">
 
             <EditText
                 android:id="@+id/txt_pw1"
@@ -106,7 +116,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="40dp"
-            android:layout_marginEnd="40dp">
+            android:layout_marginEnd="40dp"
+            android:textColorHint="@color/text"
+            app:boxStrokeColor="@color/next"
+            app:hintTextColor="@color/text">
 
             <EditText
                 android:id="@+id/txt_repw"
@@ -156,6 +169,7 @@
                 android:textStyle="bold" />
 
         </RelativeLayout>
+
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -167,9 +181,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
+                android:layout_centerInParent="true"
                 android:layout_marginEnd="30dp"
                 android:layout_marginRight="30dp"
-                android:layout_centerInParent="true"
                 android:padding="15dp"
                 android:text="Already have an account? Sign In."
                 android:textSize="18sp"
