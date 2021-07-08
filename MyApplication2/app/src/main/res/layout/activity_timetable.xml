@@ -7,20 +7,14 @@
     android:layout_height="match_parent"
     android:background="@drawable/bg1"
     android:fitsSystemWindows="true"
-    tools:context=".Timetable"
+    tools:context=".Timetable.Timetable"
     tools:openDrawer="end">
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <androidx.core.widget.NestedScrollView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
 
-            <!--Main Content Here-->
-
-        </androidx.core.widget.NestedScrollView>
 
         <com.google.android.material.appbar.AppBarLayout
             android:id="@+id/appbar_timetable"
@@ -48,6 +42,7 @@
                 android:id="@+id/tabs_ttable"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                app:tabMode="fixed"
                 app:layout_scrollFlags="scroll|enterAlways"
                 app:tabIconTint="@color/primary"
                 app:tabIndicator="@drawable/bmibuttonbackground"

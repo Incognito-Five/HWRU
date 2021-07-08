@@ -3,36 +3,28 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    tools:context=".TimetableViewFragment">
+    android:background="@color/white"
+    tools:context=".Timetable.TimetableViewFragment">
 
-    <TableLayout
-        android:id="@+id/table_header"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
 
-    <ScrollView
+    <com.google.android.material.tabs.TabLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:tabBackground="@color/nav_view_selected"
+        android:background="@color/text"
+        android:id="@+id/tab_week"
+        android:layout_marginTop="8dp"
+        app:tabMode="scrollable"
+        app:tabGravity="center"
+        app:tabIndicatorGravity="stretch"
+        app:tabSelectedTextColor="@color/white"
+        app:tabIndicatorAnimationMode="elastic"/>
+
+    <androidx.viewpager2.widget.ViewPager2
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_weight="1">
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <TableLayout
-                android:id="@+id/table"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-
-            <TextView
-                android:id="@+id/sched"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center" />
-
-        </RelativeLayout>
-
-    </ScrollView>
+        android:id="@+id/vp"/>
 
 </LinearLayout>

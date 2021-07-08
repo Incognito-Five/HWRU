@@ -23,7 +23,7 @@
         <activity android:name=".ForgotPasswordPage" />
         <activity android:name=".RegistrationPage" />
         <activity android:name=".BMI" />
-        <activity android:name=".Timetable" />
+        <activity android:name=".Timetable.Timetable" />
         <activity android:name=".Calendar" />
         <activity android:name=".WaterTracker" />
         <activity android:name=".Notebook" />
