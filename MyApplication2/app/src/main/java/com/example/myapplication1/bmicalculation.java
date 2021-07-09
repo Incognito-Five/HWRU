@@ -4,13 +4,17 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class bmicalculation extends AppCompatActivity {
 
     /*make sure that buttons are working*/
     android.widget.Button mrecalculatebmi;
+    //savebutton
+    android.widget.Button msavebmi;
     /*to get BMI result*/
     TextView mbmiresult,mbmicategory;
     Intent intent;
@@ -33,7 +37,6 @@ public class bmicalculation extends AppCompatActivity {
 
         mbmiresult=findViewById(R.id.bmiresult);
         mbmicategory=findViewById(R.id.bmicategory);
-        mrecalculatebmi=findViewById(R.id.recalculatebmi);
 
         height=intent.getStringExtra("height");
         weight=intent.getStringExtra("weight");
@@ -87,6 +90,30 @@ public class bmicalculation extends AppCompatActivity {
                 Intent intent=new Intent(bmicalculation.this,BMI.class);
                 startActivity(intent);
                 finish();
+            }
+        });
+
+        msavebmi=findViewById(R.id.savebmi);
+        msavebmi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //will check if both title and content has text
+                if(!TextUtils.isEmpty(height.getBytes().toString()) && !TextUtils.isEmpty(weight.getBytes().toString()))
+                {
+                    BMIDatabaseClass db=new BMIDatabaseClass(bmicalculation.this);
+                    db.addBMI(mbmiresult.getText().toString(),mbmicategory.getText().toString());
+
+                    //will show data on the recycler view
+                    Intent intent = new Intent(bmicalculation.this,BMI.class);
+                    intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+                    startActivity(intent);
+                    finish();
+
+                }
+                else
+                {
+                    Toast.makeText(bmicalculation.this, "Both fields are required", Toast.LENGTH_SHORT).show();
+                }
             }
         });
     }

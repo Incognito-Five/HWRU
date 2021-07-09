@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#626C6C"
+    android:background="@drawable/bg3"
     tools:context=".bmicalculation">
     <!--*A SAVE BUTTON SHALL BE PUT UNDER RECALCULATE BMI AFTER THE CODE HAS BEEN CONNECTED TO DATABASE-->
     <!-- BMI ICON-->
@@ -14,7 +14,7 @@
         android:padding="10dp"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="10dp"
-        android:layout_above="@id/contentlayout"
+        android:layout_above="@id/bmiresultlayout"
         android:src="@drawable/bmi"
         android:id="@+id/BMIimageview">
     </ImageView>
@@ -27,7 +27,7 @@
         android:layout_centerInParent="true"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
-        android:id="@+id/contentlayout">
+        android:id="@+id/bmiresultlayout">
         <!--calculated BMI-->
         <TextView
             android:layout_width="wrap_content"
@@ -60,7 +60,7 @@
         android:id="@+id/recalculatebmi"
         android:layout_width="match_parent"
         android:layout_height="40dp"
-        android:layout_below="@id/contentlayout"
+        android:layout_below="@id/bmiresultlayout"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="31dp"
         android:layout_marginRight="20dp"
@@ -70,6 +70,22 @@
         android:textColor="#443C3E"
         android:textSize="15sp"
         android:textStyle="bold"></android.widget.Button>
+
+    <android.widget.Button
+        android:id="@+id/savebmi"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_below="@id/recalculatebmi"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/bmibuttonbackground"
+        android:text="Save BMI"
+        android:textColor="#443C3E"
+        android:textSize="15sp"
+        android:textStyle="bold"></android.widget.Button>
+
 
 
 

@@ -38,7 +38,7 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[SerialNumber@OmegaTabPASIG005987]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[VirtualDevicePath@C:\Users\Lancey Fem\.android\avd\Pixel_4_XL_API_30.avd]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -75,8 +75,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="layoutResourceFile" />
         <option value="resourceFile" />
+        <option value="layoutResourceFile" />
         <option value="Class" />
       </list>
     </option>
@@ -97,7 +97,7 @@
     <property name="DeviceAndSnapshotComboBoxAction.selectedDevice" value="SerialNumber@317dddc4" />
     <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2021-07-07T14:30:45.037216600Z" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/TimetableView-master" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="SDK Location" />
     <property name="project.structure.proportion" value="0.17" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -208,51 +208,63 @@
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state x="200" y="114" key="#PSD/0.0.1366.768@0.0.1366.768" timestamp="1625741543998" />
-    <state x="829" y="89" key="#com.intellij.ide.util.MemberChooser" timestamp="1625749901312">
-      <screen x="0" y="0" width="1366" height="768" />
+    <state x="932" y="97" key="#com.intellij.ide.util.MemberChooser" timestamp="1625832651477">
+      <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="829" y="89" key="#com.intellij.ide.util.MemberChooser/0.0.1366.768@0.0.1366.768" timestamp="1625749901312" />
     <state x="932" y="95" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1625169096829" />
-    <state x="413" y="129" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1625749507452">
-      <screen x="0" y="0" width="1366" height="768" />
+    <state x="932" y="97" key="#com.intellij.ide.util.MemberChooser/0.0.1536.834@0.0.1536.834" timestamp="1625832651477" />
+    <state x="464" y="140" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1625831074565">
+      <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="413" y="129" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.768@0.0.1366.768" timestamp="1625749507452" />
+    <state x="464" y="140" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.834@0.0.1536.834" timestamp="1625831074565" />
     <state x="689" y="124" key="#com.intellij.refactoring.typeMigration.ui.FailedConversionsDialog" timestamp="1624852027906">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state x="689" y="124" key="#com.intellij.refactoring.typeMigration.ui.FailedConversionsDialog/0.0.1366.768@0.0.1366.768" timestamp="1624852027906" />
-    <state x="263" y="137" key="AndroidCreateResourceFileDialog" timestamp="1625750054909">
-      <screen x="0" y="0" width="1366" height="768" />
+    <state x="296" y="149" key="AndroidCreateResourceFileDialog" timestamp="1625813467842">
+      <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="263" y="137" key="AndroidCreateResourceFileDialog/0.0.1366.768@0.0.1366.768" timestamp="1625750054909" />
+    <state x="296" y="149" key="AndroidCreateResourceFileDialog/0.0.1536.834@0.0.1536.834" timestamp="1625813467842" />
     <state x="851" y="194" key="AndroidCreateXmlResourceDialog" timestamp="1625748908653">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state x="851" y="194" key="AndroidCreateXmlResourceDialog/0.0.1366.768@0.0.1366.768" timestamp="1625748908653" />
-    <state x="785" y="141" key="FileChooserDialogImpl" timestamp="1625741541721">
-      <screen x="0" y="0" width="1366" height="768" />
+    <state x="883" y="153" key="FileChooserDialogImpl" timestamp="1625809294735">
+      <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="785" y="141" key="FileChooserDialogImpl/0.0.1366.768@0.0.1366.768" timestamp="1625741541721" />
-    <state width="1322" height="186" key="GridCell.Tab.0.bottom" timestamp="1625758523554">
-      <screen x="0" y="0" width="1366" height="768" />
+    <state x="883" y="153" key="FileChooserDialogImpl/0.0.1536.834@0.0.1536.834" timestamp="1625809294735" />
+    <state width="989" height="171" key="GridCell.Tab.0.bottom" timestamp="1625844297624">
+      <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state width="1322" height="186" key="GridCell.Tab.0.bottom/0.0.1366.768@0.0.1366.768" timestamp="1625758523554" />
-    <state width="1322" height="186" key="GridCell.Tab.0.center" timestamp="1625758523554">
-      <screen x="0" y="0" width="1366" height="768" />
+    <state width="989" height="171" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" timestamp="1625844297624" />
+    <state width="989" height="171" key="GridCell.Tab.0.center" timestamp="1625844297623">
+      <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state width="1322" height="186" key="GridCell.Tab.0.center/0.0.1366.768@0.0.1366.768" timestamp="1625758523554" />
-    <state width="1322" height="186" key="GridCell.Tab.0.left" timestamp="1625758523554">
-      <screen x="0" y="0" width="1366" height="768" />
+    <state width="989" height="171" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" timestamp="1625844297623" />
+    <state width="989" height="171" key="GridCell.Tab.0.left" timestamp="1625844297618">
+      <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state width="1322" height="186" key="GridCell.Tab.0.left/0.0.1366.768@0.0.1366.768" timestamp="1625758523554" />
-    <state width="1322" height="186" key="GridCell.Tab.0.right" timestamp="1625758523554">
-      <screen x="0" y="0" width="1366" height="768" />
+    <state width="989" height="171" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" timestamp="1625844297618" />
+    <state width="989" height="171" key="GridCell.Tab.0.right" timestamp="1625844297624">
+      <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state width="1322" height="186" key="GridCell.Tab.0.right/0.0.1366.768@0.0.1366.768" timestamp="1625758523554" />
+    <state width="989" height="171" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1625844297624" />
     <state x="184" y="14" key="SettingsEditor" timestamp="1625741424691">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state x="184" y="14" key="SettingsEditor/0.0.1366.768@0.0.1366.768" timestamp="1625741424691" />
+    <state x="584" y="195" key="chooseDestDirectoryDialog" timestamp="1625821031189">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="584" y="195" key="chooseDestDirectoryDialog/0.0.1536.834@0.0.1536.834" timestamp="1625821031189" />
     <state x="454" y="211" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1625489506594">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
@@ -261,5 +273,9 @@
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state x="659" y="135" key="refactoring.ChangeSignatureDialog/0.0.1366.768@0.0.1366.768" timestamp="1625670544080" />
+    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup" timestamp="1625815124733">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup/0.0.1536.834@0.0.1536.834" timestamp="1625815124733" />
   </component>
 </project>
