@@ -7,8 +7,8 @@
         android:title="Delete all subjects"
         />
     <item
-        android:id="@+id/save_image_schedule"
+        android:id="@+id/timetable_settings"
         android:icon="@drawable/save_icon"
-        android:title="Save Schedule Image" />
+        android:title="@string/settings" />
 
 </menu>

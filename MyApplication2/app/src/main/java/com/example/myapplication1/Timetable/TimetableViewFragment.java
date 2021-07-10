@@ -9,6 +9,7 @@ import androidx.viewpager2.widget.ViewPager2;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ListView;
 
 import com.example.myapplication1.R;
 import com.google.android.material.tabs.TabLayout;
@@ -18,6 +19,7 @@ public class TimetableViewFragment extends Fragment {
     TabLayout tab_week;
     ViewPager2 vp;
     FragmentAdapter2 adapter2;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
@@ -48,7 +50,6 @@ public class TimetableViewFragment extends Fragment {
             public void onTabUnselected(TabLayout.Tab tab) {
 
             }
-
             @Override
             public void onTabReselected(TabLayout.Tab tab) {
 
@@ -56,4 +57,5 @@ public class TimetableViewFragment extends Fragment {
         });
         return view;
     }
+
 }

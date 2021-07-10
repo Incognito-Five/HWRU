@@ -20,6 +20,8 @@ import com.example.myapplication1.AccountFragment;
 import com.example.myapplication1.BackUpFragment;
 import com.example.myapplication1.HelpFragment;
 import com.example.myapplication1.Homepage;
+import com.example.myapplication1.Notebook;
+import com.example.myapplication1.Notebook_AddNotesActivity;
 import com.example.myapplication1.R;
 import com.example.myapplication1.SoundsFragment;
 import com.example.myapplication1.ThemesFragment;
@@ -71,8 +73,8 @@ public class Timetable extends AppCompatActivity implements NavigationView.OnNav
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                DialogAddCourse dialogAddCourse = new DialogAddCourse();
-                dialogAddCourse.show(getSupportFragmentManager(),"dialog_course");
+                Intent intent=new Intent(Timetable.this, AddCourseActivity.class);
+                startActivity(intent);
             }
         });
 
@@ -113,10 +115,10 @@ public class Timetable extends AppCompatActivity implements NavigationView.OnNav
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()){
             case R.id.delete_all_courses:
-                Toast.makeText(this, "working", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "working on it", Toast.LENGTH_SHORT).show();
                 return true;
-            case R.id.save_image_schedule:
-                Toast.makeText(this, "working too...", Toast.LENGTH_SHORT).show();
+            case R.id.timetable_settings:
+                Toast.makeText(this, "working on it too...", Toast.LENGTH_SHORT).show();
                 return true;
             default:
                 return super.onOptionsItemSelected(item);

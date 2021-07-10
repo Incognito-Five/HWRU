@@ -1,0 +1,89 @@
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/card_course"
+    app:cardCornerRadius="@dimen/_10sdp"
+    android:elevation="@dimen/_10sdp">
+
+    <RelativeLayout
+        android:layout_margin="@dimen/_10sdp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <com.example.myapplication1.Timetable.LetterImageView
+            android:id="@+id/img_icon"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_margin="8dp"/>
+
+        <TextView
+            android:id="@+id/tv_coursename"
+            android:layout_width="wrap_content"
+
+            android:paddingBottom="@dimen/_5sdp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="6dp"
+            android:layout_marginLeft="6dp"
+            android:layout_toEndOf="@+id/img_icon"
+            android:layout_toRightOf="@+id/img_icon"
+            android:text="@string/course_name"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_startTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_coursename"
+            android:layout_marginStart="6dp"
+            android:paddingBottom="@dimen/_5sdp"
+            android:layout_marginLeft="6dp"
+            android:layout_toEndOf="@+id/img_icon"
+            android:layout_toRightOf="@+id/img_icon"
+            android:text="@string/start_time"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/dash"
+
+            android:paddingBottom="@dimen/_5sdp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_coursename"
+            android:layout_marginStart="6dp"
+            android:layout_marginLeft="6dp"
+            android:layout_toEndOf="@+id/tv_startTime"
+            android:layout_toRightOf="@+id/tv_startTime"
+            android:text="-"/>
+
+        <TextView
+            android:id="@+id/tv_endTime"
+            android:layout_width="wrap_content"
+
+            android:paddingBottom="@dimen/_5sdp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_coursename"
+            android:layout_marginStart="6dp"
+            android:layout_marginLeft="6dp"
+            android:layout_toEndOf="@+id/dash"
+            android:layout_toRightOf="@+id/dash"
+            android:text="@string/end_time"
+            android:textSize="16sp"/>
+
+        <TextView
+            android:id="@+id/tv_location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_startTime"
+            android:layout_marginStart="6dp"
+            android:layout_marginLeft="6dp"
+            android:layout_toEndOf="@+id/img_icon"
+            android:layout_toRightOf="@+id/img_icon"
+            android:text="@string/room_location"
+            android:textSize="16sp" />
+
+
+
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>

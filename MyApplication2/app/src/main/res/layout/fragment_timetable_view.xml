@@ -8,7 +8,6 @@
     android:background="@color/white"
     tools:context=".Timetable.TimetableViewFragment">
 
-
     <com.google.android.material.tabs.TabLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
