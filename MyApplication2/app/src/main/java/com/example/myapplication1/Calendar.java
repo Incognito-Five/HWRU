@@ -5,6 +5,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -35,6 +36,7 @@ public class Calendar extends AppCompatActivity implements NavigationView.OnNavi
     private TextView monthYearText;
     private RecyclerView calendarRecyclerView;
     private LocalDate selectedDate;
+    ImageView add_task;
 
     @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
@@ -60,6 +62,7 @@ public class Calendar extends AppCompatActivity implements NavigationView.OnNavi
         initWidgets();
         selectedDate = LocalDate.now();
         setMonthView();
+        add_task = findViewById(R.id.add_task);
 
     }
 
@@ -173,5 +176,8 @@ public class Calendar extends AppCompatActivity implements NavigationView.OnNavi
             String message = "Selected Date " + dayText + " " + monthYearFromDate(selectedDate);
             Toast.makeText(this, message, Toast.LENGTH_LONG).show();
         }
+    }
+
+    public void add_task_btn(View view) {
     }
 }
