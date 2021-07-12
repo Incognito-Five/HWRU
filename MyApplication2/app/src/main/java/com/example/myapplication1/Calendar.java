@@ -18,6 +18,9 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.myapplication1.Timetable.AddCourseActivity;
+import com.example.myapplication1.Timetable.Timetable;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
 
 import java.time.LocalDate;
@@ -35,6 +38,7 @@ public class Calendar extends AppCompatActivity implements NavigationView.OnNavi
     private TextView monthYearText;
     private RecyclerView calendarRecyclerView;
     private LocalDate selectedDate;
+    FloatingActionButton fab;
 
     @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
@@ -60,6 +64,15 @@ public class Calendar extends AppCompatActivity implements NavigationView.OnNavi
         initWidgets();
         selectedDate = LocalDate.now();
         setMonthView();
+
+        fab = findViewById(R.id.fab_todo);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Calendar.this, ToDoList.class);
+                startActivity(intent);
+            }
+        });
 
     }
 
@@ -173,5 +186,10 @@ public class Calendar extends AppCompatActivity implements NavigationView.OnNavi
             String message = "Selected Date " + dayText + " " + monthYearFromDate(selectedDate);
             Toast.makeText(this, message, Toast.LENGTH_LONG).show();
         }
+    }
+
+    public void todo(View view) {
+        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+        startActivity(intent);
     }
 }

@@ -14,7 +14,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication1.NoActionBar"
         tools:ignore="AllowBackup">
-        <activity android:name=".Timetable.AddCourseActivity"></activity>
+        <activity android:name=".ToDoList"></activity>
+        <activity android:name=".Timetable.AddCourseActivity" />
         <activity android:name=".Notebook_UpdateNotesActivity" />
         <activity android:name=".Notebook_AddNotesActivity" />
         <activity android:name=".bmicalculation" />
