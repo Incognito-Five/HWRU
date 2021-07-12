@@ -38,7 +38,7 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[SerialNumber@317dddc4]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[VirtualDevicePath@C:\Users\Edsel\.android\avd\Pixel_4_XL_API_30.avd]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -98,30 +98,25 @@
     <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2021-07-07T14:30:45.037216600Z" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="android-custom-viewC:/Users/smnth/OneDrive/Documents/GitHub/HWRU/MyApplication2/app/src/main/java/com/example/myapplication1/Timetable/LetterImageView.java_SELECTED" value="LetterImageView" />
-    <property name="last_directory_selection" value="$PROJECT_DIR$/app/src/main/res/drawable" />
     <property name="last_opened_file_path" value="$USER_HOME$/Downloads/TimetableView-master" />
     <property name="project.structure.last.edited" value="SDK Location" />
     <property name="project.structure.proportion" value="0.17" />
     <property name="project.structure.side.proportion" value="0.0" />
   </component>
   <component name="RecentsManager">
-    <key name="CreateClassDialog.RecentsKey">
+    <key name="android.template.-1091084193">
       <recent name="com.example.myapplication1.Timetable" />
     </key>
     <key name="ExtractSuperBase.RECENT_KEYS">
       <recent name="com.example.myapplication1" />
     </key>
-    <key name="android.template.-310684765">
-      <recent name="com.example.myapplication1" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\theap\Documents\GitHub\HWRU\MyApplication2\app\src\main\res\drawable" />
-      <recent name="C:\Users\theap\Documents\GitHub\HWRU\MyApplication2\app\src\main\res\add_task_icon" />
-    </key>
     <key name="android.template.-1070821362">
       <recent name="com.example.myapplication1" />
     </key>
-    <key name="android.template.-1091084193">
+    <key name="android.template.-310684765">
+      <recent name="com.example.myapplication1" />
+    </key>
+    <key name="CreateClassDialog.RecentsKey">
       <recent name="com.example.myapplication1.Timetable" />
     </key>
   </component>
@@ -237,10 +232,6 @@
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state x="689" y="124" key="#com.intellij.refactoring.typeMigration.ui.FailedConversionsDialog/0.0.1366.768@0.0.1366.768" timestamp="1624852027906" />
-    <state x="263" y="138" key="AndroidCreateResourceDirectoryDialog" timestamp="1626001518291">
-      <screen x="0" y="0" width="1366" height="768" />
-    </state>
-    <state x="263" y="138" key="AndroidCreateResourceDirectoryDialog/0.0.1366.768@0.0.1366.768" timestamp="1626001518291" />
     <state x="263" y="137" key="AndroidCreateResourceFileDialog" timestamp="1625759815618">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
@@ -253,30 +244,29 @@
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state x="785" y="141" key="FileChooserDialogImpl/0.0.1366.768@0.0.1366.768" timestamp="1625741541721" />
-    <state width="1323" height="192" key="GridCell.Tab.0.bottom" timestamp="1626004323013">
+    <state width="1322" height="186" key="GridCell.Tab.0.bottom" timestamp="1625862673601">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1323" height="192" key="GridCell.Tab.0.bottom/0.0.1366.768@0.0.1366.768" timestamp="1626004323013" />
-    <state width="1323" height="192" key="GridCell.Tab.0.center" timestamp="1626004323013">
+    <state width="1322" height="186" key="GridCell.Tab.0.bottom/0.0.1366.768@0.0.1366.768" timestamp="1625862673601" />
+    <state width="1322" height="186" key="GridCell.Tab.0.center" timestamp="1625862673600">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1323" height="192" key="GridCell.Tab.0.center/0.0.1366.768@0.0.1366.768" timestamp="1626004323013" />
-    <state width="1323" height="192" key="GridCell.Tab.0.left" timestamp="1626004323013">
+    <state width="1322" height="186" key="GridCell.Tab.0.center/0.0.1366.768@0.0.1366.768" timestamp="1625862673600" />
+    <state width="1322" height="186" key="GridCell.Tab.0.left" timestamp="1625862673600">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1323" height="192" key="GridCell.Tab.0.left/0.0.1366.768@0.0.1366.768" timestamp="1626004323013" />
-    <state width="1323" height="192" key="GridCell.Tab.0.right" timestamp="1626004323013">
+    <state width="1322" height="186" key="GridCell.Tab.0.left/0.0.1366.768@0.0.1366.768" timestamp="1625862673600" />
+    <state width="1322" height="186" key="GridCell.Tab.0.right" timestamp="1625862673600">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1323" height="192" key="GridCell.Tab.0.right/0.0.1366.768@0.0.1366.768" timestamp="1626004323013" />
+    <state width="1322" height="186" key="GridCell.Tab.0.right/0.0.1366.768@0.0.1366.768" timestamp="1625862673600" />
     <state x="184" y="14" key="SettingsEditor" timestamp="1625741424691">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state x="184" y="14" key="SettingsEditor/0.0.1366.768@0.0.1366.768" timestamp="1625741424691" />
-    <state x="519" y="180" key="chooseDestDirectoryDialog" timestamp="1626005908515">
-      <screen x="0" y="0" width="1366" height="768" />
+    <state x="584" y="195" key="chooseDestDirectoryDialog" timestamp="1625821031189">
+      <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="519" y="180" key="chooseDestDirectoryDialog/0.0.1366.768@0.0.1366.768" timestamp="1626005908515" />
     <state x="584" y="195" key="chooseDestDirectoryDialog/0.0.1536.834@0.0.1536.834" timestamp="1625821031189" />
     <state x="454" y="211" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1625489506594">
       <screen x="0" y="0" width="1366" height="768" />
