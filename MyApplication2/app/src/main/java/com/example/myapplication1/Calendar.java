@@ -5,7 +5,6 @@ import android.os.Build;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -37,7 +36,7 @@ public class Calendar extends AppCompatActivity implements NavigationView.OnNavi
     private TextView monthYearText;
     private RecyclerView calendarRecyclerView;
     private LocalDate selectedDate;
-    Button add_task;
+    ImageView add_task;
 
     @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
@@ -180,7 +179,5 @@ public class Calendar extends AppCompatActivity implements NavigationView.OnNavi
     }
 
     public void add_task_btn(View view) {
-        Intent intent = new Intent(getApplicationContext(), ToDoList.class);
-        startActivity(intent);
     }
 }

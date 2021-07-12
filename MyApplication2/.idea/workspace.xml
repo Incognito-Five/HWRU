@@ -38,7 +38,7 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[SerialNumber@317dddc4]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[VirtualDevicePath@C:\Users\theap\.android\avd\Pixel_4_XL_API_30.avd]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -99,7 +99,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="android-custom-viewC:/Users/smnth/OneDrive/Documents/GitHub/HWRU/MyApplication2/app/src/main/java/com/example/myapplication1/Timetable/LetterImageView.java_SELECTED" value="LetterImageView" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/app/src/main/res/drawable" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/TodoList2-20210712T071043Z-001" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/TimetableView-master" />
     <property name="project.structure.last.edited" value="SDK Location" />
     <property name="project.structure.proportion" value="0.17" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -114,14 +114,11 @@
     <key name="android.template.-310684765">
       <recent name="com.example.myapplication1" />
     </key>
-    <key name="android.template.-1070821362">
-      <recent name="com.example.myapplication1" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\theap\Documents\GitHub\HWRU\MyApplication2\app\src\main\res\drawable" />
       <recent name="C:\Users\theap\Documents\GitHub\HWRU\MyApplication2\app\src\main\res\add_task_icon" />
     </key>
-    <key name="android.template.-1539136589">
+    <key name="android.template.-1070821362">
       <recent name="com.example.myapplication1" />
     </key>
     <key name="android.template.-1091084193">
@@ -252,26 +249,26 @@
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state x="851" y="194" key="AndroidCreateXmlResourceDialog/0.0.1366.768@0.0.1366.768" timestamp="1625833573962" />
-    <state x="785" y="141" key="FileChooserDialogImpl" timestamp="1626074526746">
+    <state x="785" y="141" key="FileChooserDialogImpl" timestamp="1625741541721">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state x="785" y="141" key="FileChooserDialogImpl/0.0.1366.768@0.0.1366.768" timestamp="1626074526746" />
-    <state width="1323" height="192" key="GridCell.Tab.0.bottom" timestamp="1626076120188">
+    <state x="785" y="141" key="FileChooserDialogImpl/0.0.1366.768@0.0.1366.768" timestamp="1625741541721" />
+    <state width="1323" height="192" key="GridCell.Tab.0.bottom" timestamp="1626007331503">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1323" height="192" key="GridCell.Tab.0.bottom/0.0.1366.768@0.0.1366.768" timestamp="1626076120188" />
-    <state width="1323" height="192" key="GridCell.Tab.0.center" timestamp="1626076120188">
+    <state width="1323" height="192" key="GridCell.Tab.0.bottom/0.0.1366.768@0.0.1366.768" timestamp="1626007331503" />
+    <state width="1323" height="192" key="GridCell.Tab.0.center" timestamp="1626007331503">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1323" height="192" key="GridCell.Tab.0.center/0.0.1366.768@0.0.1366.768" timestamp="1626076120188" />
-    <state width="1323" height="192" key="GridCell.Tab.0.left" timestamp="1626076120188">
+    <state width="1323" height="192" key="GridCell.Tab.0.center/0.0.1366.768@0.0.1366.768" timestamp="1626007331503" />
+    <state width="1323" height="192" key="GridCell.Tab.0.left" timestamp="1626007331503">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1323" height="192" key="GridCell.Tab.0.left/0.0.1366.768@0.0.1366.768" timestamp="1626076120188" />
-    <state width="1323" height="192" key="GridCell.Tab.0.right" timestamp="1626076120188">
+    <state width="1323" height="192" key="GridCell.Tab.0.left/0.0.1366.768@0.0.1366.768" timestamp="1626007331503" />
+    <state width="1323" height="192" key="GridCell.Tab.0.right" timestamp="1626007331503">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1323" height="192" key="GridCell.Tab.0.right/0.0.1366.768@0.0.1366.768" timestamp="1626076120188" />
+    <state width="1323" height="192" key="GridCell.Tab.0.right/0.0.1366.768@0.0.1366.768" timestamp="1626007331503" />
     <state x="184" y="14" key="SettingsEditor" timestamp="1625741424691">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
