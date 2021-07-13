@@ -1,13 +1,8 @@
 package com.example.myapplication1.Timetable;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.TimePickerDialog;
-import android.content.Intent;
-import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -16,20 +11,13 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
-
-import com.example.myapplication1.Notebook;
-import com.example.myapplication1.NotebookDatabaseClass;
-import com.example.myapplication1.Notebook_AddNotesActivity;
 import com.example.myapplication1.R;
-import com.example.myapplication1.databinding.FragmentD1MondayBinding;
-import com.example.myapplication1.days.D2_Tuesday;
 import com.google.android.material.textfield.TextInputEditText;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
-import java.util.List;
 
 public class AddCourseActivity extends AppCompatActivity {
 
@@ -87,6 +75,7 @@ public class AddCourseActivity extends AppCompatActivity {
                 String prof = professor.getText().toString();
                 String loc = location.getText().toString();
                 String desc = description.getText().toString();
+
                 if (sb.length() == 0 || courseName.equals("") || startTime.equals("") || endTime.equals("")) {
                     Toast.makeText(AddCourseActivity.this, "Please enter required fields", Toast.LENGTH_SHORT).show();
                 } else {
@@ -124,7 +113,8 @@ public class AddCourseActivity extends AppCompatActivity {
                         SimpleDateFormat f24Hours = new SimpleDateFormat("HH:mm");
                         try {
                             Date date = f24Hours.parse(time);
-                            SimpleDateFormat f12Hours = new SimpleDateFormat("hh:mm aa");
+                            SimpleDateFormat f12Hours;
+                            f12Hours = new SimpleDateFormat("hh:mm aa");
                             start_time.setText(f12Hours.format(date));
                         } catch (ParseException e) {
                             e.printStackTrace();
@@ -146,10 +136,12 @@ public class AddCourseActivity extends AppCompatActivity {
                     @Override
                     public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
                         String time = hourOfDay + ":" + minute;
-                        SimpleDateFormat f24Hours = new SimpleDateFormat("HH:mm");
+                        SimpleDateFormat f24Hours;
+                        f24Hours = new SimpleDateFormat("HH:mm");
                         try {
                             Date date = f24Hours.parse(time);
-                            SimpleDateFormat f12Hours = new SimpleDateFormat("hh:mm aa");
+                            SimpleDateFormat f12Hours;
+                            f12Hours = new SimpleDateFormat("hh:mm aa");
                             end_time.setText(f12Hours.format(date));
                         } catch (ParseException e) {
                             e.printStackTrace();

@@ -1,4 +1,4 @@
-package com.example.myapplication1.days;
+package com.example.myapplication1.Timetable;
 
 import android.database.Cursor;
 import android.os.Bundle;
@@ -20,43 +20,38 @@ import com.example.myapplication1.Timetable.TimetableModel;
 import java.util.ArrayList;
 import java.util.List;
 
-public class D7_Sunday extends Fragment {
+public class D4_Thursday extends Fragment {
 
     private TimetableDBHelper dbHelper;
-    private RecyclerView recyclerView;
-    private ScheduleAdapter adapter;
-    private Cursor cursor;
     private List<TimetableModel> models;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_d7__sunday, container, false);
+        View view = inflater.inflate(R.layout.fragment_d4__thursday, container, false);
 
-        recyclerView = view.findViewById(R.id.list_d7);
-
+        RecyclerView recyclerView = view.findViewById(R.id.list_d4);
         models = new ArrayList<>();
         dbHelper = new TimetableDBHelper(getActivity());
+
         fetchAllCourseFromDataBase();
+
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
-        adapter = new ScheduleAdapter(getActivity(), models);
+        ScheduleAdapter adapter = new ScheduleAdapter(getActivity(), models);
         recyclerView.setLayoutManager(linearLayoutManager);
         recyclerView.setAdapter(adapter);
         return view;
     }
 
     private void fetchAllCourseFromDataBase() {
-        Cursor cursor = dbHelper.readAllData();
+        Cursor cursor = dbHelper.getThursday();
+
         if (cursor.getCount() == 0) {
-            Toast.makeText(getActivity(), "No Schedule set on Sunday", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getActivity(), "No Schedule set on Tuesday", Toast.LENGTH_SHORT).show();
         } else {
             while (cursor.moveToNext()) {
                 models.add(new TimetableModel(cursor.getString(0), cursor.getString(3), cursor.getString(4), cursor.getString(6)));
             }
         }
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
-        adapter = new ScheduleAdapter(getActivity(), models);
-        recyclerView.setLayoutManager(linearLayoutManager);
-        recyclerView.setAdapter(adapter);
     }
 }

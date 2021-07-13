@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".days.D7_Sunday">
+    tools:context=".Timetable.D7_Sunday">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/list_d7"

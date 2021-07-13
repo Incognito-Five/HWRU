@@ -1,4 +1,4 @@
-package com.example.myapplication1.days;
+package com.example.myapplication1.Timetable;
 
 import android.database.Cursor;
 import android.os.Bundle;
@@ -23,9 +23,6 @@ import java.util.List;
 public class D5_Friday extends Fragment {
 
     private TimetableDBHelper dbHelper;
-    private RecyclerView recyclerView;
-    private ScheduleAdapter adapter;
-    private Cursor cursor;
     private List<TimetableModel> models;
 
     @Override
@@ -33,17 +30,22 @@ public class D5_Friday extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_d5__friday, container, false);
 
-        recyclerView = view.findViewById(R.id.list_d5);
+        RecyclerView recyclerView = view.findViewById(R.id.list_d5);
 
         models = new ArrayList<>();
         dbHelper = new TimetableDBHelper(getActivity());
+
         fetchAllCourseFromDataBase();
 
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
+        ScheduleAdapter adapter = new ScheduleAdapter(getActivity(), models);
+        recyclerView.setLayoutManager(linearLayoutManager);
+        recyclerView.setAdapter(adapter);
         return view;
     }
 
     private void fetchAllCourseFromDataBase() {
-        Cursor cursor = dbHelper.readAllData();
+        Cursor cursor = dbHelper.getFriday();
         if (cursor.getCount() == 0) {
             Toast.makeText(getActivity(), "No Schedule set on Friday", Toast.LENGTH_SHORT).show();
         } else {
@@ -51,9 +53,5 @@ public class D5_Friday extends Fragment {
                 models.add(new TimetableModel(cursor.getString(0), cursor.getString(3), cursor.getString(4), cursor.getString(6)));
             }
         }
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
-        adapter = new ScheduleAdapter(getActivity(), models);
-        recyclerView.setLayoutManager(linearLayoutManager);
-        recyclerView.setAdapter(adapter);
     }
 }

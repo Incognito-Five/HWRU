@@ -6,14 +6,6 @@ import androidx.fragment.app.FragmentManager;
 import androidx.lifecycle.Lifecycle;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 
-import com.example.myapplication1.days.D1_Monday;
-import com.example.myapplication1.days.D2_Tuesday;
-import com.example.myapplication1.days.D3_Wednesday;
-import com.example.myapplication1.days.D4_Thursday;
-import com.example.myapplication1.days.D5_Friday;
-import com.example.myapplication1.days.D6_Saturday;
-import com.example.myapplication1.days.D7_Sunday;
-
 public class FragmentAdapter2 extends FragmentStateAdapter {
 
     public FragmentAdapter2(@NonNull FragmentManager fragmentManager, @NonNull Lifecycle lifecycle) {

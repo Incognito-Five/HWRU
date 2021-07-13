@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/layout_d1"
-    tools:context=".days.D1_Monday">
+    tools:context=".Timetable.D1_Monday">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/list_d1"

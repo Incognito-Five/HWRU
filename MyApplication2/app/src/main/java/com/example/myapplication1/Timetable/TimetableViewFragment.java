@@ -29,7 +29,7 @@ public class TimetableViewFragment extends Fragment {
         vp = view.findViewById(R.id.vp);
 
         FragmentManager fm = getActivity().getSupportFragmentManager();
-        adapter2 = new FragmentAdapter2(fm, getLifecycle());
+        adapter2 = new FragmentAdapter2(fm,getLifecycle());
         vp.setAdapter(adapter2);
 
         tab_week.addTab(tab_week.newTab().setText("Monday"));

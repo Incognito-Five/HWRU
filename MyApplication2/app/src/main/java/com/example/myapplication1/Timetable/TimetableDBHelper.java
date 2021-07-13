@@ -6,6 +6,8 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+import java.util.ArrayList;
+
 public class TimetableDBHelper extends SQLiteOpenHelper {
 
 
@@ -16,16 +18,14 @@ public class TimetableDBHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase coursedb) {
         coursedb.execSQL("create Table CourseDetails(course_name TEXT primary key, course_code TEXT, days TEXT, start_time TEXT, end_time TEXT, professor TEXT, location TEXT, description TEXT)");
-/*        coursedb.execSQL("create Table Schedule(courseName primary key, startTime TEXT, endTime TEXT, roomLocation TEXT)");*/
-    }
+     }
 
     @Override
     public void onUpgrade(SQLiteDatabase coursedb, int i, int i1) {
         coursedb.execSQL("drop Table if exists CourseDetails");
-/*        coursedb.execSQL("drop Table if exists Schedule");*/
     }
 
-     public Boolean AddCourseData(String course_name, String course_code, String days, String start_time, String end_time, String professor, String location, String description) {
+    public Boolean AddCourseData(String course_name, String course_code, String days, String start_time, String end_time, String professor, String location, String description) {
         SQLiteDatabase coursedb = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put("course_name", course_name);
@@ -57,6 +57,7 @@ public class TimetableDBHelper extends SQLiteOpenHelper {
         } else {
             return false;
         }
+        
     }
 
     public Boolean DeleteCourseData(String course_name) {
@@ -70,15 +71,8 @@ public class TimetableDBHelper extends SQLiteOpenHelper {
         }
     }
 
-    public Cursor getdata() {
-        SQLiteDatabase coursedb = this.getWritableDatabase();
-        Cursor cursor = coursedb.rawQuery("Select * from CourseDetails", null);
-        return cursor;
-    }
-
-    public Cursor readAllData() {
-        //will get all the notes inside the table
-        String query = "SELECT * FROM CourseDetails";
+    public Cursor getMonday() {
+        String query = "SELECT * FROM ( SELECT * FROM CourseDetails ORDER BY CASE WHEN start_time like '%AM' then 1 when start_time like '%12:00 PM%' then 2 else start_time end) WHERE days LIKE '%Monday%'" ;
         SQLiteDatabase database = this.getReadableDatabase();
 
         Cursor cursor = null;
@@ -88,25 +82,69 @@ public class TimetableDBHelper extends SQLiteOpenHelper {
         return cursor;
     }
 
-/*    boolean addToSchedule(String courseName, String startTime, String endTime, String roomLocation) {
-        SQLiteDatabase db = this.getWritableDatabase();
-        ContentValues contentValues = new ContentValues();
-        contentValues.put("courseName", courseName);
-        contentValues.put("startTime", startTime);
-        contentValues.put("endTime",endTime);
-        contentValues.put("roomLocation",roomLocation);
-        long result = db.insert("Timetable", null, contentValues);
-        return result != -1;
-    }*/
+    public Cursor getTuesday() {
+        String query = "SELECT * FROM ( SELECT * FROM CourseDetails ORDER BY CASE WHEN start_time like '%AM' then 1 when start_time like '%12:00 PM%' then 2 else start_time end) WHERE days LIKE '%Tuesday%'";
+        SQLiteDatabase database = this.getReadableDatabase();
 
-    public boolean checkDatabase(){
-        SQLiteDatabase checkDB = null;
-        String myPath = "Schedule";
-        checkDB = SQLiteDatabase.openDatabase(myPath,null,SQLiteDatabase.OPEN_READWRITE);
-        if (checkDB!= null){
-            checkDB.close();
+        Cursor cursor = null;
+        if (database != null) {
+            cursor = database.rawQuery(query, null);
         }
-        return checkDB != null ? true : false;
+        return cursor;
     }
 
+    public Cursor getWednesday() {
+        String query = "SELECT * FROM ( SELECT * FROM CourseDetails ORDER BY CASE WHEN start_time like '%AM' then 1 when start_time like '%12:00 PM%' then 2 else start_time end) WHERE days LIKE '%Wednesday%'";
+        SQLiteDatabase database = this.getReadableDatabase();
+
+        Cursor cursor = null;
+        if (database != null) {
+            cursor = database.rawQuery(query, null);
+        }
+        return cursor;
+    }
+
+    public Cursor getThursday() {
+        String query = "SELECT * FROM ( SELECT * FROM CourseDetails ORDER BY CASE WHEN start_time like '%AM' then 1 when start_time like '%12:00 PM%' then 2 else start_time end) WHERE days LIKE '%Thursday%'";
+        SQLiteDatabase database = this.getReadableDatabase();
+
+        Cursor cursor = null;
+        if (database != null) {
+            cursor = database.rawQuery(query, null);
+        }
+        return cursor;
+    }
+
+    public Cursor getFriday() {
+        String query = "SELECT * FROM ( SELECT * FROM CourseDetails ORDER BY CASE WHEN start_time like '%AM' then 1 when start_time like '%12:00 PM%' then 2 else start_time end) WHERE days LIKE '%Friday%'";
+        SQLiteDatabase database = this.getReadableDatabase();
+
+        Cursor cursor = null;
+        if (database != null) {
+            cursor = database.rawQuery(query, null);
+        }
+        return cursor;
+    }
+
+    public Cursor getSaturday() {
+        String query = "SELECT * FROM ( SELECT * FROM CourseDetails ORDER BY CASE WHEN start_time like '%AM' then 1 when start_time like '%12:00 PM%' then 2 else start_time end) WHERE days LIKE '%Saturday%'";
+        SQLiteDatabase database = this.getReadableDatabase();
+
+        Cursor cursor = null;
+        if (database != null) {
+            cursor = database.rawQuery(query, null);
+        }
+        return cursor;
+    }
+
+    public Cursor getSunday() {
+        String query = "SELECT * FROM ( SELECT * FROM CourseDetails ORDER BY CASE WHEN start_time like '%AM' then 1 when start_time like '%12:00 PM%' then 2 else start_time end) WHERE days LIKE '%Sunday%'";
+        SQLiteDatabase database = this.getReadableDatabase();
+
+        Cursor cursor = null;
+        if (database != null) {
+            cursor = database.rawQuery(query, null);
+        }
+        return cursor;
+    }
 }
