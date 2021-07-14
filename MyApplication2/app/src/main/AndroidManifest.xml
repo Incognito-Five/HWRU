@@ -14,18 +14,22 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication1.NoActionBar"
         tools:ignore="AllowBackup">
-        <activity android:name=".Timetable.CourseListMain"></activity>
-        <activity android:name=".Timetable.CourseUpdate" />
+        <activity android:name=".BMICalculator"
+            android:parentActivityName=".BMI"
+            android:label="BMI Calculator"/>
+        <activity android:name=".BMIResult"
+            android:parentActivityName=".BMI"
+            android:label="BMICalculator"/>
+        <activity android:name=".Timetable.ScheduleReminder" />
         <activity
-            android:name=".BMICalculator"
-            android:label="BMI Calculator"
-            android:parentActivityName=".BMI" />
+            android:name=".Timetable.TimetableSettings"
+            android:parentActivityName=".Timetable.Timetable" />
         <activity
-            android:name=".BMIResult"
-            android:label="BMICalculator"
-            android:parentActivityName=".BMI" />
-        <activity android:name=".ToDoList" />
-        <activity android:name=".Timetable.AddCourseActivity" />
+            android:name=".ToDoList"
+            android:parentActivityName=".Calendar"/>
+        <activity
+            android:name=".Timetable.AddCourseActivity"
+            android:parentActivityName=".Timetable.Timetable" />
         <activity android:name=".Notebook_UpdateNotesActivity" />
         <activity android:name=".Notebook_AddNotesActivity" />
         <activity android:name=".DeleteAccount" />
@@ -46,6 +50,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <receiver android:name=".Timetable.ReminderBroadcast" />
     </application>
 
 </manifest>
