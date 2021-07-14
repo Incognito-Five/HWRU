@@ -28,7 +28,9 @@
             android:background="@drawable/bmibuttonbackground"
             android:padding="5dp"
             android:scaleType="fitCenter"
-            app:src="@drawable/bmicalcu_icon"></com.google.android.material.floatingactionbutton.FloatingActionButton>
+            android:src="@drawable/bmicalcu_icon">
+
+        </com.google.android.material.floatingactionbutton.FloatingActionButton>
 
 
         <androidx.recyclerview.widget.RecyclerView

@@ -14,12 +14,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication1.NoActionBar"
         tools:ignore="AllowBackup">
-        <activity android:name=".BMICalculator"
-            android:parentActivityName=".BMI"
-            android:label="BMI Calculator"></activity>
-        <activity android:name=".BMIResult"
-            android:parentActivityName=".BMI"
-            android:label="BMICalculator"/>
+        <activity android:name=".Timetable.CourseListMain"></activity>
+        <activity android:name=".Timetable.CourseUpdate" />
+        <activity
+            android:name=".BMICalculator"
+            android:label="BMI Calculator"
+            android:parentActivityName=".BMI" />
+        <activity
+            android:name=".BMIResult"
+            android:label="BMICalculator"
+            android:parentActivityName=".BMI" />
         <activity android:name=".ToDoList" />
         <activity android:name=".Timetable.AddCourseActivity" />
         <activity android:name=".Notebook_UpdateNotesActivity" />
