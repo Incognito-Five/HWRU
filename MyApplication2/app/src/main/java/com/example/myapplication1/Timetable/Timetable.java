@@ -2,10 +2,8 @@ package com.example.myapplication1.Timetable;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
@@ -13,21 +11,20 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
-import androidx.fragment.app.FragmentManager;
-import androidx.viewpager2.widget.ViewPager2;
+import androidx.fragment.app.Fragment;
 
 import com.example.myapplication1.AccountFragment;
 import com.example.myapplication1.BackUpFragment;
 import com.example.myapplication1.HelpFragment;
 import com.example.myapplication1.Homepage;
-import com.example.myapplication1.Notebook;
-import com.example.myapplication1.Notebook_AddNotesActivity;
 import com.example.myapplication1.R;
 import com.example.myapplication1.SoundsFragment;
 import com.example.myapplication1.ThemesFragment;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
-import com.google.android.material.tabs.TabLayout;
+
+import org.jetbrains.annotations.NotNull;
 
 public class Timetable extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -35,9 +32,6 @@ public class Timetable extends AppCompatActivity implements NavigationView.OnNav
     Toolbar toolbar;
     DrawerLayout drawerLayout;
     NavigationView navigationView;
-    TabLayout tabLayout;
-    ViewPager2 pager2;
-    FragmentAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +41,10 @@ public class Timetable extends AppCompatActivity implements NavigationView.OnNav
         fab = findViewById(R.id.fab_course);
         toolbar = findViewById(R.id.tb_ttable);
         setSupportActionBar(toolbar);
+
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottomnavview);
+        bottomNavigationView.setBackground(null);
+        bottomNavigationView.getMenu().getItem(3).setEnabled(false);
 
         //drawer
         drawerLayout = findViewById(R.id.drawer_layout);
@@ -60,15 +58,8 @@ public class Timetable extends AppCompatActivity implements NavigationView.OnNav
         drawerLayout.addDrawerListener(toggle);
         toggle.syncState();
 
-        tabLayout = findViewById(R.id.tabs_ttable);
-        pager2 = findViewById(R.id.view_pager);
-
-        FragmentManager fm = getSupportFragmentManager();
-        adapter = new FragmentAdapter(fm, getLifecycle());
-        pager2.setAdapter(adapter);
-
-        tabLayout.addTab(tabLayout.newTab().setText("Schedule"));
-        tabLayout.addTab(tabLayout.newTab().setText("Courses"));
+        bottomNavigationView.setOnNavigationItemSelectedListener(bottomNavMethod);
+        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container2, new ScheduleFragment()).commit();
 
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -78,53 +69,28 @@ public class Timetable extends AppCompatActivity implements NavigationView.OnNav
             }
         });
 
-        tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
-            @Override
-            public void onTabSelected(TabLayout.Tab tab) {
-                pager2.setCurrentItem(tab.getPosition());
-            }
-
-            @Override
-            public void onTabUnselected(TabLayout.Tab tab) {
-
-            }
-
-            @Override
-            public void onTabReselected(TabLayout.Tab tab) {
-
-            }
-        });
-
-        pager2.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
-            @Override
-            public void onPageSelected(int position) {
-                tabLayout.selectTab(tabLayout.getTabAt(position));
-            }
-        });
-
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        super.onCreateOptionsMenu(menu);
-        getMenuInflater().inflate(R.menu.menu_timetable, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        switch (item.getItemId()) {
-            case R.id.delete_all_courses:
-                Toast.makeText(this, "working on it", Toast.LENGTH_SHORT).show();
-                return true;
-            case R.id.timetable_settings:
-                Intent intent = new Intent(this, TimetableSettings.class);
-                startActivity(intent);
-                return true;
-            default:
-                return super.onOptionsItemSelected(item);
-        }
-    }
+    private final BottomNavigationView.OnNavigationItemSelectedListener bottomNavMethod = new
+            BottomNavigationView.OnNavigationItemSelectedListener() {
+                @Override
+                public boolean onNavigationItemSelected(@NonNull @NotNull MenuItem item) {
+                    Fragment fragment = null;
+                    switch (item.getItemId()){
+                        case R.id.sched:
+                            fragment = new ScheduleFragment();
+                            break;
+                        case R.id.course:
+                            fragment = new CoursesFragment();
+                            break;
+                        case R.id.timetable_setting:
+                            fragment = new SettingsFragment();
+                            break;
+                    }
+                    getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container2, fragment).commit();
+                    return true;
+                }
+            };
 
     @Override
     public void onBackPressed() {

@@ -14,15 +14,9 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <com.google.android.material.appbar.AppBarLayout
-            android:id="@+id/appbar_timetable"
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-
-            android:layout_height="wrap_content"
-            android:background="@android:color/transparent"
-            android:minHeight="?attr/actionBarSize"
-            app:liftOnScroll="true"
-            app:tabContentStart="56dp">
+            android:layout_height="match_parent">
 
             <androidx.appcompat.widget.Toolbar
                 android:id="@+id/tb_ttable"
@@ -31,45 +25,61 @@
                 android:background="@color/next"
                 android:minHeight="?attr/actionBarSize"
                 android:theme="@style/Theme.AppCompat.DayNight.DarkActionBar"
-                app:popupTheme="@style/Theme.AppCompat.DayNight.DarkActionBar"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
                 app:layout_scrollFlags="scroll|enterAlways"
-                app:menu="@menu/menu_timetable"
                 app:navigationIcon="@drawable/navi"
+                app:popupTheme="@style/Theme.AppCompat.DayNight.DarkActionBar"
                 app:title="@string/timetable" />
 
-            <com.google.android.material.tabs.TabLayout
-                android:id="@+id/tabs_ttable"
+            <LinearLayout
+                android:id="@+id/fragment_container2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:tabMode="fixed"
-                app:layout_scrollFlags="scroll|enterAlways"
-                app:tabIconTint="@color/primary"
-                app:tabIndicator="@drawable/bmibuttonbackground"
-                app:tabIndicatorColor="@color/text"
-                app:tabSelectedTextColor="@color/text"
-                app:tabTextColor="@color/middle_gray">
+                android:orientation="vertical"
+                app:layout_constraintTop_toBottomOf="@+id/tb_ttable" />
 
-            </com.google.android.material.tabs.TabLayout>
-        </com.google.android.material.appbar.AppBarLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <androidx.viewpager2.widget.ViewPager2
-            android:id="@+id/view_pager"
+        <com.google.android.material.bottomappbar.BottomAppBar
+            android:id="@+id/bottom"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:background="@color/next"
+            android:theme="@style/Theme.MaterialComponents"
+            app:backgroundTint="@color/next"
+            app:fabAlignmentMode="end"
+            app:fabCradleMargin="@dimen/_5sdp"
+            app:fabCradleRoundedCornerRadius="@dimen/_10sdp"
+            app:fabCradleVerticalOffset="@dimen/_5sdp"
+            app:theme="@style/Theme.MaterialComponents">
+
+            <com.google.android.material.bottomnavigation.BottomNavigationView
+                android:id="@+id/bottomnavview"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@android:color/transparent"
+                app:backgroundTint="@android:color/transparent"
+                app:theme="@style/Theme.MaterialComponents"
+                app:itemIconTint="@color/text"
+                app:itemTextColor="@color/text"
+                app:menu="@menu/menu_bottom" />
+        </com.google.android.material.bottomappbar.BottomAppBar>
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/fab_course"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="bottom|end"
             android:layout_margin="@dimen/fab_margin"
             android:backgroundTint="@color/text"
-            android:contentDescription="fab"
+            android:theme="@style/Theme.MaterialComponents"
             app:backgroundTint="@color/nav_view_selected"
-            app:fabSize="normal"
+            app:layout_anchor="@id/bottom"
             app:srcCompat="@drawable/add_icon"
-            tools:ignore="VectorDrawableCompat" />
+            app:theme="@style/Theme.MaterialComponents"
+            tools:ignore="ContentDescription,VectorDrawableCompat" />
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
@@ -88,5 +98,6 @@
         app:itemIconTint="@color/text"
         app:itemShapeFillColor="@color/drawer_item"
         app:itemTextColor="@color/text"
-        app:menu="@menu/main_menu"/>
+        app:menu="@menu/main_menu" />
+
 </androidx.drawerlayout.widget.DrawerLayout>

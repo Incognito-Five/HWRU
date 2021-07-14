@@ -20,10 +20,6 @@
         <activity android:name=".BMIResult"
             android:parentActivityName=".BMI"
             android:label="BMICalculator"/>
-        <activity android:name=".Timetable.ScheduleReminder" />
-        <activity
-            android:name=".Timetable.TimetableSettings"
-            android:parentActivityName=".Timetable.Timetable" />
         <activity
             android:name=".ToDoList"
             android:parentActivityName=".Calendar"/>
