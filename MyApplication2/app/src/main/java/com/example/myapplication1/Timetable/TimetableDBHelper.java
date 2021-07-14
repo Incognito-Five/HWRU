@@ -18,7 +18,7 @@ public class TimetableDBHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase coursedb) {
         coursedb.execSQL("create Table CourseDetails(course_name TEXT primary key, course_code TEXT, days TEXT, start_time TEXT, end_time TEXT, professor TEXT, location TEXT, description TEXT)");
-    }
+     }
 
     @Override
     public void onUpgrade(SQLiteDatabase coursedb, int i, int i1) {
@@ -57,7 +57,7 @@ public class TimetableDBHelper extends SQLiteOpenHelper {
         } else {
             return false;
         }
-
+        
     }
 
     public Boolean DeleteCourseData(String course_name) {
@@ -72,7 +72,7 @@ public class TimetableDBHelper extends SQLiteOpenHelper {
     }
 
     public Cursor getMonday() {
-        String query = "SELECT * FROM ( SELECT * FROM CourseDetails ORDER BY CASE WHEN start_time like '%AM' then 1 when start_time like '%12:00 PM%' then 2 else start_time end) WHERE days LIKE '%Monday%'";
+        String query = "SELECT * FROM ( SELECT * FROM CourseDetails ORDER BY CASE WHEN start_time like '%AM' then 1 when start_time like '%12:00 PM%' then 2 else start_time end) WHERE days LIKE '%Monday%'" ;
         SQLiteDatabase database = this.getReadableDatabase();
 
         Cursor cursor = null;

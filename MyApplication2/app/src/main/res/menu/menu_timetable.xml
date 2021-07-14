@@ -4,7 +4,8 @@
     <item
         android:id="@+id/delete_all_courses"
         android:icon="@drawable/delete_icon"
-        android:title="Delete all subjects" />
+        android:title="Delete all subjects"
+        />
     <item
         android:id="@+id/timetable_settings"
         android:icon="@drawable/save_icon"

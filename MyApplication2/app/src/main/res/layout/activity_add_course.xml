@@ -18,25 +18,37 @@
             android:layout_height="wrap_content"
             android:animateLayoutChanges="true">
 
-            <androidx.appcompat.widget.Toolbar
-                android:id="@+id/tb_addcourse"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/next"
-                android:minHeight="?attr/actionBarSize"
-                android:theme="@style/Theme.AppCompat.DayNight.DarkActionBar"
-                app:layout_constraintEnd_toEndOf="parent"
+            <ImageView
+                android:id="@+id/img_back"
+                android:layout_width="@dimen/_25sdp"
+                android:layout_height="@dimen/_25sdp"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginLeft="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:src="@drawable/close_icon"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_scrollFlags="scroll|enterAlways"
-                app:menu="@menu/menu_addcourse"
-                app:popupTheme="@style/Theme.AppCompat.DayNight.DarkActionBar"
-                app:title="Add Course Subject" />
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/add_course_dialog"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginLeft="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_13sdp"
+                android:gravity="start"
+                android:padding="@dimen/_4sdp"
+                android:text="Add Course Subject"
+                android:textColor="@color/text"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@+id/img_back"
+                app:layout_constraintTop_toTopOf="parent"/>
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/add_course_name"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/_12sdp"
                 android:layout_marginLeft="@dimen/_12sdp"
@@ -49,9 +61,7 @@
                 app:boxStrokeColor="@color/next"
                 app:helperText="required"
                 app:hintTextColor="@color/text"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tb_addcourse">
+                app:layout_constraintTop_toBottomOf="@id/add_course_dialog">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/input_course_name"
@@ -63,7 +73,7 @@
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/add_course_code"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/_12sdp"
                 android:layout_marginLeft="@dimen/_12sdp"
@@ -74,8 +84,6 @@
                 android:textColorHint="@color/text"
                 app:boxStrokeColor="@color/next"
                 app:hintTextColor="@color/text"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/add_course_name">
 
                 <com.google.android.material.textfield.TextInputEditText
@@ -87,15 +95,13 @@
 
             <RelativeLayout
                 android:id="@+id/week_cbox"
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/_12sdp"
                 android:layout_marginLeft="@dimen/_12sdp"
                 android:layout_marginTop="@dimen/_7sdp"
                 android:layout_marginEnd="@dimen/_12sdp"
                 android:layout_marginRight="@dimen/_12sdp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/add_course_code">
 
                 <HorizontalScrollView
@@ -161,7 +167,7 @@
 
             <TextView
                 android:id="@+id/required"
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/_12sdp"
                 android:layout_marginLeft="@dimen/_12sdp"
@@ -170,21 +176,17 @@
                 android:layout_marginRight="@dimen/_12sdp"
                 android:text="required"
                 android:textSize="12sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/week_cbox" />
 
             <RelativeLayout
                 android:id="@+id/times"
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/_15sdp"
-                android:layout_marginLeft="@dimen/_15sdp"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginLeft="@dimen/_12sdp"
                 android:layout_marginTop="@dimen/_7sdp"
-                android:layout_marginEnd="@dimen/_15sdp"
-                android:layout_marginRight="@dimen/_15sdp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginEnd="@dimen/_12sdp"
+                android:layout_marginRight="@dimen/_12sdp"
                 app:layout_constraintTop_toBottomOf="@+id/required">
 
                 <com.google.android.material.textfield.TextInputLayout
@@ -234,7 +236,7 @@
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/add_professor"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/_12sdp"
                 android:layout_marginLeft="@dimen/_12sdp"
@@ -245,8 +247,6 @@
                 android:textColorHint="@color/text"
                 app:boxStrokeColor="@color/next"
                 app:hintTextColor="@color/text"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/times">
 
                 <com.google.android.material.textfield.TextInputEditText
@@ -259,7 +259,7 @@
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/add_location"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/_12sdp"
                 android:layout_marginLeft="@dimen/_12sdp"
@@ -270,8 +270,6 @@
                 android:textColorHint="@color/text"
                 app:boxStrokeColor="@color/next"
                 app:hintTextColor="@color/text"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/add_professor">
 
                 <com.google.android.material.textfield.TextInputEditText
@@ -284,7 +282,7 @@
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/add_description"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 android:layout_height="@dimen/_100sdp"
                 android:layout_marginStart="@dimen/_12sdp"
                 android:layout_marginLeft="@dimen/_12sdp"
@@ -295,8 +293,6 @@
                 android:textColorHint="@color/text"
                 app:boxStrokeColor="@color/next"
                 app:hintTextColor="@color/text"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/add_location">
 
                 <com.google.android.material.textfield.TextInputEditText
@@ -306,6 +302,20 @@
                     android:inputType="textMultiLine" />
             </com.google.android.material.textfield.TextInputLayout>
 
+            <Button
+                android:id="@+id/save_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginLeft="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_7sdp"
+                android:layout_marginEnd="@dimen/_12sdp"
+                android:layout_marginRight="@dimen/_12sdp"
+                android:text="@string/save"
+                app:backgroundTint="@color/primary"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/add_description"
+                tools:layout_editor_absoluteX="16dp" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </ScrollView>

@@ -42,7 +42,7 @@ public class D1_Monday extends Fragment {
         return view;
     }
 
-    private void fetchAllCourseFromDataBase() {
+    public void fetchAllCourseFromDataBase() {
         Cursor cursor = dbHelper.getMonday();
         if (cursor.getCount() == 0) {
             Toast.makeText(getActivity(), "No Schedule set on Monday", Toast.LENGTH_SHORT).show();

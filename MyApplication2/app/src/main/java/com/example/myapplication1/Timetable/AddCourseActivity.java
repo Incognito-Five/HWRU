@@ -1,20 +1,16 @@
 package com.example.myapplication1.Timetable;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 
 import android.app.TimePickerDialog;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
-
 import com.example.myapplication1.R;
 import com.google.android.material.textfield.TextInputEditText;
 
@@ -31,10 +27,10 @@ public class AddCourseActivity extends AppCompatActivity {
     int currentHour, currentMin, currentHour2, currentMin2;
     String daysSel;
     TextView tv_coursename, tv_startTime, tv_endTime, tv_location;
+    ImageView img_back;
     Button save_btn;
     CheckBox mon, tues, wed, thurs, fri, sat, sun;
     TimetableDBHelper DB;
-    Toolbar tb;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,10 +38,66 @@ public class AddCourseActivity extends AppCompatActivity {
         setContentView(R.layout.activity_add_course);
 
         setupUIviews();
-        setSupportActionBar(tb);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         DB = new TimetableDBHelper(this);
+
+        save_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                StringBuilder sb = new StringBuilder();
+                if (mon.isChecked()) {
+                    sb.append("," + "Monday");
+                }
+                if (tues.isChecked()) {
+                    sb.append("," + "Tuesday");
+                }
+                if (wed.isChecked()) {
+                    sb.append("," + "Wednesday");
+                }
+                if (thurs.isChecked()) {
+                    sb.append("," + "Thursday");
+                }
+                if (fri.isChecked()) {
+                    sb.append("," + "Friday");
+                }
+                if (sat.isChecked()) {
+                    sb.append("," + "Saturday");
+                }
+                if (sun.isChecked()) {
+                    sb.append("," + "Sunday");
+                }
+
+                //Get all the values
+                String courseName = course_name.getText().toString();
+                String courseCode = course_code.getText().toString();
+                String startTime = start_time.getText().toString();
+                String endTime = end_time.getText().toString();
+                String prof = professor.getText().toString();
+                String loc = location.getText().toString();
+                String desc = description.getText().toString();
+
+                if (sb.length() == 0 || courseName.equals("") || startTime.equals("") || endTime.equals("")) {
+                    Toast.makeText(AddCourseActivity.this, "Please enter required fields", Toast.LENGTH_SHORT).show();
+                } else {
+                    String daysSel = sb.deleteCharAt(sb.indexOf(",")).toString();
+                    Boolean checkinsertdata = DB.AddCourseData(courseName, courseCode, daysSel, startTime, endTime, prof, loc, desc);
+                    if (checkinsertdata) {
+                        Toast.makeText(AddCourseActivity.this, "New Course subject added.", Toast.LENGTH_SHORT).show();
+                        finish();
+                    } else {
+                        Toast.makeText(AddCourseActivity.this, "Course subject not added. Try Again.", Toast.LENGTH_SHORT).show();
+                        finish();
+                    }
+                }
+            }
+        });
+
+        img_back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
 
         start_time.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             @Override
@@ -102,73 +154,9 @@ public class AddCourseActivity extends AppCompatActivity {
 
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        super.onCreateOptionsMenu(menu);
-        getMenuInflater().inflate(R.menu.menu_addcourse, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        if (item.getItemId() == R.id.save) {
-            saveCourse();
-        }
-        return super.onOptionsItemSelected(item);
-    }
-
-    private void saveCourse() {
-        StringBuilder sb = new StringBuilder();
-        if (mon.isChecked()) {
-            sb.append("," + "Monday");
-        }
-        if (tues.isChecked()) {
-            sb.append("," + "Tuesday");
-        }
-        if (wed.isChecked()) {
-            sb.append("," + "Wednesday");
-        }
-        if (thurs.isChecked()) {
-            sb.append("," + "Thursday");
-        }
-        if (fri.isChecked()) {
-            sb.append("," + "Friday");
-        }
-        if (sat.isChecked()) {
-            sb.append("," + "Saturday");
-        }
-        if (sun.isChecked()) {
-            sb.append("," + "Sunday");
-        }
-
-        //Get all the values
-        String courseName = course_name.getText().toString();
-        String courseCode = course_code.getText().toString();
-        String startTime = start_time.getText().toString();
-        String endTime = end_time.getText().toString();
-        String prof = professor.getText().toString();
-        String loc = location.getText().toString();
-        String desc = description.getText().toString();
-
-        if (sb.length() == 0 || courseName.equals("") || startTime.equals("") || endTime.equals("")) {
-            Toast.makeText(AddCourseActivity.this, "Please enter required fields", Toast.LENGTH_SHORT).show();
-        } else {
-            String daysSel = sb.deleteCharAt(sb.indexOf(",")).toString();
-            Boolean checkinsertdata = DB.AddCourseData(courseName, courseCode, daysSel, startTime, endTime, prof, loc, desc);
-            if (checkinsertdata) {
-                Toast.makeText(AddCourseActivity.this, "New Course subject added.", Toast.LENGTH_SHORT).show();
-                finish();
-            } else {
-                Toast.makeText(AddCourseActivity.this, "Course subject not added. Try Again.", Toast.LENGTH_SHORT).show();
-                finish();
-            }
-        }
-    }
-
     private void setupUIviews() {
-
-        //Toolbar
-        tb = findViewById(R.id.tb_addcourse);
+        //ImageView
+        img_back = findViewById(R.id.img_back);
 
         //Buttons
         save_btn = findViewById(R.id.save_btn);

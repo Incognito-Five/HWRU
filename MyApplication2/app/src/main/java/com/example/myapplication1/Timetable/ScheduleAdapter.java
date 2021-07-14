@@ -21,7 +21,7 @@ public class ScheduleAdapter extends RecyclerView.Adapter<SetViewHolder> {
     List<TimetableModel> courseList;
     List<TimetableModel> newList;
 
-    public ScheduleAdapter(Activity activity, List<TimetableModel> courseList) {
+    public ScheduleAdapter(Activity activity, List<TimetableModel> courseList){
         this.activity = activity;
         this.courseList = courseList;
     }

@@ -38,6 +38,7 @@ public class Calendar extends AppCompatActivity implements NavigationView.OnNavi
     private TextView monthYearText;
     private RecyclerView calendarRecyclerView;
     private LocalDate selectedDate;
+    FloatingActionButton fab;
 
     @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
@@ -64,8 +65,7 @@ public class Calendar extends AppCompatActivity implements NavigationView.OnNavi
         selectedDate = LocalDate.now();
         setMonthView();
 
-        FloatingActionButton fab = findViewById(R.id.fab_todo);
-
+        fab = findViewById(R.id.fab_todo);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -73,6 +73,7 @@ public class Calendar extends AppCompatActivity implements NavigationView.OnNavi
                 startActivity(intent);
             }
         });
+
     }
 
     private void initWidgets()

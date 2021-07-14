@@ -17,7 +17,7 @@
         <com.google.android.material.appbar.AppBarLayout
             android:id="@+id/appbar_timetable"
             android:layout_width="match_parent"
-
+            style="@style/Theme.AppCompat.Light"
             android:layout_height="wrap_content"
             android:background="@android:color/transparent"
             android:minHeight="?attr/actionBarSize"
@@ -26,12 +26,12 @@
 
             <androidx.appcompat.widget.Toolbar
                 android:id="@+id/tb_ttable"
+                style="@style/Theme.AppCompat.Light.DarkActionBar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@color/next"
                 android:minHeight="?attr/actionBarSize"
-                android:theme="@style/Theme.AppCompat.DayNight.DarkActionBar"
-                app:popupTheme="@style/Theme.AppCompat.DayNight.DarkActionBar"
+                android:theme="?attr/actionBarTheme"
                 app:layout_scrollFlags="scroll|enterAlways"
                 app:menu="@menu/menu_timetable"
                 app:navigationIcon="@drawable/navi"

@@ -10,7 +10,7 @@ import com.example.myapplication1.Timetable.CoursesFragment;
 import com.example.myapplication1.Timetable.TimetableViewFragment;
 
 public class FragmentAdapter extends FragmentStateAdapter {
-    public FragmentAdapter(@NonNull FragmentManager fragmentManager, @NonNull Lifecycle lifecycle) {
+    public FragmentAdapter(@NonNull FragmentManager fragmentManager, @NonNull  Lifecycle lifecycle) {
         super(fragmentManager, lifecycle);
     }
 

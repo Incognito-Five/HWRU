@@ -1,7 +1,6 @@
 package com.example.myapplication1;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -20,21 +19,17 @@ public class ToDoList extends AppCompatActivity {
     private ArrayList<String> items;
     private ArrayAdapter<String> itemsAdapter;
     private ListView listView;
-    private Button btn;
+    private Button button;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_to_do_list);
-
-        Toolbar tb = findViewById(R.id.tb_todolist);
-        setSupportActionBar(tb);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        setContentView(R.layout.activity_main);
 
         listView = findViewById(R.id.listView);
-        btn = findViewById(R.id.add_todo_btn);
+        button = findViewById(R.id.button);
 
-        btn.setOnClickListener(new View.OnClickListener() {
+        button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 addItem(view);
@@ -45,6 +40,8 @@ public class ToDoList extends AppCompatActivity {
         itemsAdapter = new ArrayAdapter<>( this,android.R.layout.simple_list_item_1, items);
         listView.setAdapter(itemsAdapter);
         setUpListViewListener();
+
+
     }
 
     private void setUpListViewListener() {
