@@ -10,174 +10,38 @@
     tools:context=".BMI"
     tools:openDrawer="end">
 
-
-    <RelativeLayout
+    <androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:id="@+id/bmi_layout"
+        tools:context=".MainActivity">
 
-        <RelativeLayout
-            android:id="@+id/centerhorizontalline"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"></RelativeLayout>
-
-        <RelativeLayout
-            android:id="@+id/centerverticalline"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_centerHorizontal="true"></RelativeLayout>
-        <!--resultslayout-->
-        <androidx.coordinatorlayout.widget.CoordinatorLayout
-            android:id="@+id/bmicoordinatorlayout"
-            android:layout_width="340dp"
-            android:layout_height="250dp"
-            android:background="@drawable/bmicardbackground"
-            android:layout_above="@id/centerhorizontalline"
-            android:layout_centerHorizontal="true"
-            android:layout_marginBottom="60dp"
-            app:layout_behavior="@string/fab_transformation_scrim_behavior">
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:id="@+id/bmirecyclerview">
-            </androidx.recyclerview.widget.RecyclerView>
-        </androidx.coordinatorlayout.widget.CoordinatorLayout>
-
-        <!--weight layout-->
-        <RelativeLayout
-            android:id="@+id/weightlayout"
-            android:layout_width="340dp"
-            android:layout_height="150dp"
-            android:layout_above="@id/centerhorizontalline"
-            android:layout_centerHorizontal="true"
-            android:layout_marginLeft="25dp"
-            android:layout_marginRight="25dp"
-            android:layout_marginBottom="-120dp"
-            android:background="@drawable/bmicardbackground">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
-                android:gravity="center_horizontal"
-                android:text="Weight"
-                android:textAlignment="center"
-                android:textColor="#443C3E"
-                android:textSize="20sp"
-                android:textStyle="bold"></TextView>
-
-            <TextView
-                android:id="@+id/currentweight"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:layout_centerInParent="true"
-                android:layout_marginBottom="50dp"
-                android:text="300"
-                android:textColor="#443C3E"
-                android:textSize="40sp"
-                android:textStyle="bold"></TextView>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:layout_marginStart="15dp"
-                android:layout_marginLeft="15dp"
-                android:layout_toEndOf="@id/currentweight"
-                android:layout_toRightOf="@id/currentweight"
-                android:text="kg"
-                android:textColor="#443C3E"
-                android:textSize="20sp"></TextView>
-
-            <SeekBar
-                android:id="@+id/weightseekbar"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:layout_marginBottom="20dp"
-                android:progressTint="#E4D3BA"
-                android:thumbTint="#B3B4B0"></SeekBar>
-        </RelativeLayout>
-        <!--Height Layout -->
-        <RelativeLayout
-            android:id="@+id/heightlayout"
-            android:layout_width="340dp"
-            android:layout_height="150dp"
-            android:layout_above="@id/centerhorizontalline"
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"
-            android:layout_marginLeft="25dp"
-            android:layout_marginRight="25dp"
-            android:layout_marginBottom="100dp"
-            android:background="@drawable/bmicardbackground">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
-                android:gravity="center_horizontal"
-                android:text="Height"
-                android:textAlignment="center"
-                android:textColor="#443C3E"
-                android:textSize="20sp"
-                android:textStyle="bold"></TextView>
-
-            <TextView
-                android:id="@+id/currentheight"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:layout_centerInParent="true"
-                android:layout_marginBottom="50dp"
-                android:text="180"
-                android:textColor="#443C3E"
-                android:textSize="40sp"
-                android:textStyle="bold"></TextView>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:layout_marginStart="15dp"
-                android:layout_marginLeft="15dp"
-                android:layout_toEndOf="@id/currentheight"
-                android:layout_toRightOf="@id/currentheight"
-                android:text="cm"
-                android:textColor="#443C3E"
-                android:textSize="20sp"></TextView>
-
-            <SeekBar
-                android:id="@+id/heightseekbar"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:layout_marginBottom="20dp"
-                android:progressTint="#E4D3BA"
-                android:thumbTint="#B3B4B0"></SeekBar>
-        </RelativeLayout>
-
-        <!--calculate button-->
-        <android.widget.Button
-            android:id="@+id/calculatebmi"
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_alignParentBottom="true"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:layout_marginBottom="20dp"
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/BMICalcuBttn"
+            android:layout_width="95dp"
+            android:layout_height="97dp"
+            android:layout_gravity="bottom|end"
+            android:layout_margin="16dp"
+            android:adjustViewBounds="true"
             android:background="@drawable/bmibuttonbackground"
-            android:text="Calculate BMI"
-            android:textColor="#443C3E"
-            android:textSize="15sp"
-            android:textStyle="bold"></android.widget.Button>
+            android:padding="5dp"
+            android:scaleType="fitCenter"
+            app:src="@drawable/bmicalcu_icon"></com.google.android.material.floatingactionbutton.FloatingActionButton>
 
-    </RelativeLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:paddingTop="?attr/actionBarSize"
+            android:id="@+id/BMIRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"></androidx.recyclerview.widget.RecyclerView>
+
+
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appbar_bmi"

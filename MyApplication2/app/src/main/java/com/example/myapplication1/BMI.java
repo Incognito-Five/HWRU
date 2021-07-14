@@ -1,9 +1,12 @@
 package com.example.myapplication1;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.SeekBar;
@@ -11,7 +14,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.coordinatorlayout.widget.CoordinatorLayout;
@@ -21,6 +26,7 @@ import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.snackbar.BaseTransientBottomBar;
 import com.google.android.material.snackbar.Snackbar;
@@ -30,31 +36,18 @@ import java.util.List;
 
 public class BMI extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
 
-    //calculate BMI
-    android.widget.Button mcalculatebmi;
+    RecyclerView recyclerView;//inclu
+    FloatingActionButton floatingActionButton;
+    //ImageButton imageButton;//inclu
 
-    //BMI Components
-    TextView mcurrentheight;
-    TextView mcurrentweight;
-    SeekBar mheightseekbar;
-    SeekBar mweightseekbar;
-
-    //initialize BMI Component's Values
-    int currentheightprogress;
-    int currentweightprogress;
-    String mintheightprogress="180";
-    String mintweightprogress="40";
-
-    //initialize all the views
-    RecyclerView recyclerView;
-    Adapter adapter;
-    List<Model> resultslist;
+    BMIDatabase bmidb;
+    ArrayList<String> bmiid,bmiresult,bmicategory;
+    BMICustomAdapter customAdapter;
     CoordinatorLayout coordinatorLayout;
-    BMIDatabaseClass databaseClass;
-    Toolbar toolbar;
     DrawerLayout drawerLayout;
 
     NavigationView navigationView;
+    Toolbar toolbar;
 
 
     @Override
@@ -62,105 +55,29 @@ public class BMI extends AppCompatActivity implements NavigationView.OnNavigatio
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bmi);
 
-        recyclerView=findViewById(R.id.bmirecyclerview);
-        coordinatorLayout = findViewById(R.id.bmicoordinatorlayout);
+        recyclerView=findViewById(R.id.BMIRecyclerView);
+        floatingActionButton=findViewById(R.id.BMICalcuBttn);
+        coordinatorLayout = findViewById(R.id.bmi_layout);
 
-        //bmi results list
-        resultslist=new ArrayList<>();
-        //database instance class
-        databaseClass=new BMIDatabaseClass(this);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        //adapter instance class
-        adapter= new Adapter(this,BMI.this,resultslist);
-        //set adapter to recycler view
-        recyclerView.setAdapter(adapter);
-
-        //itemtouchhelper instance class
-        ItemTouchHelper helper = new ItemTouchHelper(callback);
-        helper.attachToRecyclerView(recyclerView);
-
-        getSupportActionBar().hide();
-        //defining mcalculatebmi
-        mcalculatebmi=findViewById(R.id.calculatebmi);
-        //assign xml id to java
-        mcurrentheight=findViewById(R.id.currentheight);
-        mcurrentweight=findViewById(R.id.currentweight);
-        //set id for seekbar
-        mheightseekbar=findViewById(R.id.heightseekbar);
-        mweightseekbar=findViewById(R.id.weightseekbar);
-
-        mheightseekbar.setMax(400);
-        mheightseekbar.setProgress(180);
-        mheightseekbar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+        //will go to new activity when the fab is clicked
+        floatingActionButton.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                currentheightprogress=progress;
-                mintheightprogress=String.valueOf(currentheightprogress);
-                mcurrentheight.setText(mintheightprogress);
-            }
-
-            @Override
-            public void onStartTrackingTouch(SeekBar seekBar) {
-
-            }
-
-            @Override
-            public void onStopTrackingTouch(SeekBar seekBar) {
-
+            public void onClick(View view) {
+                Intent intent=new Intent(BMI.this,BMICalculator.class);
+                startActivity(intent);
             }
         });
 
-        mweightseekbar.setMax(650);
-        mweightseekbar.setProgress(40);
-        mweightseekbar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
-            @Override
-            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                currentweightprogress=progress;
-                mintweightprogress=String.valueOf(currentweightprogress);
-                mcurrentweight.setText(mintweightprogress);
-            }
+        bmidb= new BMIDatabase(BMI.this);
+        bmiid = new ArrayList<>();
+        bmiresult = new ArrayList<>();
+        bmicategory = new ArrayList<>();
 
-            @Override
-            public void onStartTrackingTouch(SeekBar seekBar) {
+        storeDatainArrays();
 
-            }
-
-            @Override
-            public void onStopTrackingTouch(SeekBar seekBar) {
-
-            }
-        });
-
-        mcalculatebmi.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                /*calculating BMI*/
-                if(mintheightprogress.equals("0"))
-                {
-                    Toast.makeText(getApplicationContext(), "Select A Value For Your Height First",Toast.LENGTH_SHORT).show();
-                }
-                else if(mintweightprogress.equals("0"))
-                {
-                    Toast.makeText(getApplicationContext(), "Select A Value For Your Weight First",Toast.LENGTH_SHORT).show();
-                }
-                else
-                {
-                    /*changing screen from main BMI screen to calculate BMI screen*/
-                    Intent intent=new Intent(BMI.this,bmicalculation.class);
-                    /*pass data to calculate BMI*/
-                    intent.putExtra("height",mintheightprogress);
-                    intent.putExtra("weight",mintweightprogress);
-
-
-                    startActivity(intent);
-                }
-
-            }
-        });
-
-
-        toolbar = findViewById(R.id.tb_bmi);
-        setSupportActionBar(toolbar);
+        customAdapter = new BMICustomAdapter(BMI.this, bmiid, bmiresult, bmicategory);
+        recyclerView.setAdapter(customAdapter);
+        recyclerView.setLayoutManager(new LinearLayoutManager(BMI.this));
 
         //drawer
         drawerLayout = findViewById(R.id.drawer_layout);
@@ -173,67 +90,73 @@ public class BMI extends AppCompatActivity implements NavigationView.OnNavigatio
 
         drawerLayout.addDrawerListener(toggle);
         toggle.syncState();
-
     }
-    void fetchAllResultsFromDataBase()
-    {
-        Cursor cursor = databaseClass.readAllData();
-        if (cursor.getCount()==0)
-        {
-            Toast.makeText(this, "No Data to Show", Toast.LENGTH_SHORT).show();
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == 1) {
+            recreate();
         }
-        else
-        {
-            while(cursor.moveToNext())
-            {
-                resultslist.add(new Model(cursor.getFloat(0),cursor.getString(1),cursor.getString(2)));
+    }
+
+    void storeDatainArrays() {
+        Cursor cursor = bmidb.readAllData();
+        if(cursor.getCount() == 0) {
+            Toast.makeText(this, "No Data", Toast.LENGTH_SHORT).show();
+        } else {
+            while (cursor.moveToNext()) {
+                bmiid.add(cursor.getString(0));
+                bmiresult.add(cursor.getString(1));
+                bmicategory.add(cursor.getString(2));
             }
         }
+
     }
-    //for swiping note to the right
-    ItemTouchHelper.SimpleCallback callback = new ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.RIGHT) {
-        @Override
-        public boolean onMove(@NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder, @NonNull RecyclerView.ViewHolder target) {
-            return false;
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater=getMenuInflater();
+        inflater.inflate(R.menu.bmioptionsmenu, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        //delete all notes when clicked
+        if (item.getItemId()==R.id.delete)
+        {
+            confirmDialog();
         }
+        return super.onOptionsItemSelected(item);
+    }
+    void confirmDialog() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Delete All?");
+        builder.setMessage("Are you sure you want to delete?");
+        builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                BMIDatabase db=new BMIDatabase(BMI.this);
+                Toast.makeText(BMI.this, "Deleted All", Toast.LENGTH_SHORT).show();
+                db.deleteAll();
+                //refresh activity
+                Intent intent = new Intent(BMI.this,BMI.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+        builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
 
-        @Override
+            }
+        });
+        builder.create().show();
+    }
 
-        //method for swiping
-        public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int direction) {
 
-            int position = viewHolder.getAdapterPosition();
-            Model item = adapter.getList().get(position);
 
-            adapter.removeItem(viewHolder.getAdapterPosition());
-
-            //displays a text for "note deleted" and "undo"
-            Snackbar snackbar = Snackbar.make(coordinatorLayout, "BMI Deleted", Snackbar.LENGTH_LONG)
-                    .setAction("UNDO", new View.OnClickListener() {
-
-                        @Override
-                        //restores the note when undo is clicked
-                        public void onClick(View v) {
-                            adapter.restoreItem(item,position);
-                            recyclerView.scrollToPosition(position);
-                        }
-                    }).addCallback(new BaseTransientBottomBar.BaseCallback<Snackbar>() {
-                        @Override
-                        public void onDismissed(Snackbar transientBottomBar, int event) {
-                            super.onDismissed(transientBottomBar, event);
-
-                            if (!(event == DISMISS_EVENT_ACTION))
-                            {
-                                BMIDatabaseClass db = new BMIDatabaseClass(BMI.this);
-                                db.deleteSingleItem(item.getId());
-                            }
-                        }
-                    });
-
-            snackbar.setActionTextColor(Color.YELLOW);
-            snackbar.show();
-        }
-    };
 
 
     @Override
