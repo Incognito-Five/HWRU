@@ -73,7 +73,7 @@ public class Timetable extends AppCompatActivity implements NavigationView.OnNav
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(Timetable.this, AddCourseActivity.class);
+                Intent intent = new Intent(Timetable.this, AddCourseActivity.class);
                 startActivity(intent);
             }
         });
@@ -113,12 +113,13 @@ public class Timetable extends AppCompatActivity implements NavigationView.OnNav
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        switch (item.getItemId()){
+        switch (item.getItemId()) {
             case R.id.delete_all_courses:
                 Toast.makeText(this, "working on it", Toast.LENGTH_SHORT).show();
                 return true;
             case R.id.timetable_settings:
-                Toast.makeText(this, "working on it too...", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(this, TimetableSettings.class);
+                startActivity(intent);
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
