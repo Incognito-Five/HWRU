@@ -16,14 +16,6 @@
         tools:ignore="AllowBackup">
         <activity android:name=".BMICalculator"
             android:parentActivityName=".BMI"
-<<<<<<< HEAD
-            android:label="BMI Calculator"></activity>
-        <activity android:name=".BMIResult"
-            android:parentActivityName=".BMI"
-            android:label="BMICalculator"/>
-        <activity android:name=".ToDoList" />
-        <activity android:name=".Timetable.AddCourseActivity" />
-=======
             android:label="BMI Calculator"/>
         <activity android:name=".BMIResult"
             android:parentActivityName=".BMI"
@@ -38,7 +30,6 @@
         <activity
             android:name=".Timetable.AddCourseActivity"
             android:parentActivityName=".Timetable.Timetable" />
->>>>>>> parent of 48f3e23 (Revert ".")
         <activity android:name=".Notebook_UpdateNotesActivity" />
         <activity android:name=".Notebook_AddNotesActivity" />
         <activity android:name=".DeleteAccount" />
