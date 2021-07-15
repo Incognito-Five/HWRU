@@ -158,8 +158,6 @@ public class AddCourseActivity extends AppCompatActivity {
         //ImageView
         img_back = findViewById(R.id.img_back);
 
-        //Buttons
-        save_btn = findViewById(R.id.save_btn);
 
         //timepickers
         start_time = findViewById(R.id.pick_start_time);

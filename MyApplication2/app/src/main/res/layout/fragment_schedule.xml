@@ -6,20 +6,24 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:background="@color/white"
-    tools:context=".Timetable.TimetableViewFragment">
+    tools:context=".Timetable.ScheduleFragment">
 
     <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tab_week"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:tabBackground="@color/nav_view_selected"
-        android:background="@color/text"
-        android:id="@+id/tab_week"
         android:layout_marginTop="8dp"
-        app:tabMode="scrollable"
+        android:background="@color/text"
+        android:theme="@style/Theme.MaterialComponents"
+        app:tabBackground="@color/nav_view_selected"
         app:tabGravity="center"
+        app:tabIconTint="@color/nav_view_selected"
+        app:tabIndicatorAnimationMode="elastic"
+        app:tabIndicatorColor="@color/primary"
         app:tabIndicatorGravity="stretch"
+        app:tabMode="scrollable"
         app:tabSelectedTextColor="@color/white"
-        app:tabIndicatorAnimationMode="elastic"/>
+        app:tabTextColor="@color/nav_view_selected" />
 
     <androidx.viewpager2.widget.ViewPager2
         android:layout_width="match_parent"
