@@ -170,8 +170,6 @@ public class AddCourseActivity extends AppCompatActivity {
         //Toolbar
         tb = findViewById(R.id.tb_addcourse);
 
-        //Buttons
-        save_btn = findViewById(R.id.save_btn);
 
         //timepickers
         start_time = findViewById(R.id.pick_start_time);

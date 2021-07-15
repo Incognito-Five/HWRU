@@ -9,27 +9,26 @@ import androidx.viewpager2.widget.ViewPager2;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ListView;
 
 import com.example.myapplication1.R;
 import com.google.android.material.tabs.TabLayout;
 
-public class TimetableViewFragment extends Fragment {
+public class ScheduleFragment extends Fragment {
 
     TabLayout tab_week;
     ViewPager2 vp;
-    FragmentAdapter2 adapter2;
+    WeekTabAdapter adapter2;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_timetable_view, container, false);
+        View view = inflater.inflate(R.layout.fragment_schedule, container, false);
 
         tab_week = view.findViewById(R.id.tab_week);
         vp = view.findViewById(R.id.vp);
 
         FragmentManager fm = getActivity().getSupportFragmentManager();
-        adapter2 = new FragmentAdapter2(fm,getLifecycle());
+        adapter2 = new WeekTabAdapter(fm,getLifecycle());
         vp.setAdapter(adapter2);
 
         tab_week.addTab(tab_week.newTab().setText("Monday"));

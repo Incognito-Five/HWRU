@@ -14,9 +14,15 @@ public class ReminderBroadcast extends BroadcastReceiver {
     @Override
     public void onReceive(Context context, Intent intent) {
 
+<<<<<<< HEAD
         Intent intent1 = new Intent(context, ScheduleReminder.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         PendingIntent pendingIntent = PendingIntent.getActivity(context, 0, intent1, 0);
+=======
+/*       Intent intent1 = new Intent(context, ScheduleReminder.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        PendingIntent pendingIntent = PendingIntent.getActivity(context, 0, intent1, 0);*//*
+>>>>>>> parent of 6f3bcfb (Revert "Merge branch 'main' of https://github.com/Incognito-Five/HWRU into main")
 
         NotificationCompat.Builder builder = new NotificationCompat.Builder(context, "notifyuser")
                 .setSmallIcon(R.id.alarm_icon)
@@ -28,6 +34,10 @@ public class ReminderBroadcast extends BroadcastReceiver {
                 .setContentIntent(pendingIntent);
 
         NotificationManagerCompat notificationManagerCompat = NotificationManagerCompat.from(context);
+<<<<<<< HEAD
         notificationManagerCompat.notify(200, builder.build());
+=======
+        notificationManagerCompat.notify(200, builder.build());*/
+>>>>>>> parent of 6f3bcfb (Revert "Merge branch 'main' of https://github.com/Incognito-Five/HWRU into main")
     }
 }
