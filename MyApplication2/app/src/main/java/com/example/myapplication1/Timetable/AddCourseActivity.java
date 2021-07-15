@@ -167,9 +167,12 @@ public class AddCourseActivity extends AppCompatActivity {
 
     private void setupUIviews() {
 
+<<<<<<< HEAD
         //Toolbar
         tb = findViewById(R.id.tb_addcourse);
 
+=======
+>>>>>>> parent of 6f3bcfb (Revert "Merge branch 'main' of https://github.com/Incognito-Five/HWRU into main")
 
         //timepickers
         start_time = findViewById(R.id.pick_start_time);
