@@ -20,7 +20,6 @@ public class TimetableModel {
         this.roomLocation = roomLocation;
     }
 
-
     public String getCourseName() {
         return courseName;
     }

@@ -1,19 +1,14 @@
 package com.example.myapplication1;
 
-import android.app.AlertDialog;
 import android.os.Bundle;
 import android.os.Environment;
-import android.text.InputType;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.CompoundButton;
-import android.widget.EditText;
-import android.widget.Toast;
-
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.SwitchCompat;
+import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 
 import java.io.File;
@@ -21,7 +16,6 @@ import java.io.File;
 public class BackUpFragment extends Fragment {
 
     BackUpHelper backUpHelper;
-
     SwitchCompat switch_backup, switch_restore;
 
     @Override
