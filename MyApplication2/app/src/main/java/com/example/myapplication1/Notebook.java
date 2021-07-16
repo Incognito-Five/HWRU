@@ -235,5 +235,4 @@ public class Notebook extends AppCompatActivity implements NavigationView.OnNavi
         return true;
     }
 
-
 }

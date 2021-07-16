@@ -24,25 +24,25 @@
 
         <RelativeLayout
             android:id="@+id/divider1"
-            android:layout_below="@+id/tv1"
             android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@+id/tv1"
             android:layout_marginStart="@dimen/_12sdp"
             android:layout_marginLeft="@dimen/_12sdp"
             android:layout_marginTop="@dimen/_7sdp"
             android:layout_marginEnd="@dimen/_12sdp"
             android:layout_marginRight="@dimen/_12sdp"
-            android:layout_height="1dp"
             android:background="#999999" />
 
         <androidx.appcompat.widget.SwitchCompat
             android:id="@+id/switch_reminder"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_below="@+id/divider1"
             android:layout_marginStart="@dimen/_12sdp"
             android:layout_marginLeft="@dimen/_12sdp"
             android:layout_marginTop="@dimen/_7sdp"
             android:layout_marginEnd="@dimen/_12sdp"
-            android:layout_below="@+id/divider1"
             android:layout_marginRight="@dimen/_12sdp"
             android:text="Turn on reminder" />
 
@@ -63,56 +63,57 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/tv2"
-            android:layout_marginStart="@dimen/_12sdp"
-            android:layout_marginLeft="@dimen/_12sdp"
-            android:layout_marginTop="@dimen/_7sdp"
-            android:layout_marginEnd="@dimen/_12sdp"
-            android:layout_marginRight="@dimen/_12sdp"
             android:layout_centerInParent="true"
+            android:layout_marginStart="@dimen/_12sdp"
+            android:layout_marginLeft="@dimen/_12sdp"
+            android:layout_marginTop="@dimen/_7sdp"
+            android:layout_marginEnd="@dimen/_12sdp"
+            android:layout_marginRight="@dimen/_12sdp"
             android:gravity="center"
-            android:textSize="@dimen/_40sdp"
-            android:text="00:00" />
-
-        <RelativeLayout
-            android:layout_below="@id/select_time"
-            android:id="@+id/divider2"
-            android:layout_width="match_parent"
-            android:layout_marginStart="@dimen/_12sdp"
-            android:layout_marginLeft="@dimen/_12sdp"
-            android:layout_marginTop="@dimen/_7sdp"
-            android:layout_marginEnd="@dimen/_12sdp"
-            android:layout_marginRight="@dimen/_12sdp"
-            android:layout_height="1dp"
-            android:background="#999999" />
-
-        <Button
-            android:id="@+id/btn_delete"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Delete all Course Subjects"
-            android:layout_below="@+id/divider2"
-            android:layout_marginStart="@dimen/_12sdp"
-            android:layout_marginLeft="@dimen/_12sdp"
-            android:layout_marginTop="@dimen/_7sdp"
-            android:layout_marginEnd="@dimen/_12sdp"
-            android:layout_marginRight="@dimen/_12sdp"
-            android:textAllCaps="false"
-            android:gravity="start|center"
-            android:background="@android:color/transparent"/>
+            android:text="00:00"
+            android:textSize="@dimen/_40sdp" />
 
         <Button
             android:id="@+id/save_reminder"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/btn_delete"
+            android:layout_below="@id/select_time"
             android:layout_marginStart="@dimen/_12sdp"
             android:layout_marginLeft="@dimen/_12sdp"
-            android:layout_marginTop="@dimen/_15sdp"
+            android:layout_marginTop="@dimen/_7sdp"
             android:layout_marginEnd="@dimen/_12sdp"
             android:layout_marginRight="@dimen/_12sdp"
             android:background="@color/primary"
-            android:text="@string/save"
+            android:text="Set Reminder"
             app:backgroundTint="@color/primary" />
+
+        <RelativeLayout
+            android:id="@+id/divider2"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@id/save_reminder"
+            android:layout_marginStart="@dimen/_12sdp"
+            android:layout_marginLeft="@dimen/_12sdp"
+            android:layout_marginTop="@dimen/_7sdp"
+            android:layout_marginEnd="@dimen/_12sdp"
+            android:layout_marginRight="@dimen/_12sdp"
+            android:background="#999999" />
+
+        <Button
+            android:id="@+id/btn_deletecourse"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/divider2"
+            android:layout_marginStart="@dimen/_12sdp"
+            android:layout_marginLeft="@dimen/_12sdp"
+            android:layout_marginTop="@dimen/_12sdp"
+            android:layout_marginEnd="@dimen/_12sdp"
+            android:layout_marginRight="@dimen/_12sdp"
+            android:background="@android:color/transparent"
+            android:gravity="start|center"
+            android:text="Delete all Course Subjects"
+            android:textAllCaps="false" />
+
     </RelativeLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

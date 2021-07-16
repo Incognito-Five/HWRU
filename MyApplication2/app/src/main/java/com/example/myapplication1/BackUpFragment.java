@@ -41,6 +41,7 @@ public class BackUpFragment extends Fragment {
                 }
             }
         });
+
         switch_restore.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {

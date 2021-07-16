@@ -117,25 +117,25 @@ public class AddCourseActivity extends AppCompatActivity {
     private void saveCourse() {
         StringBuilder sb = new StringBuilder();
         if (mon.isChecked()) {
-            sb.append("," + "Monday");
+            sb.append("," + " Monday");
         }
         if (tues.isChecked()) {
-            sb.append("," + "Tuesday");
+            sb.append("," + " Tuesday");
         }
         if (wed.isChecked()) {
-            sb.append("," + "Wednesday");
+            sb.append("," + " Wednesday");
         }
         if (thurs.isChecked()) {
-            sb.append("," + "Thursday");
+            sb.append("," + " Thursday");
         }
         if (fri.isChecked()) {
-            sb.append("," + "Friday");
+            sb.append("," + " Friday");
         }
         if (sat.isChecked()) {
-            sb.append("," + "Saturday");
+            sb.append("," + " Saturday");
         }
         if (sun.isChecked()) {
-            sb.append("," + "Sunday");
+            sb.append("," + " Sunday");
         }
 
         //Get all the values
@@ -150,7 +150,7 @@ public class AddCourseActivity extends AppCompatActivity {
         if (sb.length() == 0 || courseName.equals("") || startTime.equals("") || endTime.equals("")) {
             Toast.makeText(AddCourseActivity.this, "Please enter required fields", Toast.LENGTH_SHORT).show();
         } else {
-            String daysSel = sb.deleteCharAt(sb.indexOf(",")).toString();
+            String daysSel = sb.substring(2);
             Boolean checkinsertdata = DB.AddCourseData(courseName, courseCode, daysSel, startTime, endTime, prof, loc, desc);
             if (checkinsertdata) {
                 Toast.makeText(AddCourseActivity.this, "New Course subject added.", Toast.LENGTH_SHORT).show();

@@ -8,6 +8,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CheckBox;
+import android.widget.Filter;
+import android.widget.Filterable;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -15,14 +17,17 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.myapplication1.NotebookModel;
 import com.example.myapplication1.R;
+
+import java.util.ArrayList;
 import java.util.List;
 
-public class CourseAdapter extends RecyclerView.Adapter<CourseAdapter.MyViewHolder> {
+public class CourseAdapter extends RecyclerView.Adapter<CourseAdapter.MyViewHolder> implements Filterable {
 
-    Context context;
     Activity activity;
     List<TimetableModel> courseList;
+    List<TimetableModel> newList;
 
     public CourseAdapter( Activity activity, List<TimetableModel> courseList) {
         this.activity = activity;
@@ -44,17 +49,16 @@ public class CourseAdapter extends RecyclerView.Adapter<CourseAdapter.MyViewHold
         holder.start_time.setText(courseList.get(position).getStartTime());
         holder.end_time.setText(courseList.get(position).getEndTime());
         holder.professor.setText(courseList.get(position).getProfessor());
-        holder.location.setText(courseList.get(position).getRoomLocation());/*
-        holder.description.setText(courseList.get(position).getDescription());*/
+        holder.location.setText(courseList.get(position).getRoomLocation());
         holder.mainlayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast.makeText(activity.getApplicationContext(), "working lols", Toast.LENGTH_SHORT).show();
-/*                Intent intent = new Intent(context, UpdateCourseActivity.class);
-                activity.startActivity(intent);
-                intent.putExtra("", String.valueOf(courseList.get(position).getCourseName()));
-                intent.putExtra("", String.valueOf(courseList.get(position).getCourseCode()));
-                intent.putExtra("", String.valueOf(courseList.get(position).getStartTime()));
+                Intent intent = new Intent(activity.getApplicationContext(), UpdateCourseActivity.class);
+                intent.putExtra("course_name", courseList.get(position).getCourseName());
+                intent.putExtra("course_code", courseList.get(position).getCourseCode());
+                intent.putExtra("start_time", courseList.get(position).getStartTime());
+                intent.putExtra("end_time", courseList.get(position).getEndTime());
                 intent.putExtra("mon", courseList.get(position).getMon());
                 intent.putExtra("tues", courseList.get(position).getTues());
                 intent.putExtra("wed", courseList.get(position).getWed());
@@ -62,11 +66,10 @@ public class CourseAdapter extends RecyclerView.Adapter<CourseAdapter.MyViewHold
                 intent.putExtra("fri", courseList.get(position).getFri());
                 intent.putExtra("sat", courseList.get(position).getSat());
                 intent.putExtra("sun", courseList.get(position).getSun());
-                intent.putExtra("", String.valueOf(courseList.get(position).getEndTime()));
-                intent.putExtra("", String.valueOf(courseList.get(position).getProfessor()));
-                intent.putExtra("", String.valueOf(courseList.get(position).getRoomLocation()));
-                intent.putExtra("", String.valueOf(courseList.get(position).getDescription()));
-                activity.startActivityForResult(intent, 1);*/
+                intent.putExtra("prof", courseList.get(position).getProfessor());
+                intent.putExtra("loc", courseList.get(position).getRoomLocation());
+                intent.putExtra("desc", courseList.get(position).getDescription());
+                activity.startActivity(intent);
             }
         });
     }
@@ -75,6 +78,43 @@ public class CourseAdapter extends RecyclerView.Adapter<CourseAdapter.MyViewHold
     public int getItemCount() {
         return courseList.size();
     }
+
+    @Override
+    public Filter getFilter() {
+        return exampleFilter;
+    }
+
+    //method for filtering search lists
+    private final Filter exampleFilter = new Filter() {
+        @Override
+        protected FilterResults performFiltering(CharSequence constraint) {
+
+            List<TimetableModel> filteredList = new ArrayList<>();
+
+            if (constraint == null || constraint.length() == 0){
+                filteredList.addAll(newList);
+            } else{
+                String filterPattern = constraint.toString().toLowerCase().trim();
+                for (TimetableModel item:newList) {
+                    if (item.getCourseName().toLowerCase().contains(filterPattern)) {
+                        filteredList.add(item);
+                    }
+                }
+
+            }
+            FilterResults results = new FilterResults();
+            results.values = filteredList;
+            return results;
+        }
+
+        @Override
+        //for displaying the results
+        protected void publishResults(CharSequence constraint, FilterResults results) {
+            courseList.clear();
+            courseList.addAll((List) results.values);
+            notifyDataSetChanged();
+        }
+    };
 
     public static class MyViewHolder extends RecyclerView.ViewHolder {
         TextView course_name, course_code, start_time, end_time, professor, location, description, daysSel;
@@ -88,8 +128,7 @@ public class CourseAdapter extends RecyclerView.Adapter<CourseAdapter.MyViewHold
             end_time = itemView.findViewById(R.id.tv_endtime2);
             professor = itemView.findViewById(R.id.tv_professor2);
             location = itemView.findViewById(R.id.tv_location2);
-            daysSel = itemView.findViewById(R.id.days2);/*
-            description = itemView.findViewById(R.id.input_description);*/
+            daysSel = itemView.findViewById(R.id.days2);
             mainlayout = itemView.findViewById(R.id.courselistmainlayout);
         }
     }

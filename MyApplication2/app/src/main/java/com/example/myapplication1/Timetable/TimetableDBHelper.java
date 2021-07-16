@@ -82,7 +82,7 @@ public class TimetableDBHelper extends SQLiteOpenHelper {
         return cursor;
     }
 
-    void deleteAllData() {
+    void deleteAllCourseData() {
         SQLiteDatabase coursedb = this.getWritableDatabase();
         coursedb.execSQL("DELETE FROM CourseDetails");
     }

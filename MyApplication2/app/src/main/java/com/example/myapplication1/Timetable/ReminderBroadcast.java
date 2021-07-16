@@ -14,5 +14,23 @@ public class ReminderBroadcast extends BroadcastReceiver {
     @Override
     public void onReceive(Context context, Intent intent) {
 
+        //new activity will open up if the user taps the notification
+        Intent i = new Intent(context, Timetable.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        PendingIntent pendingIntent = PendingIntent.getActivity(context, 0,i,0);
+
+        //will show the notification
+        NotificationCompat.Builder builder=  new NotificationCompat.Builder(context, "timetable")
+                .setSmallIcon(R.drawable.notification_icon)
+                .setContentTitle("Schedule Reminder")
+                .setContentText("This is a soft reminder of your schedule today")
+                .setAutoCancel(true)
+                .setDefaults(NotificationCompat.DEFAULT_ALL)
+                .setPriority(NotificationCompat.PRIORITY_HIGH)
+                //will open new activity
+                .setContentIntent(pendingIntent);
+
+        NotificationManagerCompat notificationManagerCompat = NotificationManagerCompat.from(context);
+        notificationManagerCompat.notify(123,builder.build());
    }
 }

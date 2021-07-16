@@ -6,23 +6,24 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
-import android.app.Activity;
 import android.app.TimePickerDialog;
-import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.Button;
+import android.view.View;
 import android.widget.CheckBox;
-import android.widget.TextView;
+import android.widget.TimePicker;
 import android.widget.Toast;
 
 import com.example.myapplication1.R;
 import com.google.android.material.textfield.TextInputEditText;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
 
 public class UpdateCourseActivity extends AppCompatActivity {
 
@@ -32,9 +33,6 @@ public class UpdateCourseActivity extends AppCompatActivity {
     private Toolbar tb;
     TextInputEditText start_time, end_time, course_name, location, course_code, professor, description;
     CheckBox mon,tues,wed,thurs,fri,sat,sun;
-    Boolean getMon, getTues, getWed, getThu, getFri, getSat, getSun;
-    String daysSel;
-    String starttime, endtime, coursename, loc, coursecode, prof, des;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,16 +40,72 @@ public class UpdateCourseActivity extends AppCompatActivity {
         setContentView(R.layout.activity_update_course);
 
         setupUIviews();
+
         setSupportActionBar(tb);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         ActionBar ab = getSupportActionBar();
         if (ab != null) {
-            ab.setTitle(coursename);
+            ab.setTitle(course_name.getText().toString());
 
         }
 
-        /*getAndSetIntentData();*/
+        getAndSetIntentData();
+
         TimetableDBHelper DB = new TimetableDBHelper(this);
+
+        start_time.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                calendar = Calendar.getInstance();
+                currentHour = calendar.get(Calendar.HOUR_OF_DAY);
+                currentMin = calendar.get(Calendar.MINUTE);
+
+                timePickerDialog2 = new TimePickerDialog(UpdateCourseActivity.this, new TimePickerDialog.OnTimeSetListener() {
+                    @Override
+                    public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
+                        String time = hourOfDay + ":" + minute;
+                        SimpleDateFormat f24Hours = new SimpleDateFormat("HH:mm");
+                        try {
+                            Date date = f24Hours.parse(time);
+                            SimpleDateFormat f12Hours;
+                            f12Hours = new SimpleDateFormat("hh:mm aa");
+                            start_time.setText(f12Hours.format(date));
+                        } catch (ParseException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                }, 12, 0, false);
+                timePickerDialog2.show();
+            }
+        });
+
+        end_time.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                calendar = Calendar.getInstance();
+                currentHour2 = calendar.get(Calendar.HOUR_OF_DAY);
+                currentMin2 = calendar.get(Calendar.MINUTE);
+
+                timePickerDialog = new TimePickerDialog(UpdateCourseActivity.this, new TimePickerDialog.OnTimeSetListener() {
+                    @Override
+                    public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
+                        String time = hourOfDay + ":" + minute;
+                        SimpleDateFormat f24Hours;
+                        f24Hours = new SimpleDateFormat("HH:mm");
+                        try {
+                            Date date = f24Hours.parse(time);
+                            SimpleDateFormat f12Hours;
+                            f12Hours = new SimpleDateFormat("hh:mm aa");
+                            end_time.setText(f12Hours.format(date));
+                        } catch (ParseException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                }, 12, 0, false);
+                timePickerDialog.show();
+            }
+        });
     }
 
     @Override
@@ -77,25 +131,25 @@ public class UpdateCourseActivity extends AppCompatActivity {
     private void updateCourse() {
         StringBuilder sb = new StringBuilder();
         if (mon.isChecked()) {
-            sb.append("," + "Monday");
+            sb.append("," + " Monday");
         }
         if (tues.isChecked()) {
-            sb.append("," + "Tuesday");
+            sb.append("," + " Tuesday");
         }
         if (wed.isChecked()) {
-            sb.append("," + "Wednesday");
+            sb.append("," + " Wednesday");
         }
         if (thurs.isChecked()) {
-            sb.append("," + "Thursday");
+            sb.append("," + " Thursday");
         }
         if (fri.isChecked()) {
-            sb.append("," + "Friday");
+            sb.append("," + " Friday");
         }
         if (sat.isChecked()) {
-            sb.append("," + "Saturday");
+            sb.append("," + " Saturday");
         }
         if (sun.isChecked()) {
-            sb.append("," + "Sunday");
+            sb.append("," + " Sunday");
         }
         //Get all the values
         String courseName = course_name.getText().toString();
@@ -110,15 +164,14 @@ public class UpdateCourseActivity extends AppCompatActivity {
         if (sb.length() == 0 || courseName.equals("") || startTime.equals("") || endTime.equals("")) {
             Toast.makeText(UpdateCourseActivity.this, "Please enter required fields", Toast.LENGTH_SHORT).show();
         } else {
-            String daysSel = sb.deleteCharAt(sb.indexOf(",")).toString();
+            String daysSel = sb.substring(2);
             Boolean checkinsertdata = coursedb.UpdateCourseData(courseName, courseCode, daysSel, startTime, endTime, prof, loc, desc);
             if (checkinsertdata) {
                 Toast.makeText(UpdateCourseActivity.this, "Subject updated.", Toast.LENGTH_SHORT).show();
-                finish();
             } else {
                 Toast.makeText(UpdateCourseActivity.this, "Try Again.", Toast.LENGTH_SHORT).show();
-                finish();
             }
+            finish();
         }
     }
     
@@ -158,40 +211,24 @@ public class UpdateCourseActivity extends AppCompatActivity {
                 getIntent().hasExtra("wed") && getIntent().hasExtra("thurs") &&
                 getIntent().hasExtra("fri") &&  getIntent().hasExtra("sat") &&
                 getIntent().hasExtra("sun") && getIntent().hasExtra("start_time") &&
-                getIntent().hasExtra("end_time") && getIntent().hasExtra("professor") &&
-                getIntent().hasExtra("location") && getIntent().hasExtra("description")){
+                getIntent().hasExtra("end_time") && getIntent().hasExtra("prof") &&
+                getIntent().hasExtra("loc") && getIntent().hasExtra("desc")){
 
-            //getting data from intent
-            coursename = getIntent().getStringExtra("course_name");
-            coursecode = getIntent().getStringExtra("course_code");
-            getMon = getIntent().getExtras().getBoolean("mon");
-            getTues = getIntent().getExtras().getBoolean("tues");
-            getWed = getIntent().getExtras().getBoolean("wed");
-            getThu = getIntent().getExtras().getBoolean("thurs");
-            getFri = getIntent().getExtras().getBoolean("fri");
-            getSat = getIntent().getExtras().getBoolean("sat");
-            getSun = getIntent().getExtras().getBoolean("sun");
-            starttime = getIntent().getStringExtra("start_time");
-            endtime = getIntent().getStringExtra("end_time");
-            prof = getIntent().getStringExtra("professor");
-            loc = getIntent().getStringExtra("location");
-            des = getIntent().getStringExtra("description");
-
-            //setting intent data
-            course_name.setText(coursename);
-            course_code.setText(coursecode);
-            mon.setChecked(getMon);
-            tues.setChecked(getTues);
-            wed.setChecked(getWed);
-            thurs.setChecked(getThu);
-            fri.setChecked(getFri);
-            sat.setChecked(getFri);
-            sun.setChecked(getSun);
-            start_time.setText(starttime);
-            end_time.setText(endtime);
-            professor.setText(prof);
-            location.setText(loc);
-            description.setText(des);
+            Intent i = getIntent();
+            course_name.setText(i.getStringExtra("course_name"));
+            course_code.setText(i.getStringExtra("course_code"));
+            mon.setChecked(i.getBooleanExtra("mon",false));
+            tues.setChecked(i.getBooleanExtra("tues",false));
+            wed.setChecked(i.getBooleanExtra("wed",false));
+            thurs.setChecked(i.getBooleanExtra("thurs",false));
+            fri.setChecked(i.getBooleanExtra("fri",false));
+            sat.setChecked(i.getBooleanExtra("sat",false));
+            sun.setChecked(i.getBooleanExtra("sun",false));
+            start_time.setText(i.getStringExtra("start_time"));
+            end_time.setText(i.getStringExtra("end_time"));
+            professor.setText(i.getStringExtra("prof"));
+            location.setText(i.getStringExtra("loc"));
+            description.setText(i.getStringExtra("desc"));
 
         } else{
             Toast.makeText(this, "No data", Toast.LENGTH_SHORT).show();
@@ -200,13 +237,13 @@ public class UpdateCourseActivity extends AppCompatActivity {
 
     void confirmDialog() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("Delete " + coursename + "?");
+        builder.setTitle("Delete " + course_name.getText().toString() + "?");
         builder.setMessage("Are you sure you want to delete?");
         builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 TimetableDBHelper coursedb = new TimetableDBHelper(UpdateCourseActivity.this);
-                coursedb.DeleteCourseData(coursename);
+                coursedb.DeleteCourseData(course_name.getText().toString());
                 finish();
             }
         });
@@ -214,7 +251,7 @@ public class UpdateCourseActivity extends AppCompatActivity {
         builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-
+                finish();
             }
         });
 
