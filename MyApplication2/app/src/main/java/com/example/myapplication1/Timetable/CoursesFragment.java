@@ -1,66 +1,66 @@
 package com.example.myapplication1.Timetable;
 
+import android.database.Cursor;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
+import com.example.myapplication1.NotebookModel;
 import com.example.myapplication1.R;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link CoursesFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
+import java.util.ArrayList;
+import java.util.List;
+
 public class CoursesFragment extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
-
-    public CoursesFragment() {
-        // Required empty public constructor
-    }
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment CoursesFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static CoursesFragment newInstance(String param1, String param2) {
-        CoursesFragment fragment = new CoursesFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
+    private TimetableDBHelper dbHelper;
+    private List<TimetableModel> models;
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
-    }
-
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_courses, container, false);
+        View view = inflater.inflate(R.layout.fragment_courses, container, false);
+
+        RecyclerView recyclerView = view.findViewById(R.id.courserecyclerview);
+        models = new ArrayList<>();
+        dbHelper = new TimetableDBHelper(getActivity());
+
+        fetchAllCourseFromDataBase();
+
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
+        CourseAdapter adapter = new CourseAdapter(getActivity(), models);
+        recyclerView.setLayoutManager(linearLayoutManager);
+        recyclerView.setAdapter(adapter);
+
+        return view;
+    }
+
+
+    void fetchAllCourseFromDataBase()
+    {
+        Cursor cursor = dbHelper.readAllData();
+        if (cursor.getCount()==0)
+        {
+            Toast.makeText(getActivity(), "No Data to Show", Toast.LENGTH_SHORT).show();
+        }
+        else
+        {
+            while(cursor.moveToNext())
+            {
+                models.add(new TimetableModel(cursor.getString(0),
+                        cursor.getString(1),
+                        cursor.getString(2),
+                        cursor.getString(3),
+                        cursor.getString(4),
+                        cursor.getString(5),
+                        cursor.getString(6)));}
+        }
     }
 }

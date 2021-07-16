@@ -71,6 +71,23 @@ public class TimetableDBHelper extends SQLiteOpenHelper {
         }
     }
 
+    Cursor readAllData() {
+        String query = "SELECT * FROM CourseDetails";
+        SQLiteDatabase coursedb = this.getReadableDatabase();
+
+        Cursor cursor = null;
+        if (coursedb != null) {
+            cursor = coursedb.rawQuery(query, null);
+        }
+        return cursor;
+    }
+
+    void deleteAllData() {
+        SQLiteDatabase coursedb = this.getWritableDatabase();
+        coursedb.execSQL("DELETE FROM CourseDetails");
+    }
+
+    //Sorts schedule by day and time
     public Cursor getMonday() {
         String query = "SELECT * FROM ( SELECT * FROM CourseDetails ORDER BY CASE WHEN start_time like '%AM' then 1 when start_time like '%12:00 PM%' then 2 else start_time end) WHERE days LIKE '%Monday%'";
         SQLiteDatabase database = this.getReadableDatabase();
@@ -147,4 +164,5 @@ public class TimetableDBHelper extends SQLiteOpenHelper {
         }
         return cursor;
     }
+
 }

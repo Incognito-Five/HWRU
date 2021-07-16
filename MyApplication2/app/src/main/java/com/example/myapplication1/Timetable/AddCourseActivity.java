@@ -25,16 +25,13 @@ import java.util.Date;
 
 public class AddCourseActivity extends AppCompatActivity {
 
-    TextInputEditText start_time, end_time, course_name, location, course_code, professor, description;
-    TimePickerDialog timePickerDialog, timePickerDialog2;
-    Calendar calendar;
-    int currentHour, currentMin, currentHour2, currentMin2;
-    String daysSel;
-    TextView tv_coursename, tv_startTime, tv_endTime, tv_location;
-    Button save_btn;
-    CheckBox mon, tues, wed, thurs, fri, sat, sun;
-    TimetableDBHelper DB;
-    Toolbar tb;
+    private TextInputEditText start_time, end_time, course_name, location, course_code, professor, description;
+    private TimePickerDialog timePickerDialog, timePickerDialog2;
+    private Calendar calendar;
+    private int currentHour, currentMin, currentHour2, currentMin2;
+    private CheckBox mon, tues, wed, thurs, fri, sat, sun;
+    private TimetableDBHelper DB;
+    private Toolbar tb;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -191,12 +188,12 @@ public class AddCourseActivity extends AppCompatActivity {
         sun = findViewById(R.id.sun);
 
         //TextView
-        tv_coursename = findViewById(R.id.tv_coursename);
-        tv_startTime = findViewById(R.id.tv_startTime);
-        tv_endTime = findViewById(R.id.tv_endTime);
-        tv_location = findViewById(R.id.tv_location);
+        TextView tv_coursename = findViewById(R.id.tv_coursename);
+        TextView tv_startTime = findViewById(R.id.tv_startTime);
+        TextView tv_endTime = findViewById(R.id.tv_endTime);
+        TextView tv_location = findViewById(R.id.tv_location);
 
-        daysSel = "";
+        String daysSel = "";
 
     }
 

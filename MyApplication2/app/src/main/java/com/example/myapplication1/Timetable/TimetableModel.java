@@ -10,9 +10,28 @@ public class TimetableModel {
     String professor;
     String roomLocation;
     String description;
+    Boolean mon;
+    Boolean tues;
+    Boolean wed;
+    Boolean thurs;
+    Boolean fri;
+    Boolean sat;
+    Boolean sun;
 
+    //empty constructor
     public TimetableModel(){}
 
+    //used in Course Fragment
+    public TimetableModel(String courseName, String courseCode, String days, String startTime, String endTime, String professor, String roomLocation){
+        this.courseName = courseName;
+        this.courseCode = courseCode;
+        this.days = days;
+        this.startTime = startTime;
+        this.endTime = endTime;
+        this.professor = professor;
+        this.roomLocation = roomLocation;
+    }
+    //used in Schedule Fragment
     public TimetableModel(String courseName, String startTime, String endTime, String roomLocation) {
         this.courseName = courseName;
         this.startTime = startTime;
@@ -20,6 +39,62 @@ public class TimetableModel {
         this.roomLocation = roomLocation;
     }
 
+    //Getters and Setters
+    public Boolean getMon() {
+        return mon;
+    }
+
+    public void setMon(Boolean mon) {
+        this.mon = mon;
+    }
+
+    public Boolean getTues() {
+        return tues;
+    }
+
+    public void setTues(Boolean tues) {
+        this.tues = tues;
+    }
+
+    public Boolean getWed() {
+        return wed;
+    }
+
+    public void setWed(Boolean wed) {
+        this.wed = wed;
+    }
+
+    public Boolean getThurs() {
+        return thurs;
+    }
+
+    public void setThurs(Boolean thurs) {
+        this.thurs = thurs;
+    }
+
+    public Boolean getFri() {
+        return fri;
+    }
+
+    public void setFri(Boolean fri) {
+        this.fri = fri;
+    }
+
+    public Boolean getSat() {
+        return sat;
+    }
+
+    public void setSat(Boolean sat) {
+        this.sat = sat;
+    }
+
+    public Boolean getSun() {
+        return sun;
+    }
+
+    public void setSun(Boolean sun) {
+        this.sun = sun;
+    }
     public String getCourseName() {
         return courseName;
     }

@@ -11,8 +11,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <androidx.appcompat.widget.SwitchCompat
-            android:id="@+id/switch_reminder"
+        <TextView
+            android:id="@+id/tv1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/_12sdp"
@@ -20,10 +20,34 @@
             android:layout_marginTop="@dimen/_15sdp"
             android:layout_marginEnd="@dimen/_12sdp"
             android:layout_marginRight="@dimen/_12sdp"
+            android:text="Schedule Reminder" />
+
+        <RelativeLayout
+            android:id="@+id/divider1"
+            android:layout_below="@+id/tv1"
+            android:layout_width="match_parent"
+            android:layout_marginStart="@dimen/_12sdp"
+            android:layout_marginLeft="@dimen/_12sdp"
+            android:layout_marginTop="@dimen/_7sdp"
+            android:layout_marginEnd="@dimen/_12sdp"
+            android:layout_marginRight="@dimen/_12sdp"
+            android:layout_height="1dp"
+            android:background="#999999" />
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/switch_reminder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_12sdp"
+            android:layout_marginLeft="@dimen/_12sdp"
+            android:layout_marginTop="@dimen/_7sdp"
+            android:layout_marginEnd="@dimen/_12sdp"
+            android:layout_below="@+id/divider1"
+            android:layout_marginRight="@dimen/_12sdp"
             android:text="Turn on reminder" />
 
         <TextView
-            android:id="@+id/tv1"
+            android:id="@+id/tv2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/switch_reminder"
@@ -34,32 +58,8 @@
             android:layout_marginRight="@dimen/_12sdp"
             android:text="What time do you want to be reminded?" />
 
-        <TimePicker
-            android:id="@+id/tp_reminder"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/tv1"
-            android:layout_marginStart="@dimen/_12sdp"
-            android:layout_marginLeft="@dimen/_12sdp"
-            android:layout_marginTop="@dimen/_7sdp"
-            android:layout_marginEnd="@dimen/_12sdp"
-            android:layout_marginRight="@dimen/_12sdp"
-            android:timePickerMode="spinner" />
-
         <TextView
-            android:id="@+id/tv2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/tp_reminder"
-            android:layout_marginStart="@dimen/_12sdp"
-            android:layout_marginLeft="@dimen/_12sdp"
-            android:layout_marginTop="@dimen/_7sdp"
-            android:layout_marginEnd="@dimen/_12sdp"
-            android:layout_marginRight="@dimen/_12sdp"
-            android:text="When do you want to be reminded?" />
-
-        <HorizontalScrollView
-            android:id="@+id/week_reminder"
+            android:id="@+id/select_time"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/tv2"
@@ -67,67 +67,15 @@
             android:layout_marginLeft="@dimen/_12sdp"
             android:layout_marginTop="@dimen/_7sdp"
             android:layout_marginEnd="@dimen/_12sdp"
-            android:layout_marginRight="@dimen/_12sdp">
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <CheckBox
-                    android:id="@+id/mon2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:padding="5dp"
-                    android:text="@string/monday" />
-
-                <CheckBox
-                    android:id="@+id/tues2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:padding="5dp"
-                    android:text="@string/tuesday" />
-
-                <CheckBox
-                    android:id="@+id/wed2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:padding="5dp"
-                    android:text="@string/wednesday" />
-
-                <CheckBox
-                    android:id="@+id/thurs2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:padding="5dp"
-                    android:text="@string/thursday" />
-
-                <CheckBox
-                    android:id="@+id/fri2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:padding="5dp"
-                    android:text="@string/friday" />
-
-                <CheckBox
-                    android:id="@+id/sat2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:padding="5dp"
-                    android:text="@string/saturday" />
-
-                <CheckBox
-                    android:id="@+id/sun2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:padding="5dp"
-                    android:text="@string/sunday" />
-            </LinearLayout>
-        </HorizontalScrollView>
+            android:layout_marginRight="@dimen/_12sdp"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:textSize="@dimen/_40sdp"
+            android:text="00:00" />
 
         <RelativeLayout
-            android:layout_below="@id/week_reminder"
-            android:id="@+id/divider1"
+            android:layout_below="@id/select_time"
+            android:id="@+id/divider2"
             android:layout_width="match_parent"
             android:layout_marginStart="@dimen/_12sdp"
             android:layout_marginLeft="@dimen/_12sdp"
@@ -135,16 +83,14 @@
             android:layout_marginEnd="@dimen/_12sdp"
             android:layout_marginRight="@dimen/_12sdp"
             android:layout_height="1dp"
-            android:background="#999999" >
-
-        </RelativeLayout>
+            android:background="#999999" />
 
         <Button
             android:id="@+id/btn_delete"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Delete all Course Subjects"
-            android:layout_below="@+id/divider1"
+            android:layout_below="@+id/divider2"
             android:layout_marginStart="@dimen/_12sdp"
             android:layout_marginLeft="@dimen/_12sdp"
             android:layout_marginTop="@dimen/_7sdp"
