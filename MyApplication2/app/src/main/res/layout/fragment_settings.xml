@@ -34,23 +34,11 @@
             android:layout_marginRight="@dimen/_12sdp"
             android:background="#999999" />
 
-        <androidx.appcompat.widget.SwitchCompat
-            android:id="@+id/switch_reminder"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/divider1"
-            android:layout_marginStart="@dimen/_12sdp"
-            android:layout_marginLeft="@dimen/_12sdp"
-            android:layout_marginTop="@dimen/_7sdp"
-            android:layout_marginEnd="@dimen/_12sdp"
-            android:layout_marginRight="@dimen/_12sdp"
-            android:text="Turn on reminder" />
-
         <TextView
             android:id="@+id/tv2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/switch_reminder"
+            android:layout_below="@+id/divider1"
             android:layout_marginStart="@dimen/_12sdp"
             android:layout_marginLeft="@dimen/_12sdp"
             android:layout_marginTop="@dimen/_7sdp"
@@ -70,7 +58,7 @@
             android:layout_marginEnd="@dimen/_12sdp"
             android:layout_marginRight="@dimen/_12sdp"
             android:gravity="center"
-            android:text="00:00"
+            android:text="07:00 AM"
             android:textSize="@dimen/_40sdp" />
 
         <Button
@@ -87,11 +75,25 @@
             android:text="Set Reminder"
             app:backgroundTint="@color/primary" />
 
+        <Button
+            android:id="@+id/cancel_reminder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/save_reminder"
+            android:layout_marginStart="@dimen/_12sdp"
+            android:layout_marginLeft="@dimen/_12sdp"
+            android:layout_marginTop="@dimen/_7sdp"
+            android:layout_marginEnd="@dimen/_12sdp"
+            android:layout_marginRight="@dimen/_12sdp"
+            android:background="@color/primary"
+            android:text="Cancel Reminder"
+            app:backgroundTint="@color/primary" />
+
         <RelativeLayout
             android:id="@+id/divider2"
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:layout_below="@id/save_reminder"
+            android:layout_below="@id/cancel_reminder"
             android:layout_marginStart="@dimen/_12sdp"
             android:layout_marginLeft="@dimen/_12sdp"
             android:layout_marginTop="@dimen/_7sdp"

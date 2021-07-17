@@ -25,8 +25,6 @@ public class CoursesFragment extends Fragment {
 
     private TimetableDBHelper dbHelper;
     private List<TimetableModel> models;
-    SearchView searchView;
-    ArrayList<String> course_name, course_code, start_time, end_time, professor, location, description, daysSel;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -34,7 +32,7 @@ public class CoursesFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_courses, container, false);
 
         RecyclerView recyclerView = view.findViewById(R.id.courserecyclerview);
-        searchView = view.findViewById(R.id.search_course);
+
         models = new ArrayList<>();
         dbHelper = new TimetableDBHelper(getActivity());
 
@@ -44,20 +42,6 @@ public class CoursesFragment extends Fragment {
         CourseAdapter adapter = new CourseAdapter(getActivity(), models);
         recyclerView.setLayoutManager(linearLayoutManager);
         recyclerView.setAdapter(adapter);
-
-/*        searchView.setQueryHint("Search Course Here");
-        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
-            @Override
-            public boolean onQueryTextSubmit(String query) {
-                return false;
-            }
-
-            @Override
-            public boolean onQueryTextChange(String newText) {
-                adapter.getFilter().filter(newText);
-                return true;
-            }
-        });*/
 
         return view;
     }
@@ -74,8 +58,10 @@ public class CoursesFragment extends Fragment {
                         cursor.getString(3),
                         cursor.getString(4),
                         cursor.getString(5),
-                        cursor.getString(6)));
+                        cursor.getString(6),
+                        cursor.getString(7)));
             }
         }
     }
+
 }

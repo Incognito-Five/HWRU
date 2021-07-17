@@ -10,7 +10,10 @@ import androidx.core.app.NotificationManagerCompat;
 
 import com.example.myapplication1.R;
 
+import java.util.Calendar;
+
 public class ReminderBroadcast extends BroadcastReceiver {
+
     @Override
     public void onReceive(Context context, Intent intent) {
 
@@ -20,17 +23,17 @@ public class ReminderBroadcast extends BroadcastReceiver {
         PendingIntent pendingIntent = PendingIntent.getActivity(context, 0,i,0);
 
         //will show the notification
-        NotificationCompat.Builder builder=  new NotificationCompat.Builder(context, "timetable")
-                .setSmallIcon(R.drawable.notification_icon)
-                .setContentTitle("Schedule Reminder")
-                .setContentText("This is a soft reminder of your schedule today")
-                .setAutoCancel(true)
-                .setDefaults(NotificationCompat.DEFAULT_ALL)
-                .setPriority(NotificationCompat.PRIORITY_HIGH)
-                //will open new activity
-                .setContentIntent(pendingIntent);
+       NotificationCompat.Builder builder=  new NotificationCompat.Builder(context, "timetable")
+               .setSmallIcon(R.drawable.notification_icon)
+               .setContentTitle("Schedule Reminder")
+               .setContentText("This is a gentle reminder to view your today's class schedule.")
+               .setAutoCancel(true)
+               .setDefaults(NotificationCompat.DEFAULT_ALL)
+               .setPriority(NotificationCompat.PRIORITY_HIGH)
+               //will open new activity
+               .setContentIntent(pendingIntent);
 
-        NotificationManagerCompat notificationManagerCompat = NotificationManagerCompat.from(context);
-        notificationManagerCompat.notify(123,builder.build());
+       NotificationManagerCompat notificationManagerCompat = NotificationManagerCompat.from(context);
+       notificationManagerCompat.notify(123,builder.build());
    }
 }

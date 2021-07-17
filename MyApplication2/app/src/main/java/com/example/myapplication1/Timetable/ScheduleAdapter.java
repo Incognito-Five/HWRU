@@ -12,8 +12,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.myapplication1.R;
 
-import org.jetbrains.annotations.NotNull;
-
 import java.util.List;
 
 public class ScheduleAdapter extends RecyclerView.Adapter<ScheduleAdapter.SetViewHolder> {
@@ -31,7 +29,7 @@ public class ScheduleAdapter extends RecyclerView.Adapter<ScheduleAdapter.SetVie
     @NonNull
     @Override
     public SetViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.schedule_card, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.timetable_schedule_item, parent, false);
         return new SetViewHolder(view);
     }
 
