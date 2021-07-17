@@ -22,7 +22,7 @@ public class TimetableModel {
     public TimetableModel(){}
 
     //used in Course Fragment
-    public TimetableModel(String courseName, String courseCode, String days, String startTime, String endTime, String professor, String roomLocation){
+    public TimetableModel(String courseName, String courseCode, String days, String startTime, String endTime, String professor, String roomLocation, String description){
         this.courseName = courseName;
         this.courseCode = courseCode;
         this.days = days;
@@ -30,6 +30,7 @@ public class TimetableModel {
         this.endTime = endTime;
         this.professor = professor;
         this.roomLocation = roomLocation;
+        this.description = description;
     }
     //used in Schedule Fragment
     public TimetableModel(String courseName, String startTime, String endTime, String roomLocation) {

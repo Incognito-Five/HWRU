@@ -34,9 +34,8 @@ import java.util.Calendar;
 
 public class SettingsFragment extends Fragment {
 
-    SwitchCompat switch_reminder;
-    TextView tv1, tv2, select_time;
-    Button btn_save, btn_delete;
+    TextView select_time;
+    Button btn_save, btn_delete, btn_cancel;
     TimetableDBHelper dB;
     AlarmManager alarmManager;
     Calendar calendar;
@@ -50,48 +49,38 @@ public class SettingsFragment extends Fragment {
         createNotificationChannel();
         setupUIviews(view);
 
-        //disabled the uis when switch is off
-        tv2.setEnabled(false);
-        select_time.setEnabled(false);
-        btn_save.setEnabled(false);
-
         //sets text view to current time
         Calendar cal = Calendar.getInstance();
         SimpleDateFormat sdf = new SimpleDateFormat("HH:mm aa");
         String strTime = sdf.format(cal.getTime());
         select_time.setText(strTime);
 
-        // Saving state of our app using SharedPreferences
-        SharedPreferences sharedPreferences = requireActivity().getSharedPreferences("remindPrefs", Context.MODE_PRIVATE);
-        final SharedPreferences.Editor editor = sharedPreferences.edit();
-        final boolean isAlarmOn = sharedPreferences.getBoolean("isAlarmOn", false);
+/*        SharedPreferences sharedPreferences = getActivity().getSharedPreferences("save", Context.MODE_PRIVATE);
+        switch_reminder.setChecked(sharedPreferences.getBoolean("value", true));
+        SharedPreferences.Editor editor = getActivity().getSharedPreferences("save",Context.MODE_PRIVATE).edit();
+        editor.putBoolean("value",true);
+        editor.apply();
+        switch_reminder.setChecked(true);*/
 
-        // When user reopens the app
-        switch_reminder.setChecked(isAlarmOn);
-        switch_reminder.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+
+        //save reminder
+        btn_save.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (isAlarmOn) {
-                    //enables when switch reminder is on
-                    tv2.setEnabled(true);
-                    select_time.setEnabled(true);
-                    btn_save.setEnabled(true);
-                    editor.putBoolean("isAlarmOn", true);
-                    editor.apply();
-                    switch_reminder.setChecked(true);
-                } else {
-                    //disabled the uis when switch is off
-                    tv2.setEnabled(false);
-                    select_time.setEnabled(false);
-                    btn_save.setEnabled(false);
-                    editor.putBoolean("isAlarmOn", false);
-                    editor.apply();
-                    switch_reminder.setChecked(false);
-                    cancelAlarm();
-                }
+            public void onClick(View v) {
+                setAlarm();
+
             }
         });
 
+        //cancel reminder
+        btn_cancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                cancelAlarm();
+            }
+        });
+
+        //delete all course subjects
         btn_delete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -99,20 +88,7 @@ public class SettingsFragment extends Fragment {
             }
         });
 
-        btn_save.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                setAlarm();
-                if (picker.getHour() > 12) {
-                    String.format("%02d", (picker.getHour() - 12) + ":" + String.format("%02d", picker.getMinute()) + "PM");
-                } else {
-                    select_time.setText(picker.getHour() + ":" + picker.getMinute() + "AM");
-                }
-                Toast.makeText(getActivity(), "Working on it...", Toast.LENGTH_SHORT).show();
-
-            }
-        });
-
+        //shows time picker dialog
         select_time.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -132,7 +108,7 @@ public class SettingsFragment extends Fragment {
         }
 
         alarmManager.cancel(pendingIntent);
-        Toast.makeText(getActivity(), "Alarm Cancelled", Toast.LENGTH_SHORT).show();
+        Toast.makeText(getActivity(), "Alarm Cancelled.", Toast.LENGTH_SHORT).show();
 
     }
 
@@ -161,8 +137,9 @@ public class SettingsFragment extends Fragment {
         picker.addOnPositiveButtonClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 if (picker.getHour() > 12) {
-                    select_time.setText(String.format("%02d", (picker.getHour() - 12) + ":" + String.format("%02d", picker.getMinute()) + "PM"));
+                    select_time.setText((picker.getHour() - 12) + ":" + picker.getMinute() + "PM");
                 } else {
                     select_time.setText(picker.getHour() + ":" + picker.getMinute() + "AM");
                 }
@@ -173,6 +150,7 @@ public class SettingsFragment extends Fragment {
                 calendar.set(Calendar.MILLISECOND, 0);
             }
         });
+
     }
 
     private void createNotificationChannel() {
@@ -190,15 +168,13 @@ public class SettingsFragment extends Fragment {
     }
 
     private void setupUIviews(View view) {
-        //switch
-        switch_reminder = view.findViewById(R.id.switch_reminder);
 
         //button
         btn_save = view.findViewById(R.id.save_reminder);
+        btn_cancel = view.findViewById(R.id.cancel_reminder);
         btn_delete = view.findViewById(R.id.btn_deletecourse);
 
         //textview
-        tv2 = view.findViewById(R.id.tv2);
         select_time = view.findViewById(R.id.select_time);
     }
 

@@ -7,20 +7,7 @@
     android:background="@color/white"
     tools:context=".Timetable.CoursesFragment">
 
-    <androidx.appcompat.widget.SearchView
-        android:id="@+id/search_course"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/_10sdp"
-        android:layout_marginLeft="@dimen/_10sdp"
-        android:layout_marginTop="@dimen/_10sdp"
-        app:queryHint="Search course here"
-        android:layout_marginEnd="@dimen/_10sdp"
-        android:layout_marginRight="@dimen/_10sdp"
-        android:layout_marginBottom="@dimen/_10sdp"/>
-
     <androidx.recyclerview.widget.RecyclerView
-        android:layout_below="@+id/search_course"
         android:id="@+id/courserecyclerview"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

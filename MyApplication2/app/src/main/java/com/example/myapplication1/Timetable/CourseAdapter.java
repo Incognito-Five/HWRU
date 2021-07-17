@@ -1,43 +1,39 @@
 package com.example.myapplication1.Timetable;
 
 import android.app.Activity;
-import android.app.assist.AssistStructure;
-import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.CheckBox;
 import android.widget.Filter;
 import android.widget.Filterable;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.myapplication1.NotebookModel;
 import com.example.myapplication1.R;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
-public class CourseAdapter extends RecyclerView.Adapter<CourseAdapter.MyViewHolder> implements Filterable {
+public class CourseAdapter extends RecyclerView.Adapter<CourseAdapter.MyViewHolder> {
 
     Activity activity;
     List<TimetableModel> courseList;
     List<TimetableModel> newList;
 
-    public CourseAdapter( Activity activity, List<TimetableModel> courseList) {
+    public CourseAdapter(Activity activity, List<TimetableModel> courseList) {
         this.activity = activity;
         this.courseList = courseList;
     }
-    
+
     @NonNull
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.course_item, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.timetable_course_item, parent, false);
         return new MyViewHolder(view);
     }
 
@@ -50,10 +46,10 @@ public class CourseAdapter extends RecyclerView.Adapter<CourseAdapter.MyViewHold
         holder.end_time.setText(courseList.get(position).getEndTime());
         holder.professor.setText(courseList.get(position).getProfessor());
         holder.location.setText(courseList.get(position).getRoomLocation());
+        holder.description.setText(courseList.get(position).getDescription());
         holder.mainlayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(activity.getApplicationContext(), "working lols", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(activity.getApplicationContext(), UpdateCourseActivity.class);
                 intent.putExtra("course_name", courseList.get(position).getCourseName());
                 intent.putExtra("course_code", courseList.get(position).getCourseCode());
@@ -79,43 +75,6 @@ public class CourseAdapter extends RecyclerView.Adapter<CourseAdapter.MyViewHold
         return courseList.size();
     }
 
-    @Override
-    public Filter getFilter() {
-        return exampleFilter;
-    }
-
-    //method for filtering search lists
-    private final Filter exampleFilter = new Filter() {
-        @Override
-        protected FilterResults performFiltering(CharSequence constraint) {
-
-            List<TimetableModel> filteredList = new ArrayList<>();
-
-            if (constraint == null || constraint.length() == 0){
-                filteredList.addAll(newList);
-            } else{
-                String filterPattern = constraint.toString().toLowerCase().trim();
-                for (TimetableModel item:newList) {
-                    if (item.getCourseName().toLowerCase().contains(filterPattern)) {
-                        filteredList.add(item);
-                    }
-                }
-
-            }
-            FilterResults results = new FilterResults();
-            results.values = filteredList;
-            return results;
-        }
-
-        @Override
-        //for displaying the results
-        protected void publishResults(CharSequence constraint, FilterResults results) {
-            courseList.clear();
-            courseList.addAll((List) results.values);
-            notifyDataSetChanged();
-        }
-    };
-
     public static class MyViewHolder extends RecyclerView.ViewHolder {
         TextView course_name, course_code, start_time, end_time, professor, location, description, daysSel;
         RelativeLayout mainlayout;
@@ -129,6 +88,7 @@ public class CourseAdapter extends RecyclerView.Adapter<CourseAdapter.MyViewHold
             professor = itemView.findViewById(R.id.tv_professor2);
             location = itemView.findViewById(R.id.tv_location2);
             daysSel = itemView.findViewById(R.id.days2);
+            description = itemView.findViewById(R.id.tv_desc2);
             mainlayout = itemView.findViewById(R.id.courselistmainlayout);
         }
     }
