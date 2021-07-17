@@ -5,7 +5,6 @@
     android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/homebg"
     android:fitsSystemWindows="true"
     tools:context=".Notebook"
     tools:openDrawer="start">
@@ -13,10 +12,52 @@
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/homebg"
         app:layout_behavior="@string/fab_transformation_scrim_behavior"
         android:id="@+id/notebook_layout"
         >
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/tb_nbook"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/next"
+                android:minHeight="?attr/actionBarSize"
+                android:theme="@style/Theme.AppCompat.DayNight.DarkActionBar"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_scrollFlags="scroll|enterAlways"
+                app:navigationIcon="@drawable/navi"
+                app:popupTheme="@style/Theme.AppCompat.DayNight.DarkActionBar"
+                app:title="@string/notebook" />
+
+            <LinearLayout
+                android:id="@+id/fragment_container2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintTop_toBottomOf="@+id/tb_nbook">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/notebookrecyclerview">
+                </androidx.recyclerview.widget.RecyclerView>
+
+                <View
+                    android:id="@+id/divider3"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="?android:attr/listDivider"
+                    tools:layout_editor_absoluteX="1dp"
+                    tools:layout_editor_absoluteY="294dp" />
+
+            </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -28,33 +69,6 @@
             android:layout_margin="16dp"
             android:id="@+id/notebookfab">
         </com.google.android.material.floatingactionbutton.FloatingActionButton>
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:id="@+id/notebookrecyclerview">
-        </androidx.recyclerview.widget.RecyclerView>
-
-        <com.google.android.material.appbar.AppBarLayout
-            android:id="@+id/appbar_nbook"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@android:color/transparent"
-            app:tabContentStart="56dp"
-            android:minHeight="?attr/actionBarSize">
-
-            <androidx.appcompat.widget.Toolbar
-                android:id="@+id/tb_nbook"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/next"
-                android:minHeight="?attr/actionBarSize"
-                android:theme="?attr/actionBarTheme"
-                app:layout_scrollFlags="scroll|enterAlways"
-                app:navigationIcon="@drawable/navi"
-                app:title="@string/notebook" />
-        </com.google.android.material.appbar.AppBarLayout>
-
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
     <FrameLayout
