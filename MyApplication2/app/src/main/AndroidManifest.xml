@@ -45,14 +45,16 @@
         <activity android:name=".WaterTracker" />
         <activity android:name=".Notebook" />
         <activity android:name=".Homepage" />
-        <activity android:name=".AboutApp" />
-        <activity android:name=".MainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+        <activity android:name=".MainActivity"/>
+        <activity android:name=".SplashScreen"
+            android:theme="@style/SplashScreen">
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            <intent-filter>
+                    <action android:name="android.intent.action.MAIN" />
+
+                    <category android:name="android.intent.category.LAUNCHER" />
+                </intent-filter>
+            </activity>
 
         <receiver android:name=".Timetable.ReminderBroadcast" />
     </application>
