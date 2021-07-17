@@ -39,10 +39,10 @@
 
             <ImageView
                 android:id="@+id/img_logoApp"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
                 android:layout_gravity="fill_vertical|center"
-                android:src="@drawable/logo_incognito">
+                android:src="@drawable/hwru_signin">
             </ImageView>
 
             <TextView
@@ -54,8 +54,7 @@
                 android:fontFamily="sans-serif-condensed-light"
                 android:gravity="center"
                 android:lineSpacingExtra="5sp"
-                android:text="How Well Are U? is a free utility application designed to assist students with their distance learning activities. It incorporates tools like a timetable, a calendar, and a notebook that students can use for their schoolwork.
-Users can also monitor their body mass index (BMI) and water intake with the app. HWRU gives students the flexibility to remain organized and on time."
+                android:text="@string/aboutApp"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large"
                 android:textColor="@color/text"
                 android:textStyle="bold" />
@@ -77,8 +76,8 @@ Users can also monitor their body mass index (BMI) and water intake with the app
 
             <ImageView
                 android:id="@+id/img_logoIncognito"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
                 android:layout_gravity="fill_vertical|center"
                 android:src="@drawable/logo_incognito">
             </ImageView>
@@ -92,8 +91,7 @@ Users can also monitor their body mass index (BMI) and water intake with the app
                 android:fontFamily="sans-serif-condensed-light"
                 android:gravity="center"
                 android:lineSpacingExtra="5sp"
-                android:text= "The Incognito Five consists of a group of five 2nd-year students at Polytechnic University of the Philippines in Manila who are in their second year of study in computer engineering. The main goal of Incognito Five is to contribute to the general good of society.
-Our sole vision as an organization is to meet the needs of our clients by providing services that meet international standards and compliance with our clients' requirements. We, at Incognito Five, are dedicated to offering exceptional quality that makes a positive impact on the lives of each person."
+                android:text= "@string/aboutUs"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large"
                 android:textColor="@color/text"
                 android:textStyle="bold" />

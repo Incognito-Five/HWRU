@@ -28,7 +28,7 @@ public class Homepage extends AppCompatActivity implements View.OnClickListener,
     DrawerLayout drawerLayout;
     NavigationView navigationView;
     Toolbar toolbar;
-    CardView card_timetable, card_calendar, card_notebook, card_bmi, card_water;
+    CardView card_timetable, card_calendar, card_notebook, card_bmi, card_to_do;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,14 +58,14 @@ public class Homepage extends AppCompatActivity implements View.OnClickListener,
         card_calendar = (CardView) findViewById(R.id.card_calendar);
         card_notebook = (CardView) findViewById(R.id.card_notebook);
         card_bmi = (CardView) findViewById(R.id.card_bmi);
-        card_water = (CardView) findViewById(R.id.card_water);
+        card_to_do = (CardView) findViewById(R.id.card_to_do);
 
         //Card View
         card_timetable.setOnClickListener(this);
         card_calendar.setOnClickListener(this);
         card_notebook.setOnClickListener(this);
         card_bmi.setOnClickListener(this);
-        card_water.setOnClickListener(this);
+        card_to_do.setOnClickListener(this);
 
         navigationView.setCheckedItem(R.id.home);
 
@@ -100,7 +100,7 @@ public class Homepage extends AppCompatActivity implements View.OnClickListener,
             case R.id.card_calendar: openIntent(Calendar.class); break;
             case R.id.card_notebook: openIntent(Notebook.class); break;
             case R.id.card_bmi: openIntent(BMI.class); break;
-            case R.id.card_water: openIntent(WaterTracker.class); break;
+            case R.id.card_to_do: openIntent(ToDoList.class); break;
         }
 
     }

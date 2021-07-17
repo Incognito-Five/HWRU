@@ -60,6 +60,10 @@
     <string name="abt_backup">Back up app data and other settings.</string>
     <string name="restore_abt">When reinstalling the app, restore backed up settings and data</string>
 
+    <!-- Strings used for Help fragment -->
+    <string name="aboutApp">How Well Are U? is a free utility application designed to assist students with their distance learning activities. It incorporates tools like a timetable, a calendar, a notebook, and a to-do list that students can use for their schoolwork. Users can also monitor their body mass index (BMI) with the app. HWRU gives students the flexibility to remain organized and on time.</string>
+    <string name="aboutUs">The Incognito Five consists of a group of five 2nd-year students at Polytechnic University of the Philippines in Manila who are in their second year of study in computer engineering. The main goal of Incognito Five is to contribute to the general good of society. Our sole vision as an organization is to meet the needs of our clients by providing services that meet international standards and compliance with our clients\' requirements. We, at Incognito Five, are dedicated to offering exceptional quality that makes a positive impact on the lives of each person.</string>
+
     <!---Strings used in Timetable-->
     <string name="course">COURSE</string>
     <string name="course_name">Subject Name</string>
@@ -185,5 +189,7 @@
     <string name="action_settings">Settings</string>
     <string name="save">Save</string>
     <string name="please_reenter_password">Reenter Password</string>
+    <string name="to_do_lists">To-Do List</string>
+
 
 </resources>
