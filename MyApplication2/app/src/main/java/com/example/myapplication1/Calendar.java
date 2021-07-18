@@ -18,8 +18,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.myapplication1.Timetable.AddCourseActivity;
-import com.example.myapplication1.Timetable.Timetable;
+import com.example.myapplication1.ToDo.ToDoList;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
 
