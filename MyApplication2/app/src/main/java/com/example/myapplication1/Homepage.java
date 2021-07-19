@@ -15,6 +15,7 @@ import androidx.cardview.widget.CardView;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import com.example.myapplication1.Help.HelpFragment;
 import com.example.myapplication1.Timetable.Timetable;
 import com.example.myapplication1.ToDo.ToDoList;
 import com.google.android.material.navigation.NavigationView;

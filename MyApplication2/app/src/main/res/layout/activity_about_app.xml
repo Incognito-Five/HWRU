@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/homebg">
+
+    <LinearLayout
+        android:id="@+id/linear_aboutApp_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="12dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.083">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginTop="0dp"
+            android:fontFamily="sans-serif-condensed-light"
+            android:gravity="center"
+            android:lineSpacingExtra="12sp"
+            android:text="HOW WELL ARE U?"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            android:textColor="@color/text"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:typeface="normal">
+        </TextView>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="12dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.083"
+        android:layout_below="@+id/linear_aboutApp_title"
+        android:id="@+id/linear_aboutApp_text">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:fontFamily="sans-serif-condensed-light"
+            android:lineSpacingExtra="5sp"
+            android:text="1. Timetable"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textColor="@color/text"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:fontFamily="sans-serif-condensed-light"
+            android:lineSpacingExtra="5sp"
+            android:text="\t\t - Add course subjects and schedule \n\t\t - Set reminders"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textColor="@color/text"
+            android:textSize="15sp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:fontFamily="sans-serif-condensed-light"
+            android:lineSpacingExtra="5sp"
+            android:text="2. Calendar"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textColor="@color/text"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:fontFamily="sans-serif-condensed-light"
+            android:lineSpacingExtra="5sp"
+            android:text="\t\t - View calendar"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textColor="@color/text"
+            android:textSize="15sp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:fontFamily="sans-serif-condensed-light"
+            android:lineSpacingExtra="5sp"
+            android:text="3. Notebook"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textColor="@color/text"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:fontFamily="sans-serif-condensed-light"
+            android:lineSpacingExtra="5sp"
+            android:text="\t\t - Add notes \n\t\t - Swipe right to delete notes \n\t\t - Click notes to edit"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textColor="@color/text"
+            android:textSize="15sp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:fontFamily="sans-serif-condensed-light"
+            android:lineSpacingExtra="5sp"
+            android:text="4. To-Do List"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textColor="@color/text"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:fontFamily="sans-serif-condensed-light"
+            android:lineSpacingExtra="5sp"
+            android:text="\t\t - Add tasks \n\t\t - Swipe right to delete tasks \n\t\t - Swipe left to edit tasks"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textColor="@color/text"
+            android:textSize="15sp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:fontFamily="sans-serif-condensed-light"
+            android:lineSpacingExtra="5sp"
+            android:text="5. BMI"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textColor="@color/text"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:fontFamily="sans-serif-condensed-light"
+            android:lineSpacingExtra="5sp"
+            android:text="\t\t - Check your BMI"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textColor="@color/text"
+            android:textSize="15sp"
+            android:textStyle="bold"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/linear_aboutApp_text"
+        android:gravity="center">
+        <Button
+            android:id="@+id/btn_back_app"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:backgroundTint="#d3ba7f"
+            android:text="BACK"
+            android:textSize="20sp"
+            />
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/fragment_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</RelativeLayout>

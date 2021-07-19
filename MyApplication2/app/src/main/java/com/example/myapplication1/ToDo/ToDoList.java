@@ -18,7 +18,7 @@ import android.view.View;
 
 import com.example.myapplication1.AccountFragment;
 import com.example.myapplication1.BackUpFragment;
-import com.example.myapplication1.HelpFragment;
+import com.example.myapplication1.Help.HelpFragment;
 import com.example.myapplication1.Homepage;
 import com.example.myapplication1.R;
 import com.example.myapplication1.SoundsFragment;

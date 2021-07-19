@@ -31,7 +31,7 @@
 
     <fragment
         android:id="@+id/nav_help"
-        android:name="com.example.myapplication1.HelpFragment"
+        android:name="com.example.myapplication1.Help.HelpFragment"
         android:label="@string/help"
         tools:layout="@layout/fragment_help"/>
 
