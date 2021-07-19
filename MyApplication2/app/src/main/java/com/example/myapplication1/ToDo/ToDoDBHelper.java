@@ -5,6 +5,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 
@@ -13,6 +14,7 @@ import java.util.List;
 
 public class ToDoDBHelper extends SQLiteOpenHelper {
 
+    Context context;
     private SQLiteDatabase toDoDB;
 
     //Database Table
@@ -24,6 +26,7 @@ public class ToDoDBHelper extends SQLiteOpenHelper {
 
     public ToDoDBHelper(@Nullable Context context) {
         super(context, DatabaseName, null, 1);
+        this.context = context;
     }
 
     @Override
@@ -44,7 +47,16 @@ public class ToDoDBHelper extends SQLiteOpenHelper {
 
         values.put(ColumnTask,model.getTask());
         values.put(ColumnStatus,0);
-        toDoDB.insert(TableName,null, values);
+        long result = toDoDB.insert(TableName,null, values);
+
+        if (result == -1)
+        {
+            Toast.makeText(context,"Task Unsaved",Toast.LENGTH_SHORT).show();
+        }
+        else
+        {
+            Toast.makeText(context,"Task Added Successfully",Toast.LENGTH_SHORT).show();
+        }
     }
 
     //method for updating tasks
@@ -53,7 +65,14 @@ public class ToDoDBHelper extends SQLiteOpenHelper {
         ContentValues values = new ContentValues();
 
         values.put(ColumnTask, task);
-        toDoDB.update(TableName, values, "ID=?", new String[]{String.valueOf(id)});
+        long result = toDoDB.update(TableName, values, "ID=?", new String[]{String.valueOf(id)});
+
+        if (result == -1){
+            Toast.makeText(context, "Task Update Failed", Toast.LENGTH_SHORT).show();
+        }
+        else{
+            Toast.makeText(context, "Task Updated Successfully", Toast.LENGTH_SHORT).show();
+        }
     }
 
     //method for updating status
@@ -68,7 +87,14 @@ public class ToDoDBHelper extends SQLiteOpenHelper {
     //method for deleting task
     public void deleteTask(int id){
         toDoDB = this.getWritableDatabase();
-        toDoDB.delete(TableName,"ID=?", new String[]{String.valueOf(id)});
+        long result = toDoDB.delete(TableName,"ID=?", new String[]{String.valueOf(id)});
+
+        if (result == -1){
+            Toast.makeText(context, "Task Not Deleted", Toast.LENGTH_SHORT).show();
+        }
+        else{
+            Toast.makeText(context, "Task Deleted Successfully", Toast.LENGTH_SHORT).show();
+        }
     }
 
     //method for getting all tasks
