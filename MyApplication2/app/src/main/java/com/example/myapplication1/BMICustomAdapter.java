@@ -1,21 +1,17 @@
 package com.example.myapplication1;
 
 import android.content.Context;
-import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
-import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.RecyclerView;
 
-import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 
@@ -71,7 +67,6 @@ public class BMICustomAdapter extends RecyclerView.Adapter<BMICustomAdapter.MyVi
 
         TextView bmiid, bmiresult, bmicategory;
         LinearLayout bmimainlayout;
-        Button deletebutton;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);

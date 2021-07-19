@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#626C6C"
+    android:background="@drawable/bg1"
     tools:context=".BMIResult">
 
     <ImageView
@@ -60,7 +60,7 @@
         android:layout_below="@id/contentlayout"
         android:layout_margin="25dp"
         android:layout_centerHorizontal="true"
-        android:background="@drawable/bmicardbackground"
+        android:background="@drawable/custom_btn_bg"
         android:text="Recalculate BMI"
         android:textColor="#443C3E"
         android:textSize="18sp"
@@ -73,7 +73,7 @@
         android:layout_below="@id/recalculatebmi"
         android:layout_margin="10dp"
         android:layout_centerHorizontal="true"
-        android:background="@drawable/bmicardbackground"
+        android:background="@drawable/custom_btn_bg"
         android:text="Save BMI"
         android:textColor="#443C3E"
         android:textSize="18sp"

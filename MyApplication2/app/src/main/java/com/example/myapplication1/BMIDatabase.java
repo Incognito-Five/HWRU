@@ -24,6 +24,7 @@ public class BMIDatabase extends SQLiteOpenHelper {
 
     public BMIDatabase (@Nullable Context context) {
         super(context, DatabaseName, null, DatabaseVersion);
+        this.context = context;
     }
 
     @Override

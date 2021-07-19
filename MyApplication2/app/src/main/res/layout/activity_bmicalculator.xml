@@ -5,143 +5,148 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_gravity="bottom"
-    android:background="#626C6C"
+    android:background="@drawable/bg1"
     tools:context=".BMICalculator">
 
     <!--weight layout-->
+
+    <!--height layout-->
     <RelativeLayout
         android:id="@+id/weightlayout"
         android:layout_width="340dp"
         android:layout_height="150dp"
-        android:layout_margin="20dp"
+        android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
+        android:layout_marginTop="158dp"
         android:background="@drawable/bmicardbackground">
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textAlignment="center"
-            android:text="Weight"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:textColor="#443C3E"
             android:layout_marginTop="15dp"
-            android:gravity="center_horizontal"></TextView>
+            android:gravity="center_horizontal"
+            android:text="Weight"
+            android:textAlignment="center"
+            android:textColor="#443C3E"
+            android:textSize="20sp"
+            android:textStyle="bold"></TextView>
 
         <TextView
             android:id="@+id/currentweight"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textAlignment="center"
-            android:text="40"
-            android:textSize="40sp"
-            android:textStyle="bold"
-            android:textColor="#443C3E"
             android:layout_alignParentBottom="true"
             android:layout_centerInParent="true"
             android:layout_marginBottom="50dp"
-            android:gravity="center_horizontal"></TextView>
+            android:gravity="center_horizontal"
+            android:text="40"
+            android:textAlignment="center"
+            android:textColor="#443C3E"
+            android:textSize="40sp"
+            android:textStyle="bold"></TextView>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="kg"
-            android:textSize="20sp"
-            android:textColor="#443C3E"
             android:layout_centerInParent="true"
-            android:layout_toRightOf="@id/currentweight"
-            android:layout_toEndOf="@id/currentweight"
             android:layout_marginStart="15dp"
-            android:layout_marginLeft="15dp">
-        </TextView>
+            android:layout_marginLeft="15dp"
+            android:layout_toEndOf="@id/currentweight"
+            android:layout_toRightOf="@id/currentweight"
+            android:text="kg"
+            android:textColor="#443C3E"
+            android:textSize="20sp"></TextView>
 
         <SeekBar
+            android:id="@+id/weightseekbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
-            android:layout_marginBottom="20dp"
             android:layout_marginLeft="10dp"
-            android:progressTint="#626C6C"
-            android:thumbTint="#B3B4B0"
             android:layout_marginRight="10dp"
-            android:id="@+id/weightseekbar">
-        </SeekBar>
+            android:layout_marginBottom="20dp"
+            android:progressTint="#626C6C"
+            android:thumbTint="#B3B4B0"></SeekBar>
     </RelativeLayout>
 
-    <!--height layout-->
     <RelativeLayout
         android:id="@+id/heightlayout"
         android:layout_width="340dp"
         android:layout_height="150dp"
-        android:layout_margin="10dp"
-        android:layout_centerHorizontal="true"
         android:layout_below="@id/weightlayout"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="54dp"
+        android:layout_marginBottom="10dp"
         android:background="@drawable/bmicardbackground">
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textAlignment="center"
-            android:text="Height"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:textColor="#443C3E"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
             android:layout_marginTop="15dp"
-            android:gravity="center_horizontal"></TextView>
+            android:layout_marginEnd="0dp"
+            android:layout_marginRight="0dp"
+            android:gravity="center_horizontal"
+            android:text="Height"
+            android:textAlignment="center"
+            android:textColor="#443C3E"
+            android:textSize="20sp"
+            android:textStyle="bold"></TextView>
 
         <TextView
             android:id="@+id/currentheight"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textAlignment="center"
-            android:text="180"
-            android:textSize="40sp"
-            android:textStyle="bold"
-            android:textColor="#443C3E"
             android:layout_alignParentBottom="true"
             android:layout_centerInParent="true"
             android:layout_marginBottom="50dp"
-            android:gravity="center_horizontal"></TextView>
+            android:gravity="center_horizontal"
+            android:text="180"
+            android:textAlignment="center"
+            android:textColor="#443C3E"
+            android:textSize="40sp"
+            android:textStyle="bold"></TextView>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="cm"
-            android:textSize="20sp"
-            android:textColor="#443C3E"
             android:layout_centerInParent="true"
-            android:layout_toRightOf="@id/currentheight"
-            android:layout_toEndOf="@id/currentheight"
             android:layout_marginStart="15dp"
-            android:layout_marginLeft="15dp">
-        </TextView>
+            android:layout_marginLeft="15dp"
+            android:layout_toEndOf="@id/currentheight"
+            android:layout_toRightOf="@id/currentheight"
+            android:text="cm"
+            android:textColor="#443C3E"
+            android:textSize="20sp"></TextView>
 
         <SeekBar
+            android:id="@+id/heightseekbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
-            android:layout_marginBottom="20dp"
             android:layout_marginLeft="10dp"
-            android:progressTint="#626C6C"
-            android:thumbTint="#B3B4B0"
             android:layout_marginRight="10dp"
-            android:id="@+id/heightseekbar">
-        </SeekBar>
+            android:layout_marginBottom="20dp"
+            android:progressTint="#626C6C"
+            android:thumbTint="#B3B4B0"></SeekBar>
     </RelativeLayout>
 
     <Button
-        android:layout_width="match_parent"
+        android:id="@+id/calculatebmi"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/heightlayout"
-        android:id="@+id/calculatebmi"
-        android:textSize="15sp"
-        android:layout_margin="10dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="51dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/custom_btn_bg"
+        android:paddingLeft="80dp"
+        android:paddingRight="80dp"
         android:text="Calculate BMI"
-        android:textColor="#443C3E"
+        android:textColor="@color/text"
+        android:textSize="18sp"
         android:textStyle="bold"></Button>
-
-
 
 
 </RelativeLayout>
