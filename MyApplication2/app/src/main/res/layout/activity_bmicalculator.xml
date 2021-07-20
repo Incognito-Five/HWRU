@@ -39,9 +39,9 @@
             android:layout_centerInParent="true"
             android:layout_marginBottom="50dp"
             android:gravity="center_horizontal"
-            android:text="40"
+            android:text="0"
             android:textAlignment="center"
-            android:textColor="#443C3E"
+            android:textColor="@color/text"
             android:textSize="40sp"
             android:textStyle="bold"></TextView>
 
@@ -54,7 +54,7 @@
             android:layout_toEndOf="@id/currentweight"
             android:layout_toRightOf="@id/currentweight"
             android:text="kg"
-            android:textColor="#443C3E"
+            android:textColor="@color/text"
             android:textSize="20sp"></TextView>
 
         <SeekBar
@@ -66,7 +66,7 @@
             android:layout_marginRight="10dp"
             android:layout_marginBottom="20dp"
             android:progressTint="#626C6C"
-            android:thumbTint="#B3B4B0"></SeekBar>
+            android:thumbTint="@color/text"></SeekBar>
     </RelativeLayout>
 
     <RelativeLayout
@@ -90,7 +90,7 @@
             android:gravity="center_horizontal"
             android:text="Height"
             android:textAlignment="center"
-            android:textColor="#443C3E"
+            android:textColor="@color/text"
             android:textSize="20sp"
             android:textStyle="bold"></TextView>
 
@@ -102,9 +102,9 @@
             android:layout_centerInParent="true"
             android:layout_marginBottom="50dp"
             android:gravity="center_horizontal"
-            android:text="180"
+            android:text="0"
             android:textAlignment="center"
-            android:textColor="#443C3E"
+            android:textColor="@color/text"
             android:textSize="40sp"
             android:textStyle="bold"></TextView>
 
@@ -117,7 +117,7 @@
             android:layout_toEndOf="@id/currentheight"
             android:layout_toRightOf="@id/currentheight"
             android:text="cm"
-            android:textColor="#443C3E"
+            android:textColor="@color/text"
             android:textSize="20sp"></TextView>
 
         <SeekBar
@@ -129,7 +129,7 @@
             android:layout_marginRight="10dp"
             android:layout_marginBottom="20dp"
             android:progressTint="#626C6C"
-            android:thumbTint="#B3B4B0"></SeekBar>
+            android:thumbTint="@color/text"></SeekBar>
     </RelativeLayout>
 
     <Button
@@ -138,9 +138,9 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/heightlayout"
         android:layout_centerHorizontal="true"
+        android:backgroundTint="#d3ba7f"
         android:layout_marginTop="51dp"
         android:layout_marginBottom="8dp"
-        android:background="@drawable/custom_btn_bg"
         android:paddingLeft="80dp"
         android:paddingRight="80dp"
         android:text="Calculate BMI"

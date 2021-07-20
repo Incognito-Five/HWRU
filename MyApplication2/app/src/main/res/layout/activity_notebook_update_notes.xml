@@ -30,7 +30,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
         android:layout_alignParentBottom="true"
-        android:background="@drawable/custom_btn_bg"
+        android:backgroundTint="#d3ba7f"
         android:text="Update Note"
         android:textStyle="bold"
         android:textSize="18sp"

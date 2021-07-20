@@ -24,7 +24,7 @@
                 android:textSize="30sp"
                 android:layout_marginLeft="10dp"
                 android:layout_centerVertical="true"
-                android:textColor="@color/black"
+                android:textColor="@color/text"
                 android:id="@+id/bmiid"></TextView>
 
             <TextView
@@ -37,7 +37,7 @@
                 android:textSize="25sp"
                 android:layout_marginLeft="10dp"
                 android:layout_centerVertical="true"
-                android:textColor="@color/black"
+                android:textColor="@color/text"
                 android:id="@+id/bmiresult"></TextView>
 
             <TextView
@@ -51,7 +51,7 @@
                 android:textSize="15sp"
                 android:layout_centerVertical="true"
                 android:layout_centerHorizontal="true"
-                android:textColor="@color/black"
+                android:textColor="@color/text"
                 android:id="@+id/bmicategory"></TextView>
 
         </RelativeLayout>

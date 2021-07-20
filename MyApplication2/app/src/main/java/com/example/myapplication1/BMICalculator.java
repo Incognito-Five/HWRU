@@ -24,8 +24,8 @@ public class BMICalculator extends AppCompatActivity {
     /*initialize BMI Component's Values*/
     int currentheightprogress;
     int currentweightprogress;
-    String intheightprogress="180";
-    String intweightprogress="40";
+    String intheightprogress="0";
+    String intweightprogress="0";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,7 +43,7 @@ public class BMICalculator extends AppCompatActivity {
 
         //height seekbar functions
         heightseekbar.setMax(400);
-        heightseekbar.setProgress(180);
+        heightseekbar.setProgress(0);
         heightseekbar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
@@ -65,7 +65,7 @@ public class BMICalculator extends AppCompatActivity {
 
         //weight seekbar
         weightseekbar.setMax(650);
-        weightseekbar.setProgress(40);
+        weightseekbar.setProgress(0);
         weightseekbar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
