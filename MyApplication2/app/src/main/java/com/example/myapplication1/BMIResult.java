@@ -29,8 +29,6 @@ public class BMIResult extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bmiresult);
 
-        getSupportActionBar().hide();
-
         /*get data to calculate BMI*/
         intent=getIntent();
 
@@ -58,7 +56,7 @@ public class BMIResult extends AppCompatActivity {
                         bmicategory.getText().toString().trim());
 
                 //will show data on the recycler view
-                Intent intent = new Intent(BMIResult.this,MainActivity.class);
+                Intent intent = new Intent(BMIResult.this, BMI.class);
                 intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
                 startActivity(intent);
                 finish();

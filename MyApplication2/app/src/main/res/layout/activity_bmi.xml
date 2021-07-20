@@ -8,7 +8,7 @@
     android:background="@drawable/bg1"
     android:fitsSystemWindows="true"
     tools:context=".BMI"
-    tools:openDrawer="end">
+    tools:openDrawer="start">
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -28,18 +28,13 @@
             app:tint="#E4D3BA"
             android:src="@drawable/bmicalcu_icon"></com.google.android.material.floatingactionbutton.FloatingActionButton>
 
-
         <androidx.recyclerview.widget.RecyclerView
             android:paddingTop="?attr/actionBarSize"
             android:id="@+id/BMIRecyclerView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"></androidx.recyclerview.widget.RecyclerView>
 
-
-
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
-
-
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appbar_bmi"

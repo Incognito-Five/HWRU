@@ -32,7 +32,6 @@ public class BMICalculator extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bmicalculator);
 
-        getSupportActionBar().hide();
         /*defining mcalculatebmi*/
         calculatebmi=findViewById(R.id.calculatebmi);
         /*assign xml id to java*/

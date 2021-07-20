@@ -53,6 +53,9 @@ public class BMI extends AppCompatActivity implements NavigationView.OnNavigatio
         floatingActionButton=findViewById(R.id.BMICalcuBttn);
         coordinatorLayout = findViewById(R.id.bmi_layout);
 
+        toolbar = findViewById(R.id.tb_bmi);
+        setSupportActionBar(toolbar);
+
         //will go to new activity when the fab is clicked
         floatingActionButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -149,10 +152,6 @@ public class BMI extends AppCompatActivity implements NavigationView.OnNavigatio
         builder.create().show();
     }
 
-
-
-
-
     @Override
     public void onBackPressed(){
 
@@ -166,7 +165,7 @@ public class BMI extends AppCompatActivity implements NavigationView.OnNavigatio
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-        switch (item.getItemId()){
+        switch (item.getItemId()) {
             case R.id.home:
                 Intent intent = new Intent(this, Homepage.class);
                 startActivity(intent);
